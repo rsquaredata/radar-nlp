@@ -102,7 +102,7 @@ radar-nlp/
 
 Auteurs
 
-- Aya MECHERI
 - Mohamed Habib BAH
-- Rina RAZAFIMAHEFA
 - Thibaud LECOMTE
+- Aya MECHERI
+- Rina RAZAFIMAHEFA
