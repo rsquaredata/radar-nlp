@@ -1,0 +1,1235 @@
+{
+  "k": 12,
+  "inertia": 16349.28482713439,
+  "silhouette": 0.04321972941296038,
+  "tfidf_shape": [
+    18060,
+    80000
+  ],
+  "top_terms": {
+    "0": [
+      {
+        "term": "pathway",
+        "weight": 0.06466501190835323
+      },
+      {
+        "term": "model",
+        "weight": 0.04789082452030261
+      },
+      {
+        "term": "monorails",
+        "weight": 0.03926603690101453
+      },
+      {
+        "term": "metros monorails",
+        "weight": 0.03926603690101453
+      },
+      {
+        "term": "alstom",
+        "weight": 0.03922571273654704
+      },
+      {
+        "term": "metros",
+        "weight": 0.03802597333906956
+      },
+      {
+        "term": "req id",
+        "weight": 0.035581093846198876
+      },
+      {
+        "term": "req",
+        "weight": 0.035226597201300905
+      },
+      {
+        "term": "id",
+        "weight": 0.03375400591089781
+      },
+      {
+        "term": "trains",
+        "weight": 0.03203183482644537
+      },
+      {
+        "term": "team",
+        "weight": 0.03179109783177085
+      },
+      {
+        "term": "societe lance",
+        "weight": 0.0308943185866842
+      },
+      {
+        "term": "team ne",
+        "weight": 0.0308943185866842
+      },
+      {
+        "term": "ne start",
+        "weight": 0.0308943185866842
+      },
+      {
+        "term": "sommes determi",
+        "weight": 0.0308943185866842
+      },
+      {
+        "term": "determi",
+        "weight": 0.0308943185866842
+      },
+      {
+        "term": "engine market",
+        "weight": 0.030698236695961896
+      },
+      {
+        "term": "first post",
+        "weight": 0.030698236695961896
+      },
+      {
+        "term": "intelligence introducing",
+        "weight": 0.030698236695961896
+      },
+      {
+        "term": "toward truly",
+        "weight": 0.030698236695961896
+      },
+      {
+        "term": "breakthrough architecture",
+        "weight": 0.030698236695961896
+      },
+      {
+        "term": "transformer model",
+        "weight": 0.030698236695961896
+      },
+      {
+        "term": "works combining",
+        "weight": 0.030698236695961896
+      },
+      {
+        "term": "combining foundational",
+        "weight": 0.030698236695961896
+      },
+      {
+        "term": "thinks like",
+        "weight": 0.030698236695961896
+      }
+    ],
+    "1": [
+      {
+        "term": "plus",
+        "weight": 0.09947143738204955
+      },
+      {
+        "term": "defense",
+        "weight": 0.08661219611559955
+      },
+      {
+        "term": "plus respectueux",
+        "weight": 0.0831331355934003
+      },
+      {
+        "term": "environnement plus",
+        "weight": 0.08238547813858958
+      },
+      {
+        "term": "monde plus",
+        "weight": 0.08191575790432612
+      },
+      {
+        "term": "respectueux de",
+        "weight": 0.0813886870578077
+      },
+      {
+        "term": "respectueux",
+        "weight": 0.08028111860708403
+      },
+      {
+        "term": "domaines",
+        "weight": 0.07924671284153283
+      },
+      {
+        "term": "un monde",
+        "weight": 0.078650649140108
+      },
+      {
+        "term": "de environnement",
+        "weight": 0.07790760053570167
+      },
+      {
+        "term": "defense securite",
+        "weight": 0.07720405848460436
+      },
+      {
+        "term": "aeronautique",
+        "weight": 0.07606145722967045
+      },
+      {
+        "term": "confiance thales",
+        "weight": 0.06552996377390043
+      },
+      {
+        "term": "euros recherche",
+        "weight": 0.06552996377390043
+      },
+      {
+        "term": "securite aeronautique",
+        "weight": 0.06552996377390043
+      },
+      {
+        "term": "thales un",
+        "weight": 0.06548903381463853
+      },
+      {
+        "term": "mondial hautes",
+        "weight": 0.06548903381463853
+      },
+      {
+        "term": "construisons ensemble",
+        "weight": 0.06544823236409429
+      },
+      {
+        "term": "hautes technologies",
+        "weight": 0.0653670117789357
+      },
+      {
+        "term": "domaines cles",
+        "weight": 0.06519764182845095
+      },
+      {
+        "term": "trois secteurs",
+        "weight": 0.06508819233646398
+      },
+      {
+        "term": "investit pres",
+        "weight": 0.06508819233646398
+      },
+      {
+        "term": "contribuent un",
+        "weight": 0.06508819233646398
+      },
+      {
+        "term": "technologies specialise",
+        "weight": 0.06508819233646398
+      },
+      {
+        "term": "specialise trois",
+        "weight": 0.06508819233646398
+      }
+    ],
+    "2": [
+      {
+        "term": "une",
+        "weight": 0.02319073978282435
+      },
+      {
+        "term": "nos",
+        "weight": 0.014708454377165591
+      },
+      {
+        "term": "equipe",
+        "weight": 0.012384322064275788
+      },
+      {
+        "term": "clients",
+        "weight": 0.012348896690739002
+      },
+      {
+        "term": "plus",
+        "weight": 0.011940970069462152
+      },
+      {
+        "term": "missions",
+        "weight": 0.010713923120192315
+      },
+      {
+        "term": "transformation",
+        "weight": 0.010420037949226598
+      },
+      {
+        "term": "entreprise",
+        "weight": 0.010366604861176989
+      },
+      {
+        "term": "groupe",
+        "weight": 0.010269328918589839
+      },
+      {
+        "term": "aux",
+        "weight": 0.009859461935033889
+      },
+      {
+        "term": "vos",
+        "weight": 0.009508263271086136
+      },
+      {
+        "term": "sein",
+        "weight": 0.00938526382624899
+      },
+      {
+        "term": "poste",
+        "weight": 0.009308642756273479
+      },
+      {
+        "term": "description",
+        "weight": 0.008991264422196839
+      },
+      {
+        "term": "recherche",
+        "weight": 0.008623031222977444
+      },
+      {
+        "term": "developpement",
+        "weight": 0.008474737344423975
+      },
+      {
+        "term": "mission",
+        "weight": 0.008426863077195935
+      },
+      {
+        "term": "projets",
+        "weight": 0.008332681990796379
+      },
+      {
+        "term": "gestion",
+        "weight": 0.00806303333983127
+      },
+      {
+        "term": "conseil",
+        "weight": 0.007859275122482438
+      },
+      {
+        "term": "plus de",
+        "weight": 0.007758377038308069
+      },
+      {
+        "term": "collaborateurs",
+        "weight": 0.007752166138536086
+      },
+      {
+        "term": "france",
+        "weight": 0.00772312805227169
+      },
+      {
+        "term": "de nos",
+        "weight": 0.007389247745780706
+      },
+      {
+        "term": "client",
+        "weight": 0.007311786220566595
+      }
+    ],
+    "3": [
+      {
+        "term": "medical",
+        "weight": 0.06334677152819819
+      },
+      {
+        "term": "appel medical",
+        "weight": 0.0631023136146506
+      },
+      {
+        "term": "appel",
+        "weight": 0.0628536502435911
+      },
+      {
+        "term": "sante",
+        "weight": 0.052619746680986984
+      },
+      {
+        "term": "transformer",
+        "weight": 0.04837976809225808
+      },
+      {
+        "term": "vos",
+        "weight": 0.04552807776511377
+      },
+      {
+        "term": "de sante",
+        "weight": 0.0450174933675992
+      },
+      {
+        "term": "avenir",
+        "weight": 0.04099992419439337
+      },
+      {
+        "term": "de nos",
+        "weight": 0.039727862152499176
+      },
+      {
+        "term": "nos",
+        "weight": 0.03951555886246199
+      },
+      {
+        "term": "plus",
+        "weight": 0.037792309998539525
+      },
+      {
+        "term": "un avenir",
+        "weight": 0.0376982733650296
+      },
+      {
+        "term": "vos cotes",
+        "weight": 0.03658995328898398
+      },
+      {
+        "term": "pret transformer",
+        "weight": 0.035906284235730376
+      },
+      {
+        "term": "besoins",
+        "weight": 0.03579259852403828
+      },
+      {
+        "term": "cotes",
+        "weight": 0.03385120461227052
+      },
+      {
+        "term": "de carriere",
+        "weight": 0.03379818694366577
+      },
+      {
+        "term": "thales",
+        "weight": 0.032696333120172685
+      },
+      {
+        "term": "aux besoins",
+        "weight": 0.03268766660137984
+      },
+      {
+        "term": "etablissement",
+        "weight": 0.0325843983223381
+      },
+      {
+        "term": "pret",
+        "weight": 0.03215815736198871
+      },
+      {
+        "term": "repondre aux",
+        "weight": 0.032062973752172846
+      },
+      {
+        "term": "tant qu",
+        "weight": 0.031321677681627816
+      },
+      {
+        "term": "nos clients",
+        "weight": 0.031120925302886186
+      },
+      {
+        "term": "chez appel",
+        "weight": 0.030833902161821563
+      }
+    ],
+    "4": [
+      {
+        "term": "date",
+        "weight": 0.065395232879361
+      },
+      {
+        "term": "medecin",
+        "weight": 0.055046693956020645
+      },
+      {
+        "term": "date de",
+        "weight": 0.05246360543803866
+      },
+      {
+        "term": "debut de",
+        "weight": 0.038129961675626274
+      },
+      {
+        "term": "de debut",
+        "weight": 0.037834326500284156
+      },
+      {
+        "term": "recruitmentprofession recherchee",
+        "weight": 0.03732979111104931
+      },
+      {
+        "term": "recruitmentprofession",
+        "weight": 0.03732979111104931
+      },
+      {
+        "term": "societe rc",
+        "weight": 0.03732979111104931
+      },
+      {
+        "term": "rc human",
+        "weight": 0.03732979111104931
+      },
+      {
+        "term": "human recruitmentprofession",
+        "weight": 0.03732979111104931
+      },
+      {
+        "term": "recherchee",
+        "weight": 0.03715440511256709
+      },
+      {
+        "term": "rc",
+        "weight": 0.036983696636032064
+      },
+      {
+        "term": "recherchee medecin",
+        "weight": 0.03569332314886915
+      },
+      {
+        "term": "debut",
+        "weight": 0.035150468980978546
+      },
+      {
+        "term": "date limite",
+        "weight": 0.034289644066021
+      },
+      {
+        "term": "limite",
+        "weight": 0.032936554560189873
+      },
+      {
+        "term": "human",
+        "weight": 0.03284852629095451
+      },
+      {
+        "term": "fonctionnaires",
+        "weight": 0.03248740247250721
+      },
+      {
+        "term": "reference",
+        "weight": 0.03190127618444009
+      },
+      {
+        "term": "localisation",
+        "weight": 0.03179067555919168
+      },
+      {
+        "term": "proche",
+        "weight": 0.03126398336143106
+      },
+      {
+        "term": "categorie",
+        "weight": 0.030983915194435864
+      },
+      {
+        "term": "obligatoires",
+        "weight": 0.0305962932471711
+      },
+      {
+        "term": "localisation proche",
+        "weight": 0.029947299426691526
+      },
+      {
+        "term": "informations generales",
+        "weight": 0.029827510878969045
+      }
+    ],
+    "5": [
+      {
+        "term": "reseau dsiactive",
+        "weight": 0.11964359421783838
+      },
+      {
+        "term": "dsiactive",
+        "weight": 0.11964359421783838
+      },
+      {
+        "term": "reseau",
+        "weight": 0.10793352413943495
+      },
+      {
+        "term": "groupeactive",
+        "weight": 0.1037563536116127
+      },
+      {
+        "term": "digital reseau",
+        "weight": 0.08239876591045595
+      },
+      {
+        "term": "diri",
+        "weight": 0.08239876591045595
+      },
+      {
+        "term": "marche etes",
+        "weight": 0.08239876591045595
+      },
+      {
+        "term": "defis digital",
+        "weight": 0.08239876591045595
+      },
+      {
+        "term": "transformer entreprise",
+        "weight": 0.08239876591045595
+      },
+      {
+        "term": "dsiactive adapter",
+        "weight": 0.08239876591045595
+      },
+      {
+        "term": "adapter transformer",
+        "weight": 0.08239876591045595
+      },
+      {
+        "term": "deja marche",
+        "weight": 0.08239876591045595
+      },
+      {
+        "term": "aider diri",
+        "weight": 0.08239876591045595
+      },
+      {
+        "term": "monde deja",
+        "weight": 0.08239876591045595
+      },
+      {
+        "term": "nouveau monde",
+        "weight": 0.0822204058080656
+      },
+      {
+        "term": "entreprise nouveau",
+        "weight": 0.08204454033446801
+      },
+      {
+        "term": "developpement commercial",
+        "weight": 0.07937294694121518
+      },
+      {
+        "term": "defis",
+        "weight": 0.0707452460818244
+      },
+      {
+        "term": "pme",
+        "weight": 0.07072578166522255
+      },
+      {
+        "term": "strategie systemes",
+        "weight": 0.0706634341016183
+      },
+      {
+        "term": "dsiactive dedie",
+        "weight": 0.0706634341016183
+      },
+      {
+        "term": "information souhaitez",
+        "weight": 0.07052293904905967
+      },
+      {
+        "term": "experts",
+        "weight": 0.0694413206837893
+      },
+      {
+        "term": "relever defis",
+        "weight": 0.0693244920366142
+      },
+      {
+        "term": "adapter",
+        "weight": 0.06659508466014837
+      }
+    ],
+    "6": [
+      {
+        "term": "ai",
+        "weight": 0.043161410653582984
+      },
+      {
+        "term": "team",
+        "weight": 0.024921146146011187
+      },
+      {
+        "term": "data",
+        "weight": 0.01961221768390685
+      },
+      {
+        "term": "platform",
+        "weight": 0.018823017026566122
+      },
+      {
+        "term": "work",
+        "weight": 0.017225300503873595
+      },
+      {
+        "term": "re",
+        "weight": 0.016417972615525352
+      },
+      {
+        "term": "technology",
+        "weight": 0.016411203254577695
+      },
+      {
+        "term": "world",
+        "weight": 0.016307375782448376
+      },
+      {
+        "term": "across",
+        "weight": 0.0162555755147464
+      },
+      {
+        "term": "global",
+        "weight": 0.016186653609611388
+      },
+      {
+        "term": "business",
+        "weight": 0.014800377042736594
+      },
+      {
+        "term": "company",
+        "weight": 0.013944596288190223
+      },
+      {
+        "term": "join",
+        "weight": 0.013710127570836207
+      },
+      {
+        "term": "new",
+        "weight": 0.01368563434484939
+      },
+      {
+        "term": "life",
+        "weight": 0.013522856955821954
+      },
+      {
+        "term": "models",
+        "weight": 0.01329538146980273
+      },
+      {
+        "term": "solutions",
+        "weight": 0.012728397253813969
+      },
+      {
+        "term": "products",
+        "weight": 0.012724741788927654
+      },
+      {
+        "term": "leading",
+        "weight": 0.01232092076950779
+      },
+      {
+        "term": "learning",
+        "weight": 0.012008955884010936
+      },
+      {
+        "term": "designed",
+        "weight": 0.011987909361236232
+      },
+      {
+        "term": "high",
+        "weight": 0.01176931853870819
+      },
+      {
+        "term": "product",
+        "weight": 0.011707420225315455
+      },
+      {
+        "term": "innovative",
+        "weight": 0.011254440275451548
+      },
+      {
+        "term": "mistral",
+        "weight": 0.011203110146145273
+      }
+    ],
+    "7": [
+      {
+        "term": "data",
+        "weight": 0.04627032625086526
+      },
+      {
+        "term": "donnees",
+        "weight": 0.030667599665763694
+      },
+      {
+        "term": "ia",
+        "weight": 0.024433584363831536
+      },
+      {
+        "term": "de donnees",
+        "weight": 0.020381389832586794
+      },
+      {
+        "term": "une",
+        "weight": 0.01894024333422272
+      },
+      {
+        "term": "projets",
+        "weight": 0.018653940123992616
+      },
+      {
+        "term": "solutions",
+        "weight": 0.017525668274104466
+      },
+      {
+        "term": "equipe",
+        "weight": 0.01673905595260892
+      },
+      {
+        "term": "intelligence",
+        "weight": 0.0158856004812673
+      },
+      {
+        "term": "missions",
+        "weight": 0.015723503177900645
+      },
+      {
+        "term": "nos",
+        "weight": 0.015693987968436213
+      },
+      {
+        "term": "equipes",
+        "weight": 0.014457051199852715
+      },
+      {
+        "term": "developpement",
+        "weight": 0.014136840175976292
+      },
+      {
+        "term": "clients",
+        "weight": 0.013874099526522415
+      },
+      {
+        "term": "concevoir",
+        "weight": 0.013516249969090843
+      },
+      {
+        "term": "tant",
+        "weight": 0.01347528198191036
+      },
+      {
+        "term": "transformation",
+        "weight": 0.01313359892216102
+      },
+      {
+        "term": "vos",
+        "weight": 0.012665771690523102
+      },
+      {
+        "term": "metiers",
+        "weight": 0.01250240210806527
+      },
+      {
+        "term": "artificielle",
+        "weight": 0.0123958594060835
+      },
+      {
+        "term": "intelligence artificielle",
+        "weight": 0.012385229358169724
+      },
+      {
+        "term": "analyse",
+        "weight": 0.012131814877112795
+      },
+      {
+        "term": "sein",
+        "weight": 0.011628346089900099
+      },
+      {
+        "term": "developper",
+        "weight": 0.011365383959341765
+      },
+      {
+        "term": "mise",
+        "weight": 0.011171908456828292
+      }
+    ],
+    "8": [
+      {
+        "term": "salaire",
+        "weight": 0.05560609252384143
+      },
+      {
+        "term": "offres",
+        "weight": 0.051879426351154945
+      },
+      {
+        "term": "salaire brut",
+        "weight": 0.05018535538691213
+      },
+      {
+        "term": "mois heure",
+        "weight": 0.04988267090398033
+      },
+      {
+        "term": "app",
+        "weight": 0.049774826034138096
+      },
+      {
+        "term": "brut",
+        "weight": 0.04950250839689655
+      },
+      {
+        "term": "heure",
+        "weight": 0.04935625019295127
+      },
+      {
+        "term": "cv",
+        "weight": 0.0491075708634512
+      },
+      {
+        "term": "emploi",
+        "weight": 0.04681322370480217
+      },
+      {
+        "term": "esn",
+        "weight": 0.04532166189592446
+      },
+      {
+        "term": "profil",
+        "weight": 0.04288870156684048
+      },
+      {
+        "term": "mois",
+        "weight": 0.041946622261120725
+      },
+      {
+        "term": "cette",
+        "weight": 0.04063841676050508
+      },
+      {
+        "term": "offre",
+        "weight": 0.04053416320809204
+      },
+      {
+        "term": "app postulez",
+        "weight": 0.04041224262779074
+      },
+      {
+        "term": "parametres deconnexion",
+        "weight": 0.04041224262779074
+      },
+      {
+        "term": "vus candidatures",
+        "weight": 0.04041224262779074
+      },
+      {
+        "term": "alertes profil",
+        "weight": 0.04041224262779074
+      },
+      {
+        "term": "postulez premiers",
+        "weight": 0.04041224262779074
+      },
+      {
+        "term": "telechargez",
+        "weight": 0.04041224262779074
+      },
+      {
+        "term": "espace cv",
+        "weight": 0.04041224262779074
+      },
+      {
+        "term": "profil parametres",
+        "weight": 0.04041224262779074
+      },
+      {
+        "term": "cv vus",
+        "weight": 0.04041224262779074
+      },
+      {
+        "term": "candidatures alertes",
+        "weight": 0.04041224262779074
+      },
+      {
+        "term": "telechargez app",
+        "weight": 0.04041224262779074
+      }
+    ],
+    "9": [
+      {
+        "term": "grandes",
+        "weight": 0.05612026858806812
+      },
+      {
+        "term": "nos",
+        "weight": 0.04603751140009224
+      },
+      {
+        "term": "avons",
+        "weight": 0.04543604728879177
+      },
+      {
+        "term": "clients",
+        "weight": 0.04509340557462778
+      },
+      {
+        "term": "grandes transformations",
+        "weight": 0.042504009698598626
+      },
+      {
+        "term": "propre",
+        "weight": 0.04150366468701156
+      },
+      {
+        "term": "clients de",
+        "weight": 0.04073164249552805
+      },
+      {
+        "term": "de nos",
+        "weight": 0.04036237522085993
+      },
+      {
+        "term": "nos clients",
+        "weight": 0.04030765938028766
+      },
+      {
+        "term": "economique",
+        "weight": 0.03999667617020149
+      },
+      {
+        "term": "matiere de",
+        "weight": 0.038992568863161846
+      },
+      {
+        "term": "collectif chez",
+        "weight": 0.03877554098426311
+      },
+      {
+        "term": "technologique",
+        "weight": 0.03874436833044774
+      },
+      {
+        "term": "approche reset",
+        "weight": 0.038609213422797446
+      },
+      {
+        "term": "responsabilite economique",
+        "weight": 0.038609213422797446
+      },
+      {
+        "term": "englobe ensemble",
+        "weight": 0.038609213422797446
+      },
+      {
+        "term": "rse avons",
+        "weight": 0.038609213422797446
+      },
+      {
+        "term": "reset englobe",
+        "weight": 0.038609213422797446
+      },
+      {
+        "term": "tant sein",
+        "weight": 0.038609213422797446
+      },
+      {
+        "term": "propre approche",
+        "weight": 0.038609213422797446
+      },
+      {
+        "term": "engagements matiere",
+        "weight": 0.038609213422797446
+      },
+      {
+        "term": "technologique tant",
+        "weight": 0.038609213422797446
+      },
+      {
+        "term": "environnementale technologique",
+        "weight": 0.038609213422797446
+      },
+      {
+        "term": "reset",
+        "weight": 0.03856147149987397
+      },
+      {
+        "term": "economique sociale",
+        "weight": 0.03856147149987397
+      }
+    ],
+    "10": [
+      {
+        "term": "offres",
+        "weight": 0.054694154659463125
+      },
+      {
+        "term": "app",
+        "weight": 0.05466862671863397
+      },
+      {
+        "term": "cv",
+        "weight": 0.05404859008818428
+      },
+      {
+        "term": "emploi",
+        "weight": 0.05250370053225932
+      },
+      {
+        "term": "salaire",
+        "weight": 0.051671033561689686
+      },
+      {
+        "term": "offre",
+        "weight": 0.05082100816698676
+      },
+      {
+        "term": "profil",
+        "weight": 0.04882129368408577
+      },
+      {
+        "term": "recruteur",
+        "weight": 0.047192348145707975
+      },
+      {
+        "term": "telechargez",
+        "weight": 0.044389126652435794
+      },
+      {
+        "term": "espace cv",
+        "weight": 0.04438226190593188
+      },
+      {
+        "term": "postulez premiers",
+        "weight": 0.04438226190593188
+      },
+      {
+        "term": "candidatures alertes",
+        "weight": 0.04438226190593188
+      },
+      {
+        "term": "telechargez app",
+        "weight": 0.04438226190593188
+      },
+      {
+        "term": "alertes profil",
+        "weight": 0.04438226190593188
+      },
+      {
+        "term": "app postulez",
+        "weight": 0.04438226190593188
+      },
+      {
+        "term": "cv vus",
+        "weight": 0.04438226190593188
+      },
+      {
+        "term": "parametres deconnexion",
+        "weight": 0.04438226190593188
+      },
+      {
+        "term": "vus candidatures",
+        "weight": 0.04438226190593188
+      },
+      {
+        "term": "profil parametres",
+        "weight": 0.04438226190593188
+      },
+      {
+        "term": "deconnexion",
+        "weight": 0.044381353220615094
+      },
+      {
+        "term": "vus",
+        "weight": 0.04438093049886675
+      },
+      {
+        "term": "premiers",
+        "weight": 0.04436130685393082
+      },
+      {
+        "term": "alertes",
+        "weight": 0.04427874017000744
+      },
+      {
+        "term": "parametres",
+        "weight": 0.04426534443854484
+      },
+      {
+        "term": "postulez",
+        "weight": 0.04421368284009135
+      }
+    ],
+    "11": [
+      {
+        "term": "groupeactive",
+        "weight": 0.2011784701913032
+      },
+      {
+        "term": "tpe pme",
+        "weight": 0.1438627240328256
+      },
+      {
+        "term": "tpe",
+        "weight": 0.1435052104415418
+      },
+      {
+        "term": "pme",
+        "weight": 0.13580358236984677
+      },
+      {
+        "term": "experimentes soutenu",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "rejoignez groupeactive",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "encadre pairs",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "dynamiser carriere",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "soutenu un",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "pairs experimentes",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "carriere choisissant",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "souhaitez dynamiser",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "groupeactive optez",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "passionnes beneficiaires",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "entrepreneurial encadre",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "projet entrepreneurial",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "optez un",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "choisissant groupeactive",
+        "weight": 0.09892641906962417
+      },
+      {
+        "term": "unique rejoignez",
+        "weight": 0.09889764154943224
+      },
+      {
+        "term": "dynamiser",
+        "weight": 0.09875426168871898
+      },
+      {
+        "term": "choisissant",
+        "weight": 0.09875426168871898
+      },
+      {
+        "term": "modele unique",
+        "weight": 0.09872568670830528
+      },
+      {
+        "term": "beneficiaires de",
+        "weight": 0.09864016233253772
+      },
+      {
+        "term": "optez",
+        "weight": 0.09864016233253772
+      },
+      {
+        "term": "collectif experts",
+        "weight": 0.09855493716802535
+      }
+    ]
+  }
+}
