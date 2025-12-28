@@ -1,108 +1,204 @@
-# RADAR — Recherche Analytique Des Annonces Régionales
+# RADAR
+**Analyse régionale des offres d'emploi - Scraping, Entrepôt DuckDB, NLP & Application Streamlit**
 
-**RADAR** (Recherche Analytique Des Annonces Régionales) est un projet de text mining et d'analyse NLP des offres d’emploi en France, avec un focus sur les métiers de la **data** et de l’**intelligence artificielle**.
+**RADAR** (Recherche Analytique Des Annonces Régionales) est un projet de NLP - Text Mining réalisé dans le cadre du **Master 2 SISE - Université Lyon 2**.
 
-L’objectif est de construire :
+![authors: Mohamed Habib Bah, Thibaud Lecomte, Aya Mecheri, Rina Razafimahefa](assets/authors.svg)
 
-- Un **corpus d’offres d’emploi** collectées automatiquement (web scraping) depuis plusieurs plateformes.
-- Un **entrepôt de données** alimenté par ces offres (titre, texte, géographie, compétences, etc.).
-- Une **application web interactive** (Streamlit) permettant d’explorer :
-  - la répartition régionale des offres,
-  - les compétences et technologies demandées,
-  - la typologie des métiers (clustering, topics),
-  - des comparaisons entre régions, métiers, périodes, etc.
-- Une **image Docker** permettant de déployer l’application facilement.
-
-Ce projet est réalisé dans le cadre du Master 2 SISE (Université Lyon 2) pour l’UE *NLP – Text Mining*.
+Encadrement : Ricco Rakotomalala  
 
 ---
 
-## 1. Objectifs du projet
+## Présentation générale
 
-1. **Constituer un corpus** d’offres d’emploi liées à la data / IA en France :
-   - data scientist, data analyst, data engineer, machine learning engineer, MLOps, etc.
-   - sur plusieurs mois récents.
-   - avec une dimension régionale explicite (régions administratives françaises).
+**RADAR** est un projet complet d'ingénierie et d'analyse de données permettant de :
 
-2. **Modéliser une base de données / entrepôt** :
-   - table de faits des offres,
-   - dimensions (région, date, source, type de métier, etc.),
-   - stockage dans un SGBD libre (SQLite ou DuckDB).
-
-3. **Appliquer des techniques de text mining / NLP** pour :
-   - nettoyer et normaliser les textes (tokenisation, lemmatisation, etc.),
-   - extraire des compétences et technologies (hard skills, soft skills),
-   - identifier des thèmes (topics) ou familles d’offres (clustering sémantique),
-   - analyser les différences régionales.
-
-4. **Proposer une application web interactive** :
-   - visualisations cartographiques (répartition des offres, intensité des compétences),
-   - graphiques interactifs (Plotly, etc.),
-   - filtres par région, métier, technologie, période,
-   - ajout dynamique de nouvelles offres (par URL ou par scraping).
-
-5. **Fournir un environnement de déploiement** :
-   - image Docker,
-   - script d’initialisation de la base,
-   - documentation d’installation et d’utilisation.
+1. **Collecter** des offres d'emploi (Indeed, APEC, Jooble API, Emploi-Territorial)  
+2. **Stocker & modélieser** ces offres dansn un **entrepôt DuckDB** (schéma en snowflake)
+3. **Enrichir les données** par un pipeline NLP (nettoyage, extraction de variables, détection de compétences, segmentation...)  
+4. **Analyser** les tendances régionales (offres, métiers, compétences, texte)  
+5. **Visualiser** via une application **Streamlit** modulaire.  
 
 ---
 
-## 2. Architecture du projet
-
-L’arborescence prévisionnelle du projet est la suivante :
+## Arborescence (simplifiée) du dépôt
 
 ```text
 radar-nlp/
-├── README.md
-├── .gitignore
+│
+├── pyproject.toml
 ├── environment.yml
+├── README.md
+│
+├── data/
+│   ├── db/               # Fichier DuckDB généré automatiquement
+│   ├── geo/              # GeoJSON régions
+│   ├── raw/              # Offres brutes JSONL
+│   └── static/           # CSV de dimensions (métiers, skills…)
+│
+├── scripts/              # Scripts CLI : scraping, update, chargement
+│   ├── scrape_*.py
+│   ├── update_corpus.py
+│   └── init_db.py
+│
 ├── src/
 │   └── radar/
-│       ├── __init__.py
-│       ├── config.py
 │       ├── db/
-│       │   ├── __init__.py
 │       │   ├── schema.py
-│       │   └── io.py
+│       │   ├── io.py
+│       │   └── load_geo.py
 │       ├── scraping/
-│       │   ├── __init__.py
 │       │   ├── base.py
 │       │   ├── indeed.py
-│       │   └── apec.py
-│       ├── nlp/
-│       │   ├── __init__.py
-│       │   ├── preprocess.py
-│       │   ├── features.py
-│       │   ├── topics.py
-│       │   └── embeddings.py
-│       └── app/
-│           ├── __init__.py
-│           └── main.py
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── db/
-├── notebooks/
-│   ├── exploration_nlp.ipynb
-│   └── tests_cartes.ipynb
-├── scripts/
-│   ├── init_db.py
-│   ├── scrape_indeed.py
-│   ├── scrape_apec.py
-│   └── update_corpus.py
-├── docker/
-│   ├── Dockerfile
-│   └── entrypoint.sh
-└── reports/
-    └── radar_report.tex
+│       │   ├── apec.py
+│       │   ├── emploi_territorial.py
+│       │   └── jooble.py
+│       └── nlp/
+│           └── process_offre.py
+│
+├── Dockerfile
+├── main.py               # Page d’accueil Streamlit
+└── pages/
+    ├── 01_Carte.py
+    ├── 02_Analyse_NLP.py
+    ├── 03_Competences.py
+    ├── 04_Comparaison.py
+    └── 05_Ajout_Offre.py
 ```
 
 ---
 
-Auteurs
+## Installation locale (sans Docker)
 
-- Mohamed Habib BAH
-- Thibaud LECOMTE
-- Aya MECHERI
-- Rina RAZAFIMAHEFA
+### 1. Cloner le dépôt
+
+```bash
+git clone https://github.com/rsquaredata/radar-nlp
+cd radar-nlp
+```
+
+### 2. Créer l'environnement conda
+
+```bash
+conva env create -f environment.yml
+conda activate radar-nlp
+```
+
+### 3. Installer le package local (editable)
+
+---
+
+## Scraper & mettre à jour le corpus (mode CLI)
+
+Exemples typiques :
+
+```bash
+# Scraper Indeed / APEC / Jooble / Emploi Territorial
+python scripts/scrape_indeed.py
+python scripts/scrape_apec.py
+python scripts/scrape_jooble.py
+python scripts/scrape.emploi_territorial.py
+
+# Mettre à jour l'entrepôt (lecture JSON → process_offre → DuckDB)
+python scripts/update_corpus.py
+```
+
+Les offres bruites sont stockées dans `data/raw/`, l'entrepôt analysé dans `data/db/radar.duckdb`.
+
+---
+
+## Lancer l'application Streamlit (local)
+
+Depuis la racine du dépôt :
+
+```bash
+streamlit run main.py
+```
+
+L'application propose plusieurs pages :  
+- **Accueil** : vue globale et navigation  
+- **Carte** : choroplethèe par région  
+- **Analyse NLP** : topics LDA, TF-IDF, clustering, projection 2D  
+- **Comparaison** : comparaisons régions/métiers  
+- **Ajout d'offre** : ajout d'une offre par URL  
+
+---
+
+## Utilisation avec Docker
+
+Une image Docker est prévue pour exécuter RADAR sans installation locale.
+
+### 1. Constuire l'image Docker et initialiser la base DuckDB
+
+```bash
+Dockerfile build -t radar-nlp
+docker run --rm -it -v "$(pwd)/data:/app/data" radar-nlp python -m radar.db.schema
+```
+
+### 2. Lancer l'application Streamlit
+
+```bash
+docker run --rm -p 8501:8501 -v "$(pwd)/data:/app/data" radar-nlp
+```
+
+Puis ouvrir dans le navigateur :
+
+```
+http://localhost:8501
+```
+
+### 3. Exécuter un script
+
+Par exemple, mettre à jour le corpus :
+
+```bash
+docker run --rm -it -v "$(pwd)/data:/app/data" radar-nlp python scripts_/update_corpus.py
+```
+
+---
+
+## Utilitaires
+
+### Script `run.sh`
+
+Un petit scrpit (local) est fourni pour ajouter `src/` au `PYTHONPATH` si besoin et lancer Streamlit.
+
+```bash
+chmod +x run.sh
+./run.sh
+```
+
+---
+
+## Entrepôt et NLP - Résumé
+
+- Entrepôt : *DuckDB* (fichier unique, performant, portable)
+- Modélisation : schéma en **snowflake avec :
+  - fact_offre
+  - dim_date, dim_source, dim_metier, dim_skill
+  - dim_ville → dim_departement → dim_region
+  - dim_texte, fact_offre_skill
+- NLP :
+  - nettoyage & normalisation du texte
+  - extraction des champs structurés (contrat, salaire, lieu...)
+  - topics LDA, TF-IDF + KMeans, SVD/LSA 2D
+  - analyse des compétences demandeés
+
+---
+
+Perspectives
+
+- UMAP / t-SNE pour une projection plus fine des documents
+- Embeddings pour la similarité entre offres
+- Classification automatique des métiers
+- Comparaison interactive région/métier (page 5)
+- Export automatique de rapports (PDF/HMTL) à partir des analyses Streamlit
+
+---
+
+## Licence
+
+Projet pédagogique - Université Lyon 2
+Réutilisation libre dans un cadre personnel, universitaire ou non commercial.
+
+</details>
