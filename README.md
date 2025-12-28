@@ -173,7 +173,7 @@ chmod +x run.sh
 ## Entrepôt et NLP - Résumé
 
 - Entrepôt : *DuckDB* (fichier unique, performant, portable)
-- Modélisation : schéma en **snowflake avec :
+- Modélisation : schéma en **snowflake** avec :
   - fact_offre
   - dim_date, dim_source, dim_metier, dim_skill
   - dim_ville → dim_departement → dim_region
