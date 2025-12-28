@@ -3,7 +3,7 @@
 
 **RADAR** (Recherche Analytique Des Annonces Régionales) est un projet de NLP - Text Mining réalisé dans le cadre du **Master 2 SISE - Université Lyon 2**.
 
-![authors: Mohamed Habib Bah, Thibaud Lecomte, Aya Mecheri, Rina Razafimahefa](assets/authors.svg)
+<img src="assets/authors.svg" width="600">
 
 Encadrement : Ricco Rakotomalala  
 
