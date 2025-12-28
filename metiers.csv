@@ -1,0 +1,20 @@
+domaine_id;nom_domaine;famille_id;nom_famille;metier_id;nom_metier;mots_cles
+1;Data & IA;10;Data Science;100;Data Scientist;"data scientist, scientist data, machine learning scientist"
+1;Data & IA;10;Data Science;101;Machine Learning Engineer;"machine learning engineer, ml engineer, mle"
+1;Data & IA;10;Data Science;102;AI Researcher;"ai researcher, research scientist ai, deep learning researcher"
+
+1;Data & IA;11;Data Engineering;110;Data Engineer;"data engineer, big data engineer, data platform engineer"
+1;Data & IA;11;Data Engineering;111;ETL Developer;"etl developer, ingestion engineer"
+1;Data & IA;11;Data Engineering;112;Cloud Data Engineer;"cloud data engineer, gcp data, aws data engineer"
+
+1;Data & IA;12;BI & Analytics;120;BI Analyst;"business intelligence analyst, bi analyst, reporting analyst"
+1;Data & IA;12;BI & Analytics;121;Data Analyst;"data analyst, analyste data"
+1;Data & IA;12;BI & Analytics;122;Data Visualisation Specialist;"data viz specialist, tableau expert, power bi expert"
+
+1;Data & IA;13;ML Ops & Architecture;130;ML Ops Engineer;"ml ops, mlops engineer, machine learning ops"
+1;Data & IA;13;ML Ops & Architecture;131;Data Architect;"data architect, architecte data"
+1;Data & IA;13;ML Ops & Architecture;132;ML Platform Engineer;"ml platform engineer, model ops"
+
+1;Data & IA;14;Management & Strategy;140;Data Product Manager;"data pm, product owner data, data product manager"
+1;Data & IA;14;Management & Strategy;141;Head of Data;"head of data, data lead, data manager"
+1;Data & IA;14;Management & Strategy;142;Chief Data Officer;"cdo, chief data officer"
