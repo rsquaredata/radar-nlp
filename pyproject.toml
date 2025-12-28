@@ -1,0 +1,22 @@
+[project]
+name = "radar-nlp"
+version = "0.1.0"
+description = "Entrepôt d'emploi RADAR + NLP + Streamlit"
+authors = [
+    { name = "Rina Razafimahefa" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

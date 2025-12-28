@@ -1,0 +1,25 @@
+name: radar-nlp
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - jupyterlab
+  - ipykernel
+  - pandas
+  - numpy
+  - sqlalchemy
+  - sqlite
+  - duckdb
+  - requests
+  - beautifulsoup4
+  - lxml
+  - spacy
+  - scikit-learn
+  - matplotlib
+  - plotly
+  - pip:
+      - -e .
+      - streamlit
+      - sentence-transformers
+      - wordcloud
