@@ -1,0 +1,11 @@
+<svg width="300" height="50" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Radley&display=swap');
+    </style>
+  </defs>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-family="'Radley', serif" font-size="28" fill="#2c3e50">
+    Auteurs : Mohamed Habib Bah, Thibaud Lecomte, Aya Mecheri, Rina Razafimahefa
+  </text>
+</svg>
