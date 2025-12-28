@@ -28,46 +28,21 @@ Encadrement : Ricco Rakotomalala
 ## Arborescence (simplifiée) du dépôt
 
 ```text
-radar-nlp/
-│
-├── pyproject.toml
-├── environment.yml
-├── README.md
-│
-├── data/
-│   ├── db/               # Fichier DuckDB généré automatiquement
-│   ├── geo/              # GeoJSON régions
-│   ├── raw/              # Offres brutes JSONL
-│   └── static/           # CSV de dimensions (métiers, skills…)
-│
-├── scripts/              # Scripts CLI : scraping, update, chargement
-│   ├── scrape_*.py
-│   ├── update_corpus.py
-│   └── init_db.py
-│
-├── src/
-│   └── radar/
-│       ├── db/
-│       │   ├── schema.py
-│       │   ├── io.py
-│       │   └── load_geo.py
-│       ├── scraping/
-│       │   ├── base.py
-│       │   ├── indeed.py
-│       │   ├── apec.py
-│       │   ├── emploi_territorial.py
-│       │   └── jooble.py
-│       └── nlp/
-│           └── process_offre.py
-│
-├── Dockerfile
-├── main.py               # Page d’accueil Streamlit
-└── pages/
-    ├── 01_Carte.py
-    ├── 02_Analyse_NLP.py
-    ├── 03_Competences.py
-    ├── 04_Comparaison.py
-    └── 05_Ajout_Offre.py
+radar-nlp/  
+├── main.py  
+├── pages/  
+│  
+├── src/  
+│   └── radar/  
+│       ├── db/  
+│       ├── nlp/  
+│       ├── scraping/  
+│       └── __init__.py  
+│  
+├── data/  
+├── scripts/  
+├── pyproject.toml  
+└── README.md  
 ```
 
 ---
