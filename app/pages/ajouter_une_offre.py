@@ -1,5 +1,13 @@
-# app/pages/5_ajout_offre.py
+
 from __future__ import annotations
+import streamlit as st
+from components import inject_premium_css, top_navbar
+
+
+
+inject_premium_css()
+top_navbar(active="Dashboard")
+
 
 import hashlib
 import json

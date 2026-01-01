@@ -1,4 +1,10 @@
 from __future__ import annotations
+import streamlit as st
+from components import inject_premium_css, top_navbar
+
+inject_premium_css()
+top_navbar(active="Dashboard")
+
 
 import os
 import sqlite3
