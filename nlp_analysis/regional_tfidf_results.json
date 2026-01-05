@@ -1,0 +1,1006 @@
+{
+  "Île-de-France": {
+    "top_terms": [
+      {
+        "term": "sql",
+        "tfidf_score": 0.1093761123346249
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.1081919936883138
+      },
+      {
+        "term": "management",
+        "tfidf_score": 0.0999127605586831
+      },
+      {
+        "term": "innovation",
+        "tfidf_score": 0.09678889127196834
+      },
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.08641773358315034
+      },
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.08155486016708346
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.0805198173381702
+      },
+      {
+        "term": "optimisation",
+        "tfidf_score": 0.07986647643373065
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.07865192841413315
+      },
+      {
+        "term": "anglais",
+        "tfidf_score": 0.07836044850868133
+      },
+      {
+        "term": "organisation",
+        "tfidf_score": 0.07641803672097516
+      },
+      {
+        "term": "statistiques",
+        "tfidf_score": 0.06655814166668444
+      },
+      {
+        "term": "r",
+        "tfidf_score": 0.06402993563729574
+      },
+      {
+        "term": "bi",
+        "tfidf_score": 0.06164203773571333
+      },
+      {
+        "term": "power",
+        "tfidf_score": 0.06164203773571333
+      },
+      {
+        "term": "documentation",
+        "tfidf_score": 0.061447268022039585
+      },
+      {
+        "term": "agile",
+        "tfidf_score": 0.06069062484835523
+      },
+      {
+        "term": "azure",
+        "tfidf_score": 0.055021436435062104
+      },
+      {
+        "term": "aws",
+        "tfidf_score": 0.054452373268899616
+      },
+      {
+        "term": "ci",
+        "tfidf_score": 0.053802899717807766
+      }
+    ]
+  },
+  "Grand Est": {
+    "top_terms": [
+      {
+        "term": "sql",
+        "tfidf_score": 0.1262443870212425
+      },
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.0979610906028644
+      },
+      {
+        "term": "anglais",
+        "tfidf_score": 0.09073904956173061
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.08479992345747268
+      },
+      {
+        "term": "etl",
+        "tfidf_score": 0.07680082253200453
+      },
+      {
+        "term": "équipe",
+        "tfidf_score": 0.07608460588601614
+      },
+      {
+        "term": "statistiques",
+        "tfidf_score": 0.07411638803075195
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.07262309727393558
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.06872465809166181
+      },
+      {
+        "term": "organisation",
+        "tfidf_score": 0.06510380967714668
+      },
+      {
+        "term": "bi",
+        "tfidf_score": 0.06156807141592795
+      },
+      {
+        "term": "power",
+        "tfidf_score": 0.06156807141592795
+      },
+      {
+        "term": "innovation",
+        "tfidf_score": 0.06049692880184966
+      },
+      {
+        "term": "management",
+        "tfidf_score": 0.059900183748987555
+      },
+      {
+        "term": "vision",
+        "tfidf_score": 0.05798795924389487
+      },
+      {
+        "term": "chef",
+        "tfidf_score": 0.05371047813452807
+      },
+      {
+        "term": "computer",
+        "tfidf_score": 0.052913375259256545
+      },
+      {
+        "term": "d",
+        "tfidf_score": 0.051794016581612666
+      },
+      {
+        "term": "rédaction",
+        "tfidf_score": 0.04910066635163817
+      },
+      {
+        "term": "git",
+        "tfidf_score": 0.048563261767112204
+      }
+    ]
+  },
+  "Pays de la Loire": {
+    "top_terms": [
+      {
+        "term": "sql",
+        "tfidf_score": 0.10320877309439566
+      },
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.10122212409264901
+      },
+      {
+        "term": "management",
+        "tfidf_score": 0.08916149777277732
+      },
+      {
+        "term": "organisation",
+        "tfidf_score": 0.08913999845755748
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.07713876781438214
+      },
+      {
+        "term": "optimisation",
+        "tfidf_score": 0.07547737677383408
+      },
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.07186840293370025
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.07110617841649496
+      },
+      {
+        "term": "azure",
+        "tfidf_score": 0.07045595250414681
+      },
+      {
+        "term": "innovation",
+        "tfidf_score": 0.0687557570566826
+      },
+      {
+        "term": "chef",
+        "tfidf_score": 0.06799558337165652
+      },
+      {
+        "term": "agile",
+        "tfidf_score": 0.0672340419057444
+      },
+      {
+        "term": "ci",
+        "tfidf_score": 0.06714290199811715
+      },
+      {
+        "term": "documentation",
+        "tfidf_score": 0.06199787650673537
+      },
+      {
+        "term": "devops",
+        "tfidf_score": 0.06193288106819593
+      },
+      {
+        "term": "aws",
+        "tfidf_score": 0.0581099986709283
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.0547027848466555
+      },
+      {
+        "term": "équipe",
+        "tfidf_score": 0.054700090575215854
+      },
+      {
+        "term": "gcp",
+        "tfidf_score": 0.05359125161173219
+      },
+      {
+        "term": "esprit",
+        "tfidf_score": 0.052361540313316954
+      }
+    ]
+  },
+  "Auvergne-Rhône-Alpes": {
+    "top_terms": [
+      {
+        "term": "sql",
+        "tfidf_score": 0.12812809868925204
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.09337667736425866
+      },
+      {
+        "term": "innovation",
+        "tfidf_score": 0.08447948767888164
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.08275242436352717
+      },
+      {
+        "term": "anglais",
+        "tfidf_score": 0.08257834596762477
+      },
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.08237706301013725
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.07574245866391026
+      },
+      {
+        "term": "optimisation",
+        "tfidf_score": 0.07321345458211356
+      },
+      {
+        "term": "management",
+        "tfidf_score": 0.07275158326964111
+      },
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.07169461741023804
+      },
+      {
+        "term": "organisation",
+        "tfidf_score": 0.06985702741328065
+      },
+      {
+        "term": "power",
+        "tfidf_score": 0.06859572163437513
+      },
+      {
+        "term": "bi",
+        "tfidf_score": 0.06859572163437513
+      },
+      {
+        "term": "azure",
+        "tfidf_score": 0.06789259403165031
+      },
+      {
+        "term": "devops",
+        "tfidf_score": 0.06774107399338476
+      },
+      {
+        "term": "documentation",
+        "tfidf_score": 0.06695506550136394
+      },
+      {
+        "term": "équipe",
+        "tfidf_score": 0.0654827659591894
+      },
+      {
+        "term": "r",
+        "tfidf_score": 0.06311105903534082
+      },
+      {
+        "term": "agile",
+        "tfidf_score": 0.05913169572761239
+      },
+      {
+        "term": "etl",
+        "tfidf_score": 0.05688106039904054
+      }
+    ]
+  },
+  "Normandie": {
+    "top_terms": [
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.12516371566580625
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.11927202265208638
+      },
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.11071044757794396
+      },
+      {
+        "term": "sql",
+        "tfidf_score": 0.10589031884558933
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.08520782221048025
+      },
+      {
+        "term": "agile",
+        "tfidf_score": 0.08119679150876564
+      },
+      {
+        "term": "anglais",
+        "tfidf_score": 0.07975945244524937
+      },
+      {
+        "term": "gcp",
+        "tfidf_score": 0.07642938910464214
+      },
+      {
+        "term": "équipe",
+        "tfidf_score": 0.07555898987364634
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.07354529526056607
+      },
+      {
+        "term": "devops",
+        "tfidf_score": 0.0732820574640049
+      },
+      {
+        "term": "cloud",
+        "tfidf_score": 0.0677445325413108
+      },
+      {
+        "term": "optimisation",
+        "tfidf_score": 0.06509912215425243
+      },
+      {
+        "term": "esprit",
+        "tfidf_score": 0.06283654538686433
+      },
+      {
+        "term": "documentation",
+        "tfidf_score": 0.06079191870797968
+      },
+      {
+        "term": "d",
+        "tfidf_score": 0.054713584009614534
+      },
+      {
+        "term": "qlik",
+        "tfidf_score": 0.053874568461833555
+      },
+      {
+        "term": "bigquery",
+        "tfidf_score": 0.05253363322792072
+      },
+      {
+        "term": "storage",
+        "tfidf_score": 0.05253363322792072
+      },
+      {
+        "term": "airflow",
+        "tfidf_score": 0.05253363322792072
+      }
+    ]
+  },
+  "Nouvelle-Aquitaine": {
+    "top_terms": [
+      {
+        "term": "sql",
+        "tfidf_score": 0.10164076973184984
+      },
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.10115955025681499
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.09731960220530925
+      },
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.09450550678035387
+      },
+      {
+        "term": "innovation",
+        "tfidf_score": 0.08727915277305637
+      },
+      {
+        "term": "management",
+        "tfidf_score": 0.08507703745314352
+      },
+      {
+        "term": "chef",
+        "tfidf_score": 0.08084908370643738
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.07829378399472368
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.07460850293243591
+      },
+      {
+        "term": "organisation",
+        "tfidf_score": 0.07404422181461146
+      },
+      {
+        "term": "optimisation",
+        "tfidf_score": 0.061460450141712204
+      },
+      {
+        "term": "anglais",
+        "tfidf_score": 0.06109869408318228
+      },
+      {
+        "term": "aws",
+        "tfidf_score": 0.05873275329888523
+      },
+      {
+        "term": "snowflake",
+        "tfidf_score": 0.056662876913121094
+      },
+      {
+        "term": "etl",
+        "tfidf_score": 0.05604513988709207
+      },
+      {
+        "term": "ci",
+        "tfidf_score": 0.05379150818100222
+      },
+      {
+        "term": "r",
+        "tfidf_score": 0.053167230187130585
+      },
+      {
+        "term": "bi",
+        "tfidf_score": 0.04830427015246767
+      },
+      {
+        "term": "power",
+        "tfidf_score": 0.04830427015246767
+      },
+      {
+        "term": "équipe",
+        "tfidf_score": 0.04676750859240623
+      }
+    ]
+  },
+  "Provence-Alpes-Côte d'Azur": {
+    "top_terms": [
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.13214958202456267
+      },
+      {
+        "term": "anglais",
+        "tfidf_score": 0.11202847246997706
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.09569034101738932
+      },
+      {
+        "term": "sql",
+        "tfidf_score": 0.09525968759345793
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.08156025395046959
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.07998200261166004
+      },
+      {
+        "term": "innovation",
+        "tfidf_score": 0.07987749933143921
+      },
+      {
+        "term": "optimisation",
+        "tfidf_score": 0.07854998892414104
+      },
+      {
+        "term": "devops",
+        "tfidf_score": 0.0747288181504825
+      },
+      {
+        "term": "esprit",
+        "tfidf_score": 0.07382634873701184
+      },
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.07011718722855094
+      },
+      {
+        "term": "management",
+        "tfidf_score": 0.0655460205817588
+      },
+      {
+        "term": "organisation",
+        "tfidf_score": 0.06353100152079444
+      },
+      {
+        "term": "r",
+        "tfidf_score": 0.06082419374842035
+      },
+      {
+        "term": "azure",
+        "tfidf_score": 0.05935787546585808
+      },
+      {
+        "term": "statistiques",
+        "tfidf_score": 0.057301987821066075
+      },
+      {
+        "term": "équipe",
+        "tfidf_score": 0.056167709052851816
+      },
+      {
+        "term": "power",
+        "tfidf_score": 0.05564949551636109
+      },
+      {
+        "term": "bi",
+        "tfidf_score": 0.05564949551636109
+      },
+      {
+        "term": "scrum",
+        "tfidf_score": 0.054947120181929314
+      }
+    ]
+  },
+  "Hauts-de-France": {
+    "top_terms": [
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.10920360334499019
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.09639009504867922
+      },
+      {
+        "term": "sql",
+        "tfidf_score": 0.0906596385289651
+      },
+      {
+        "term": "organisation",
+        "tfidf_score": 0.09055574170032525
+      },
+      {
+        "term": "anglais",
+        "tfidf_score": 0.09029512636105623
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.08871102406592755
+      },
+      {
+        "term": "innovation",
+        "tfidf_score": 0.0856264398736423
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.0839092390658147
+      },
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.0796696468957333
+      },
+      {
+        "term": "management",
+        "tfidf_score": 0.07286228104361558
+      },
+      {
+        "term": "équipe",
+        "tfidf_score": 0.06778266968884704
+      },
+      {
+        "term": "esprit",
+        "tfidf_score": 0.06674990693855513
+      },
+      {
+        "term": "gcp",
+        "tfidf_score": 0.06542939222569527
+      },
+      {
+        "term": "bi",
+        "tfidf_score": 0.06480384767268198
+      },
+      {
+        "term": "power",
+        "tfidf_score": 0.06480384767268198
+      },
+      {
+        "term": "aws",
+        "tfidf_score": 0.061655580474141186
+      },
+      {
+        "term": "azure",
+        "tfidf_score": 0.061119837964861014
+      },
+      {
+        "term": "agile",
+        "tfidf_score": 0.06052455697789538
+      },
+      {
+        "term": "optimisation",
+        "tfidf_score": 0.06046854152736136
+      },
+      {
+        "term": "r",
+        "tfidf_score": 0.05972856411036739
+      }
+    ]
+  },
+  "Centre-Val de Loire": {
+    "top_terms": [
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.13144267762553385
+      },
+      {
+        "term": "sql",
+        "tfidf_score": 0.12908182322113332
+      },
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.12593957022965074
+      },
+      {
+        "term": "bi",
+        "tfidf_score": 0.1152531013591729
+      },
+      {
+        "term": "power",
+        "tfidf_score": 0.1152531013591729
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.09827361639498011
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.0883615720257972
+      },
+      {
+        "term": "management",
+        "tfidf_score": 0.08819881686749691
+      },
+      {
+        "term": "agile",
+        "tfidf_score": 0.0806179195911702
+      },
+      {
+        "term": "optimisation",
+        "tfidf_score": 0.07342577719966892
+      },
+      {
+        "term": "équipe",
+        "tfidf_score": 0.07154786116121487
+      },
+      {
+        "term": "talend",
+        "tfidf_score": 0.07110196556859516
+      },
+      {
+        "term": "etl",
+        "tfidf_score": 0.06790857407189896
+      },
+      {
+        "term": "scrum",
+        "tfidf_score": 0.0630095077960697
+      },
+      {
+        "term": "anglais",
+        "tfidf_score": 0.06226372750070586
+      },
+      {
+        "term": "r",
+        "tfidf_score": 0.06076583117715234
+      },
+      {
+        "term": "de",
+        "tfidf_score": 0.060075020837080585
+      },
+      {
+        "term": "spark",
+        "tfidf_score": 0.06006517265031583
+      },
+      {
+        "term": "scala",
+        "tfidf_score": 0.06006517265031583
+      },
+      {
+        "term": "documentation",
+        "tfidf_score": 0.05367080354821453
+      }
+    ]
+  },
+  "Bretagne": {
+    "top_terms": [
+      {
+        "term": "sql",
+        "tfidf_score": 0.1458340599641297
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.10261305233439341
+      },
+      {
+        "term": "équipe",
+        "tfidf_score": 0.09272051629827942
+      },
+      {
+        "term": "documentation",
+        "tfidf_score": 0.08901545463343645
+      },
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.08211260383448381
+      },
+      {
+        "term": "aws",
+        "tfidf_score": 0.07748619798367377
+      },
+      {
+        "term": "gcp",
+        "tfidf_score": 0.07398234595043472
+      },
+      {
+        "term": "innovation",
+        "tfidf_score": 0.07169954918085324
+      },
+      {
+        "term": "organisation",
+        "tfidf_score": 0.07060603223463849
+      },
+      {
+        "term": "esprit",
+        "tfidf_score": 0.06944747113989855
+      },
+      {
+        "term": "management",
+        "tfidf_score": 0.06704194446901181
+      },
+      {
+        "term": "d",
+        "tfidf_score": 0.0648632883188037
+      },
+      {
+        "term": "agile",
+        "tfidf_score": 0.06345146909873355
+      },
+      {
+        "term": "azure",
+        "tfidf_score": 0.06306135206442456
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.06270723466932517
+      },
+      {
+        "term": "airflow",
+        "tfidf_score": 0.06263675531155641
+      },
+      {
+        "term": "statistiques",
+        "tfidf_score": 0.05867806471470746
+      },
+      {
+        "term": "etl",
+        "tfidf_score": 0.05856656884038961
+      },
+      {
+        "term": "r",
+        "tfidf_score": 0.05760179378156802
+      },
+      {
+        "term": "power",
+        "tfidf_score": 0.0560036343466709
+      }
+    ]
+  },
+  "Occitanie": {
+    "top_terms": [
+      {
+        "term": "sql",
+        "tfidf_score": 0.11325690203273414
+      },
+      {
+        "term": "management",
+        "tfidf_score": 0.09432871581487516
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.09326127475519316
+      },
+      {
+        "term": "innovation",
+        "tfidf_score": 0.09091598832643454
+      },
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.08760667630946196
+      },
+      {
+        "term": "optimisation",
+        "tfidf_score": 0.08756389424774644
+      },
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.08239800884398761
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.08019204206803565
+      },
+      {
+        "term": "anglais",
+        "tfidf_score": 0.07878027523401694
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.07277122095612795
+      },
+      {
+        "term": "etl",
+        "tfidf_score": 0.06856527669123953
+      },
+      {
+        "term": "bi",
+        "tfidf_score": 0.06650791474648327
+      },
+      {
+        "term": "power",
+        "tfidf_score": 0.06650791474648327
+      },
+      {
+        "term": "équipe",
+        "tfidf_score": 0.06266528428983839
+      },
+      {
+        "term": "organisation",
+        "tfidf_score": 0.05871437822219464
+      },
+      {
+        "term": "aws",
+        "tfidf_score": 0.05870194390289219
+      },
+      {
+        "term": "chef",
+        "tfidf_score": 0.05796096979304498
+      },
+      {
+        "term": "esprit",
+        "tfidf_score": 0.057904726124231136
+      },
+      {
+        "term": "azure",
+        "tfidf_score": 0.05743045195612216
+      },
+      {
+        "term": "statistiques",
+        "tfidf_score": 0.0543151172958675
+      }
+    ]
+  },
+  "Bourgogne-Franche-Comté": {
+    "top_terms": [
+      {
+        "term": "autonomie",
+        "tfidf_score": 0.21268792461198172
+      },
+      {
+        "term": "organisation",
+        "tfidf_score": 0.19927059039484024
+      },
+      {
+        "term": "collaboration",
+        "tfidf_score": 0.1930262799630148
+      },
+      {
+        "term": "rigueur",
+        "tfidf_score": 0.18504301898519046
+      },
+      {
+        "term": "anglais",
+        "tfidf_score": 0.18336502154212114
+      },
+      {
+        "term": "communication",
+        "tfidf_score": 0.15152823553914926
+      },
+      {
+        "term": "documentation",
+        "tfidf_score": 0.13807792995111245
+      },
+      {
+        "term": "sql",
+        "tfidf_score": 0.11935333875608384
+      },
+      {
+        "term": "python",
+        "tfidf_score": 0.11009267508266916
+      },
+      {
+        "term": "optimisation",
+        "tfidf_score": 0.066462309784712
+      },
+      {
+        "term": "mysql",
+        "tfidf_score": 0.060970551795485904
+      },
+      {
+        "term": "docker",
+        "tfidf_score": 0.060970551795485904
+      },
+      {
+        "term": "java",
+        "tfidf_score": 0.05885942597571549
+      },
+      {
+        "term": "oracle",
+        "tfidf_score": 0.05885942597571549
+      },
+      {
+        "term": "kubernetes",
+        "tfidf_score": 0.05792071192136638
+      },
+      {
+        "term": "ci",
+        "tfidf_score": 0.05792071192136638
+      },
+      {
+        "term": "cd",
+        "tfidf_score": 0.05792071192136638
+      },
+      {
+        "term": "git",
+        "tfidf_score": 0.05748312044083261
+      },
+      {
+        "term": "curiosité",
+        "tfidf_score": 0.05580958610159596
+      }
+    ]
+  }
+}

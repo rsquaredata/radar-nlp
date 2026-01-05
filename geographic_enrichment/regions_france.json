@@ -1,0 +1,146 @@
+{
+  "regions": {
+    "Auvergne-Rhône-Alpes": {
+      "latitude": 45.4471,
+      "longitude": 4.3854,
+      "departements": ["01", "03", "07", "15", "26", "38", "42", "43", "63", "69", "73", "74"],
+      "villes_principales": [
+        "Lyon", "Grenoble", "Saint-Étienne", "Saint-Etienne", "Clermont-Ferrand", 
+        "Villeurbanne", "Annecy", "Valence", "Chambéry", "Bourg-en-Bresse"
+      ]
+    },
+    "Bourgogne-Franche-Comté": {
+      "latitude": 47.2805,
+      "longitude": 4.9994,
+      "departements": ["21", "25", "39", "58", "70", "71", "89", "90"],
+      "villes_principales": [
+        "Dijon", "Besançon", "Belfort", "Nevers", "Auxerre", "Chalon-sur-Saône"
+      ]
+    },
+    "Bretagne": {
+      "latitude": 48.2020,
+      "longitude": -2.9326,
+      "departements": ["22", "29", "35", "56"],
+      "villes_principales": [
+        "Rennes", "Brest", "Quimper", "Lorient", "Vannes", "Saint-Malo", "Saint-Brieuc"
+      ]
+    },
+    "Centre-Val de Loire": {
+      "latitude": 47.7516,
+      "longitude": 1.6751,
+      "departements": ["18", "28", "36", "37", "41", "45"],
+      "villes_principales": [
+        "Tours", "Orléans", "Bourges", "Blois", "Chartres", "Châteauroux"
+      ]
+    },
+    "Corse": {
+      "latitude": 42.0396,
+      "longitude": 9.0129,
+      "departements": ["2A", "2B"],
+      "villes_principales": [
+        "Ajaccio", "Bastia", "Porto-Vecchio", "Corte"
+      ]
+    },
+    "Grand Est": {
+      "latitude": 48.6999,
+      "longitude": 6.1878,
+      "departements": ["08", "10", "51", "52", "54", "55", "57", "67", "68", "88"],
+      "villes_principales": [
+        "Strasbourg", "Reims", "Metz", "Nancy", "Mulhouse", "Troyes", "Colmar", "Épernay", "Epernay"
+      ]
+    },
+    "Hauts-de-France": {
+      "latitude": 50.4801,
+      "longitude": 2.7937,
+      "departements": ["02", "59", "60", "62", "80"],
+      "villes_principales": [
+        "Lille", "Amiens", "Roubaix", "Tourcoing", "Dunkerque", "Calais", "Valenciennes", "Beauvais"
+      ]
+    },
+    "Île-de-France": {
+      "latitude": 48.8566,
+      "longitude": 2.3522,
+      "departements": ["75", "77", "78", "91", "92", "93", "94", "95"],
+      "villes_principales": [
+        "Paris", "Boulogne-Billancourt", "Saint-Denis", "Argenteuil", "Montreuil",
+        "Versailles", "Nanterre", "Créteil", "Évry", "Evry", "Cergy", "La Défense", "Defense",
+        "Neuilly-sur-Seine", "Neuilly", "Levallois-Perret", "Levallois", "Issy-les-Moulineaux", 
+        "Issy", "Courbevoie", "Châtenay-Malabry", "Chatenay-Malabry", "Malabry"
+      ]
+    },
+    "Normandie": {
+      "latitude": 48.8799,
+      "longitude": 0.1718,
+      "departements": ["14", "27", "50", "61", "76"],
+      "villes_principales": [
+        "Rouen", "Le Havre", "Caen", "Cherbourg", "Évreux", "Evreux", "Dieppe"
+      ]
+    },
+    "Nouvelle-Aquitaine": {
+      "latitude": 45.7130,
+      "longitude": -0.3490,
+      "departements": ["16", "17", "19", "23", "24", "33", "40", "47", "64", "79", "86", "87"],
+      "villes_principales": [
+        "Bordeaux", "Limoges", "Poitiers", "La Rochelle", "Pau", "Bayonne",
+        "Biarritz", "Angoulême", "Angouleme", "Périgueux", "Perigueux", "Niort"
+      ]
+    },
+    "Occitanie": {
+      "latitude": 43.6047,
+      "longitude": 1.4442,
+      "departements": ["09", "11", "12", "30", "31", "32", "34", "46", "48", "65", "66", "81", "82"],
+      "villes_principales": [
+        "Toulouse", "Montpellier", "Nîmes", "Nimes", "Perpignan", "Béziers", "Beziers", "Narbonne",
+        "Carcassonne", "Albi", "Tarbes", "Rodez"
+      ]
+    },
+    "Pays de la Loire": {
+      "latitude": 47.7633,
+      "longitude": -0.3291,
+      "departements": ["44", "49", "53", "72", "85"],
+      "villes_principales": [
+        "Nantes", "Angers", "Le Mans", "Saint-Nazaire", "Cholet", "Laval"
+      ]
+    },
+    "Provence-Alpes-Côte d'Azur": {
+      "latitude": 43.9352,
+      "longitude": 6.0679,
+      "departements": ["04", "05", "06", "13", "83", "84"],
+      "villes_principales": [
+        "Marseille", "Nice", "Toulon", "Aix-en-Provence", "Aix", "Avignon", "Cannes",
+        "Antibes", "Grasse", "Fréjus", "Frejus", "Arles", "Gap", "Sophia-Antipolis", "Sophia Antipolis"
+      ]
+    }
+  },
+  "departement_to_region": {
+    "01": "Auvergne-Rhône-Alpes", "02": "Hauts-de-France", "03": "Auvergne-Rhône-Alpes",
+    "04": "Provence-Alpes-Côte d'Azur", "05": "Provence-Alpes-Côte d'Azur", "06": "Provence-Alpes-Côte d'Azur",
+    "07": "Auvergne-Rhône-Alpes", "08": "Grand Est", "09": "Occitanie", "10": "Grand Est",
+    "11": "Occitanie", "12": "Occitanie", "13": "Provence-Alpes-Côte d'Azur", "14": "Normandie",
+    "15": "Auvergne-Rhône-Alpes", "16": "Nouvelle-Aquitaine", "17": "Nouvelle-Aquitaine",
+    "18": "Centre-Val de Loire", "19": "Nouvelle-Aquitaine", "21": "Bourgogne-Franche-Comté",
+    "22": "Bretagne", "23": "Nouvelle-Aquitaine", "24": "Nouvelle-Aquitaine",
+    "25": "Bourgogne-Franche-Comté", "26": "Auvergne-Rhône-Alpes", "27": "Normandie",
+    "28": "Centre-Val de Loire", "29": "Bretagne", "30": "Occitanie", "31": "Occitanie",
+    "32": "Occitanie", "33": "Nouvelle-Aquitaine", "34": "Occitanie", "35": "Bretagne",
+    "36": "Centre-Val de Loire", "37": "Centre-Val de Loire", "38": "Auvergne-Rhône-Alpes",
+    "39": "Bourgogne-Franche-Comté", "40": "Nouvelle-Aquitaine", "41": "Centre-Val de Loire",
+    "42": "Auvergne-Rhône-Alpes", "43": "Auvergne-Rhône-Alpes", "44": "Pays de la Loire",
+    "45": "Centre-Val de Loire", "46": "Occitanie", "47": "Nouvelle-Aquitaine", "48": "Occitanie",
+    "49": "Pays de la Loire", "50": "Normandie", "51": "Grand Est", "52": "Grand Est",
+    "53": "Pays de la Loire", "54": "Grand Est", "55": "Grand Est", "56": "Bretagne",
+    "57": "Grand Est", "58": "Bourgogne-Franche-Comté", "59": "Hauts-de-France",
+    "60": "Hauts-de-France", "61": "Normandie", "62": "Hauts-de-France",
+    "63": "Auvergne-Rhône-Alpes", "64": "Nouvelle-Aquitaine", "65": "Occitanie",
+    "66": "Occitanie", "67": "Grand Est", "68": "Grand Est", "69": "Auvergne-Rhône-Alpes",
+    "70": "Bourgogne-Franche-Comté", "71": "Bourgogne-Franche-Comté", "72": "Pays de la Loire",
+    "73": "Auvergne-Rhône-Alpes", "74": "Auvergne-Rhône-Alpes", "75": "Île-de-France",
+    "76": "Normandie", "77": "Île-de-France", "78": "Île-de-France", "79": "Nouvelle-Aquitaine",
+    "80": "Hauts-de-France", "81": "Occitanie", "82": "Occitanie",
+    "83": "Provence-Alpes-Côte d'Azur", "84": "Provence-Alpes-Côte d'Azur",
+    "85": "Pays de la Loire", "86": "Nouvelle-Aquitaine", "87": "Nouvelle-Aquitaine",
+    "88": "Grand Est", "89": "Bourgogne-Franche-Comté", "90": "Bourgogne-Franche-Comté",
+    "91": "Île-de-France", "92": "Île-de-France", "93": "Île-de-France",
+    "94": "Île-de-France", "95": "Île-de-France"
+  }
+}
