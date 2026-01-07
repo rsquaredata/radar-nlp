@@ -1,0 +1,38 @@
+# ============================================================
+# Configuration des requêtes – Projet RADAR
+# ============================================================
+
+# ------------------------------------------------------------
+# Mots-clés métiers (Data / IA)
+# ------------------------------------------------------------
+data_ia:
+  - "data"
+  - "données"
+  - "data scientist"
+  - "data analyst"
+  - "data engineer"
+  - "machine learning"
+  - "ml engineer"
+  - "mlops"
+  - "business intelligence"
+  - "statisticien"
+  - "quant"
+  - "intelligence artificielle"
+  - "deep learning"
+  - "nlp"
+
+# ------------------------------------------------------------
+# Paramètres spécifiques par source
+# ------------------------------------------------------------
+sources:
+  france_travail:
+    max_per_query: 600
+    chunk: 150
+    local_filter: false
+
+  hellowork:
+    max_pages: 50
+
+  emploi_territorial:
+    max_pages: 25
+    et_famille_metiers: "A7,A1"

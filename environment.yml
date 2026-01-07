@@ -1,0 +1,29 @@
+name: radarenv
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - requests
+  - urllib3
+  - beautifulsoup4
+  - lxml
+  - python-dotenv
+  - mistralai
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - duckdb
+  - streamlit
+  - pyarrow
+  - altair
+  - ipykernel
+  - nltk
+  - wordcloud
+  - plotly
+  - pip
+  - pip:
+    - -e .
+    - streamlit-folium
+    - folium
