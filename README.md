@@ -83,9 +83,7 @@ Le projet repose sur un pipeline de traitement rigoureux :
 
 ---
 
-## .
-
-📂 Structure du Projet
+## 📂 Structure du Projet
 
 ```plaintext
 radar-nlp/
