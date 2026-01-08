@@ -12,7 +12,7 @@ agent = Agent(
     model=MistralModel("mistral-large-latest"),
     system_prompt=(
         "Tu es un assistant chargé d'extraire des informations structurées à partir d'offres d'emploi françaises."
-        "À partir du texte ci-dessous, extrais les informations suivantes et réponds uniquement en JSON valide :"
+        "À partir du lien ci-dessous, extrais les informations suivantes et réponds uniquement en JSON valide :"
         "- employeur"
         "- localisation"
         "- type_contrat"
@@ -30,9 +30,13 @@ agent = Agent(
 
 
 async def main():
-    df = pd.read_csv("corpus_offres_data.csv", sep=";")
+    df = pd.read_csv(
+        "corpus_clean.csv", sep=","
+    )  # attention au sep ; pour corpus_offres_data
     for _, row in tqdm(df.iterrows(), total=len(df)):
-        response = await agent.run(row["text"])
+        response = await agent.run(
+            row["url"]
+        )  # on peut mettre url aussi en précisant le lien au lieu du texte dans le prompt
         print(response.output)
 
 
