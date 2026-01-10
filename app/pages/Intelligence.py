@@ -401,7 +401,7 @@ def analyze_with_mistral_supreme(top_terms, sample_titles, n_docs, region=None):
     top_skills_names = [s[0] for s in top_skilled]
     
     if top_skills_names:
-        label = f"🎯 Expert {' • '.join([s.title() for s in top_skills_names[:3]])}"
+        label = f" Expert {' • '.join([s.title() for s in top_skills_names[:3]])}"
     else:
         label = "💼 Profil Technique Polyvalent"
     

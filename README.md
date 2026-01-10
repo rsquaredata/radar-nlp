@@ -134,6 +134,11 @@ Université Lumière Lyon 2 | 2024-2025
 │   └── jobs.db                      # Base SQLite (2520 offres)
 │
 ├──  scraping/                     # Collecte de données
+    ├──  data/
+    /  ├──  unify_sources_v2.py      # fusionner les deux sources de données 
+│   ├── processed/                   # Données traitées
+│   ├── france_travail_api.py        # API France Travail                         # Données
+│   ├── processed/                   # Données traitées
 │   ├── france_travail_api.py        # API France Travail
 │   └── hellowork_scraper.py         # Scraper HelloWork
 │
@@ -142,9 +147,10 @@ Université Lumière Lyon 2 | 2024-2025
 │   └── regions_france.json          # Référentiel régions
 │
 ├──  data/                         # Données
-│   ├── raw/                         # Données brutes
 │   ├── processed/                   # Données traitées
-│   └── exports/                     # Exports CSV/JSON
+├──  skills_extraction/                         # Données
+│   ├── skills_extractor.py          # extraires les competences 
+│   ├── apply_skills_extraction      # Données avec competence et savoir faire                      
 │
 ├──  Dockerfile                    # Image Docker
 ├──  requirements.txt              # Dépendances Python

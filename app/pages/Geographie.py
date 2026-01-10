@@ -89,9 +89,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ============================================================================
-# CHARGER DONNÉES
-# ============================================================================
+
 
 @st.cache_data(ttl=300)
 def load_geo_data():
@@ -132,9 +130,7 @@ if df.empty:
     st.error("⚠️ Aucune donnée")
     st.stop()
 
-# ============================================================================
-# FILTRES DANS LA PAGE PRINCIPALE (PAS SIDEBAR)
-# ============================================================================
+
 
 st.markdown("## 🎛️ PANNEAU DE CONTRÔLE")
 
@@ -231,9 +227,7 @@ if sel_skills:
 
 filtered = filtered[(filtered['skills_count'] >= min_sk) & (filtered['skills_count'] <= max_sk)]
 
-# ============================================================================
-# MÉTRIQUES
-# ============================================================================
+
 
 st.markdown("## 📊 STATISTIQUES EN TEMPS RÉEL")
 
@@ -286,9 +280,7 @@ with m5:
 
 st.markdown("---")
 
-# ============================================================================
-# CARTE - MÉTHODE GARANTIE
-# ============================================================================
+
 
 st.markdown("## 🗺️ CARTE INTERACTIVE")
 
@@ -364,7 +356,7 @@ if not filtered.empty:
     chart_col1, chart_col2 = st.columns(2)
     
     with chart_col1:
-        st.markdown("### 🗺️ Top 10 Régions")
+        st.markdown("### 🗺️ Top Régions")
         region_counts = filtered['region_name'].value_counts().head(10)
         
         fig1 = go.Figure(data=[

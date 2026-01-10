@@ -32,9 +32,36 @@ except ImportError:
     def check_duplicate_by_uid(uid):
         return False
 
-# ============================================================================
-# CONFIG
-# ============================================================================
+
+
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+
+
+sys.path.insert(0, str(PROJECT_ROOT / "geographic_enrichment"))
+sys.path.insert(0, str(PROJECT_ROOT / "skills_extraction"))
+
+try:
+    from enrich_geography import GeographicEnricher
+    ENRICHERS_GEO_AVAILABLE = True
+    print("✅ GeographicEnricher importé avec succès")
+except ImportError as e:
+    print(f"❌ Erreur import GeographicEnricher : {e}")
+    ENRICHERS_GEO_AVAILABLE = False
+    GeographicEnricher = None
+
+try:
+    from skills_extractor import SkillsExtractor
+    ENRICHERS_SKILLS_AVAILABLE = True
+    print(" SkillsExtractor importé avec succès")
+except ImportError as e:
+    print(f" Erreur import SkillsExtractor : {e}")
+    ENRICHERS_SKILLS_AVAILABLE = False
+    SkillsExtractor = None
+
+ENRICHERS_AVAILABLE = ENRICHERS_GEO_AVAILABLE and ENRICHERS_SKILLS_AVAILABLE
+
+
+
 
 st.set_page_config(
     page_title="Contribuer | DataJobs",
@@ -46,9 +73,7 @@ st.set_page_config(
 inject_premium_css()
 premium_navbar(active_page="Contribuer")
 
-# ============================================================================
-# INITIALISATION SESSION STATE
-# ============================================================================
+
 
 if 'contribution_count' not in st.session_state:
     st.session_state.contribution_count = 0
@@ -59,9 +84,148 @@ if 'level' not in st.session_state:
 if 'xp' not in st.session_state:
     st.session_state.xp = 0
 
-# ============================================================================
-# CSS ULTRA-MODERNE GAMIFIÉ
-# ============================================================================
+
+
+@st.cache_resource
+def get_enrichers():
+    """Charge les enrichisseurs (cache pour performance)"""
+    if not ENRICHERS_AVAILABLE:
+        st.warning("⚠️ Enrichisseurs non disponibles - Les offres seront ajoutées sans enrichissement")
+        return None, None
+    
+    try:
+        geo_enricher = GeographicEnricher()
+        skills_enricher = SkillsExtractor()
+        st.success("✅ Enrichisseurs chargés avec succès !")
+        return geo_enricher, skills_enricher
+    except Exception as e:
+        st.error(f"❌ Erreur chargement enrichisseurs : {e}")
+        return None, None
+
+# Charger les enrichisseurs
+geo_enricher, skills_enricher = get_enrichers()
+
+# Afficher le statut dans la sidebar (optionnel)
+if 'show_enricher_status' not in st.session_state:
+    st.session_state.show_enricher_status = True
+
+if st.session_state.show_enricher_status:
+    with st.sidebar:
+        st.markdown("---")
+        st.markdown("### 🔧 Statut Enrichisseurs")
+        if geo_enricher and skills_enricher:
+            st.success("✅ Actifs")
+        else:
+            st.error("❌ Inactifs")
+
+
+
+def enrich_offer_automatically(offer: dict) -> dict:
+    """
+    Enrichit automatiquement une offre avec :
+    - Région, latitude, longitude (géographie)
+    - Compétences techniques et savoir-être
+    
+    Args:
+        offer: Dict contenant l'offre brute
+    
+    Returns:
+        offer: Dict enrichi avec nouvelles clés
+    """
+    
+    if not geo_enricher or not skills_enricher:
+        # Si les enrichisseurs ne sont pas disponibles, retourner l'offre telle quelle
+        offer['region'] = None
+        offer['region_lat'] = None
+        offer['region_lon'] = None
+        offer['competences'] = []
+        offer['savoir_etre'] = []
+        offer['skills_count'] = 0
+        offer['competences_count'] = 0
+        offer['savoir_etre_count'] = 0
+        return offer
+    
+    # 1. ENRICHISSEMENT GÉOGRAPHIQUE
+    location = offer.get('location', '')
+    if location:
+        try:
+            region_name, lat, lon = geo_enricher.extract_region(location)
+            offer['region'] = region_name
+            offer['region_lat'] = lat
+            offer['region_lon'] = lon
+        except Exception as e:
+            print(f"⚠️ Erreur enrichissement géo : {e}")
+            offer['region'] = None
+            offer['region_lat'] = None
+            offer['region_lon'] = None
+    else:
+        offer['region'] = None
+        offer['region_lat'] = None
+        offer['region_lon'] = None
+    
+    # 2. EXTRACTION DES COMPÉTENCES
+    description = offer.get('description', '')
+    if description:
+        try:
+            skills_by_type = skills_enricher.extract_by_type(description)
+            offer['competences'] = skills_by_type.get('competences', [])
+            offer['savoir_etre'] = skills_by_type.get('savoir_etre', [])
+            offer['skills_count'] = len(offer['competences']) + len(offer['savoir_etre'])
+            offer['competences_count'] = len(offer['competences'])
+            offer['savoir_etre_count'] = len(offer['savoir_etre'])
+        except Exception as e:
+            print(f"⚠️ Erreur extraction compétences : {e}")
+            offer['competences'] = []
+            offer['savoir_etre'] = []
+            offer['skills_count'] = 0
+            offer['competences_count'] = 0
+            offer['savoir_etre_count'] = 0
+    else:
+        offer['competences'] = []
+        offer['savoir_etre'] = []
+        offer['skills_count'] = 0
+        offer['competences_count'] = 0
+        offer['savoir_etre_count'] = 0
+    
+    return offer
+
+
+def enrich_offers_batch(offers: list) -> list:
+    """
+    Enrichit un lot d'offres.
+    
+    Args:
+        offers: Liste d'offres brutes
+    
+    Returns:
+        Liste d'offres enrichies
+    """
+    if not geo_enricher or not skills_enricher:
+        # Sans enrichisseurs, retourner tel quel
+        for offer in offers:
+            offer['region'] = None
+            offer['region_lat'] = None
+            offer['region_lon'] = None
+            offer['competences'] = []
+            offer['savoir_etre'] = []
+            offer['skills_count'] = 0
+        return offers
+    
+    enriched_offers = []
+    total = len(offers)
+    
+    for idx, offer in enumerate(offers):
+        enriched_offer = enrich_offer_automatically(offer)
+        enriched_offers.append(enriched_offer)
+        
+        # Afficher progression tous les 10 items
+        if (idx + 1) % 10 == 0 or (idx + 1) == total:
+            print(f"   Enrichissement : {idx + 1}/{total}")
+    
+    return enriched_offers
+
+
+
 
 st.markdown("""
 <style>
@@ -324,9 +488,7 @@ def add_contribution_xp(points):
         st.balloons()
         st.success(f"🎉 **LEVEL UP!** Vous êtes maintenant niveau {level}!")
 
-# ============================================================================
-# SCRAPING FRANCE TRAVAIL
-# ============================================================================
+
 
 def scrape_france_travail(query: str, max_results: int = 100):
     """Scrape France Travail via API"""
@@ -414,9 +576,7 @@ def scrape_france_travail(query: str, max_results: int = 100):
     except Exception as e:
         return None, f"❌ Erreur: {str(e)}"
 
-# ============================================================================
-# SCRAPING HELLOWORK
-# ============================================================================
+
 
 def scrape_hellowork(metier: str, mode: str = "emploi", city: str = None, max_pages: int = 3):
     """Scrape HelloWork"""
@@ -523,9 +683,7 @@ def scrape_hellowork(metier: str, mode: str = "emploi", city: str = None, max_pa
     except Exception as e:
         return None, f"❌ Erreur: {str(e)}"
 
-# ============================================================================
-# HEADER GAMIFIÉ
-# ============================================================================
+
 
 st.markdown("""
 <div class="contrib-header">
@@ -536,9 +694,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ============================================================================
-# PANNEAU GAMIFICATION
-# ============================================================================
+
 
 level, xp_in_level, xp_for_next = calculate_level_xp(st.session_state.xp)
 xp_percentage = (xp_in_level / xp_for_next) * 100
@@ -581,9 +737,8 @@ with gamif_col3:
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# ============================================================================
-# STATISTIQUES
-# ============================================================================
+
+
 
 st.markdown("### 📊 Statistiques de Contribution")
 
@@ -628,9 +783,7 @@ with stats_col4:
 
 st.markdown("---")
 
-# ============================================================================
-# MÉTHODES DE CONTRIBUTION
-# ============================================================================
+
 
 st.markdown("### 🎯 Choisissez votre Méthode de Contribution")
 
@@ -641,9 +794,7 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "🌐 Scraping HelloWork"
 ])
 
-# ============================================================================
-# TAB 1: AJOUT MANUEL
-# ============================================================================
+
 
 with tab1:
     st.markdown('<div class="method-card">', unsafe_allow_html=True)
@@ -725,9 +876,7 @@ with tab1:
     
     st.markdown('</div>', unsafe_allow_html=True)
 
-# ============================================================================
-# TAB 2: UPLOAD FICHIER
-# ============================================================================
+
 
 with tab2:
     st.markdown('<div class="method-card">', unsafe_allow_html=True)
@@ -819,9 +968,7 @@ with tab2:
     
     st.markdown('</div>', unsafe_allow_html=True)
 
-# ============================================================================
-# TAB 3: SCRAPING FRANCE TRAVAIL
-# ============================================================================
+
 
 with tab3:
     st.markdown('<div class="method-card">', unsafe_allow_html=True)
@@ -880,7 +1027,20 @@ with tab3:
                 status_text.text(f"📊 {len(unique_offers)} nouvelles offres détectées")
                 
                 if unique_offers:
-                    # INSERTION DANS LA BASE DE DONNÉES
+                    # ⭐ ENRICHISSEMENT AUTOMATIQUE (NOUVEAUTÉ)
+                    if geo_enricher and skills_enricher:
+                        with st.spinner("✨ Enrichissement automatique en cours..."):
+                            unique_offers = enrich_offers_batch(unique_offers)
+                        
+                        # Stats d'enrichissement
+                        enriched_count = sum(1 for o in unique_offers if o.get('region'))
+                        skills_total = sum(o.get('skills_count', 0) for o in unique_offers)
+                        
+                        st.success(f"✅ Enrichissement : {enriched_count}/{len(unique_offers)} régions • {skills_total} compétences")
+                    else:
+                        st.warning("⚠️ Enrichissement désactivé")
+                    
+                    # # INSERTION DANS LA BASE DE DONNÉES
                     inserted, duplicates_db, save_message = insert_offers(unique_offers)
                     
                     progress_bar.progress(100)
@@ -925,9 +1085,7 @@ with tab3:
     
     st.markdown('</div>', unsafe_allow_html=True)
 
-# ============================================================================
-# TAB 4: SCRAPING HELLOWORK
-# ============================================================================
+
 
 with tab4:
     st.markdown('<div class="method-card">', unsafe_allow_html=True)
@@ -976,7 +1134,20 @@ with tab4:
                 status_text.text(f"📊 {len(unique_offers)} nouvelles offres détectées")
                 
                 if unique_offers:
-                    # INSERTION DANS LA BASE DE DONNÉES
+                    # ⭐ ENRICHISSEMENT AUTOMATIQUE (NOUVEAUTÉ)
+                    if geo_enricher and skills_enricher:
+                        with st.spinner("✨ Enrichissement automatique en cours..."):
+                            unique_offers = enrich_offers_batch(unique_offers)
+                        
+                        # Stats d'enrichissement
+                        enriched_count = sum(1 for o in unique_offers if o.get('region'))
+                        skills_total = sum(o.get('skills_count', 0) for o in unique_offers)
+                        
+                        st.success(f"✅ Enrichissement : {enriched_count}/{len(unique_offers)} régions • {skills_total} compétences")
+                    else:
+                        st.warning("⚠️ Enrichissement désactivé")
+                    
+                    # # INSERTION DANS LA BASE DE DONNÉES
                     inserted, duplicates_db, save_message = insert_offers(unique_offers)
                     
                     progress_bar.progress(100)
@@ -1021,21 +1192,12 @@ with tab4:
     
     st.markdown('</div>', unsafe_allow_html=True)
 
-# ============================================================================
-# HISTORIQUE DES CONTRIBUTIONS
-# ============================================================================
-
 if st.session_state.contribution_history:
     st.markdown("---")
     st.markdown("### 📜 Historique de vos Contributions")
     
     history_df = pd.DataFrame(st.session_state.contribution_history)
     st.dataframe(history_df, use_container_width=True, height=300)
-
-# ============================================================================
-# FOOTER
-# ============================================================================
-
 st.markdown("---")
 st.markdown(f"""
 <div class="contrib-header" style="padding: 1.5rem;">
@@ -1046,10 +1208,6 @@ st.markdown(f"""
     </p>
 </div>
 """, unsafe_allow_html=True)
-
-# ============================================================================
-# BADGES ET ACHIEVEMENTS
-# ============================================================================
 
 st.markdown("### 🏆 Vos Badges")
 
