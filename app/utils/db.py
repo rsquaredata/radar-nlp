@@ -115,6 +115,7 @@ class DatabaseManager:
                 fo.salary,
                 fo.remote,
                 fo.description,
+                fo.source_url,
                 dr.region_name,
                 dc.company_name,
                 dct.contract_type,

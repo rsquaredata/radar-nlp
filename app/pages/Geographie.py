@@ -16,12 +16,6 @@ from utils.db import load_offers_with_skills
 # CONFIG
 # ============================================================================
 
-st.set_page_config(
-    page_title="Géographie | Mission Control",
-    page_icon="🛰️",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
 
 inject_premium_css()
 premium_navbar(active_page="Géographie")
