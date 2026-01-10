@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎯 Job Radar
+#  Job Radar
 
 ### *Analyse Territoriale des Offres d'Emploi par NLP & IA*
 
@@ -13,33 +13,33 @@
 *Un projet de Master SISE – NLP & Text Mining*  
 *Université Lumière Lyon 2*
 
-[🚀 Démo](#-démo) • [📖 Documentation](#-documentation) • [🐳 Installation](#-installation-docker) • [🎨 Fonctionnalités](#-fonctionnalités)
+[ Démo](#-démo) • [ Documentation](#-documentation) • [ Installation](#-installation-docker) • [ Fonctionnalités](#-fonctionnalités)
 
 ---
 
 </div>
 
-## 📋 Table des matières
+##  Table des matières
 
-- [🎯 Vue d'ensemble](#-vue-densemble)
-- [✨ Points forts du projet](#-points-forts-du-projet)
-- [🏗️ Architecture](#️-architecture)
-- [🎨 Fonctionnalités](#-fonctionnalités)
-- [🔬 Technologies & NLP](#-technologies--nlp)
-- [🐳 Installation Docker](#-installation-docker)
-- [⚙️ Installation Locale](#️-installation-locale)
-- [📊 Sources de données](#-sources-de-données)
-- [🗄️ Modélisation des données](#️-modélisation-des-données)
-- [🤖 Intelligence Artificielle](#-intelligence-artificielle)
-- [📸 Captures d'écran](#-captures-décran)
-- [🔐 Configuration](#-configuration)
-- [📈 Roadmap](#-roadmap)
-- [🤝 Contribution](#-contribution)
-- [📄 Licence](#-licence)
+- [ Vue d'ensemble](#-vue-densemble)
+- [ Points forts du projet](#-points-forts-du-projet)
+- [ Architecture](#️-architecture)
+- [ Fonctionnalités](#-fonctionnalités)
+- [ Technologies & NLP](#-technologies--nlp)
+- [ Installation Docker](#-installation-docker)
+- [ Installation Locale](#️-installation-locale)
+- [ Sources de données](#-sources-de-données)
+- [ Modélisation des données](#️-modélisation-des-données)
+- [ Intelligence Artificielle](#-intelligence-artificielle)
+- [ Captures d'écran](#-captures-décran)
+- [ Configuration](#-configuration)
+- [ Roadmap](#-roadmap)
+- [ Contribution](#-contribution)
+- [ Licence](#-licence)
 
 ---
 
-## 🎯 Vue d'ensemble
+##  Vue d'ensemble
 
 **Job Radar** est une plateforme d'analyse avancée des offres d'emploi en France, spécialisée dans les **métiers de la Data, IA et Analytics**. 
 
@@ -50,23 +50,23 @@ Combinant **NLP**, **Text Mining** et **visualisation interactive**, ce projet o
 Projet réalisé dans le cadre du **Master SISE** – *NLP & Text Mining*  
 Université Lumière Lyon 2 | 2024-2025
 
-### 🔍 Objectifs
+###  Objectifs
 
-- 📊 **Analyser** plus de 2 500 offres d'emploi en temps réel
-- 🗺️ **Cartographier** la répartition géographique des compétences
-- 🧠 **Identifier** les compétences les plus demandées par région
-- 📈 **Visualiser** les tendances du marché de l'emploi
-- 🤖 **Assister** les utilisateurs via IA générative (Mistral)
+-  **Analyser** plus de 2 500 offres d'emploi en temps réel
+-  **Cartographier** la répartition géographique des compétences
+-  **Identifier** les compétences les plus demandées par région
+- **Visualiser** les tendances du marché de l'emploi
+-  **Assister** les utilisateurs via IA générative (Mistral)
 
 ---
 
-## ✨ Points forts du projet
+##  Points forts du projet
 
 <table>
 <tr>
 <td width="50%">
 
-### 🎨 Interface Moderne
+###  Interface Moderne
 - Design NASA-FBI professionnel
 - Navigation fluide et intuitive
 - Animations et effets visuels
@@ -75,7 +75,7 @@ Université Lumière Lyon 2 | 2024-2025
 </td>
 <td width="50%">
 
-### 🔄 Pipeline ETL Robuste
+###  Pipeline ETL Robuste
 - Collecte automatisée (API + Scraping)
 - Enrichissement géographique
 - Gestion des doublons
@@ -86,7 +86,7 @@ Université Lumière Lyon 2 | 2024-2025
 <tr>
 <td width="50%">
 
-### 🧠 NLP Avancé
+###  NLP Avancé
 - Extraction de compétences
 - TF-IDF & Vectorisation
 - Analyse de similarité
@@ -95,7 +95,7 @@ Université Lumière Lyon 2 | 2024-2025
 </td>
 <td width="50%">
 
-### 🐳 Déploiement Simplifié
+###  Déploiement Simplifié
 - Dockerisé (1 commande)
 - Prêt pour la production
 - Persistance des données
@@ -110,17 +110,17 @@ Université Lumière Lyon 2 | 2024-2025
 ## 🏗️ Architecture
 
 ```
-📦 projet_nlp/
+ projet_nlp/
 │
-├── 🎨 app/                          # Application Streamlit
+├──  app/                          # Application Streamlit
 │   ├── home.py                      # Page d'accueil
 │   ├── pages/
-│   │   ├── Explorer.py              # 💼 Exploration des 2500+ offres
-│   │   ├── Geographie.py            # 🗺️ Cartographie interactive
-│   │   ├── Analytics.py             # 📊 Statistiques avancées
-│   │   ├── Intelligence.py          # 🧠 Analyses NLP & Clustering
-│   │   ├── Assistant.py             # 🤖 Assistant IA (Mistral)
-│   │   └── Contribuer.py            # ➕ Ajout dynamique d'offres
+│   │   ├── Explorer.py              #  Exploration des 2500+ offres
+│   │   ├── Geographie.py            #  Cartographie interactive
+│   │   ├── Analytics.py             #  Statistiques avancées
+│   │   ├── Intelligence.py          #  Analyses NLP & Clustering
+│   │   ├── Assistant.py             #  Assistant IA (Mistral)
+│   │   └── Contribuer.py            #  Ajout dynamique d'offres
 │   │
 │   └── utils/                       # Utilitaires
 │       ├── components.py            # Composants UI
@@ -128,97 +128,97 @@ Université Lumière Lyon 2 | 2024-2025
 │       ├── nlp_utils.py             # Outils NLP
 │       └── viz.py                   # Visualisations
 │
-├── 🗄️ database/                     # Base de données
+├──  database/                     # Base de données
 │   ├── schema.sql                   # Schéma SQL (Star Schema)
 │   ├── etl_pipeline.py              # Pipeline ETL complet
 │   └── jobs.db                      # Base SQLite (2520 offres)
 │
-├── 🕷️ scraping/                     # Collecte de données
+├──  scraping/                     # Collecte de données
 │   ├── france_travail_api.py        # API France Travail
 │   └── hellowork_scraper.py         # Scraper HelloWork
 │
-├── 🌍 geographic_enrichment/        # Enrichissement géo
+├──  geographic_enrichment/        # Enrichissement géo
 │   ├── enrich_geo.py                # Géolocalisation
 │   └── regions_france.json          # Référentiel régions
 │
-├── 📊 data/                         # Données
+├──  data/                         # Données
 │   ├── raw/                         # Données brutes
 │   ├── processed/                   # Données traitées
 │   └── exports/                     # Exports CSV/JSON
 │
-├── 🐳 Dockerfile                    # Image Docker
-├── 📋 requirements.txt              # Dépendances Python
-├── ⚙️ config.py                     # Configuration
-├── 🔒 .env.example                  # Variables d'environnement
-└── 📖 README.md                     # Ce fichier
+├──  Dockerfile                    # Image Docker
+├──  requirements.txt              # Dépendances Python
+├── config.py                     # Configuration
+├──  .env.example                  # Variables d'environnement
+└──  README.md                     # Ce fichier
 ```
 
 ---
 
-## 🎨 Fonctionnalités
+##  Fonctionnalités
 
-### 💼 Explorer – Navigation des offres
+###  Explorer – Navigation des offres
 
 <table>
 <tr>
 <td width="60%">
 
 **Fonctionnalités principales :**
-- 🔍 Recherche intelligente (titre, compétences, entreprise)
-- 🗺️ Filtrage par région (53 régions)
-- 📋 Filtrage par type de contrat (CDI, CDD, Stage...)
-- 🏠 Filtrage par mode de travail (Télétravail, Hybride, Sur site)
-- 💎 Affichage des compétences requises
-- 🎯 Score de pertinence par offre
-- 🚀 **Redirection directe vers les sites d'offres**
-- ⭐ Système de favoris
-- 📊 Comparaison d'offres
+-  Recherche intelligente (titre, compétences, entreprise)
+-  Filtrage par région (53 régions)
+-  Filtrage par type de contrat (CDI, CDD, Stage...)
+-  Filtrage par mode de travail (Télétravail, Hybride, Sur site)
+-  Affichage des compétences requises
+-  Score de pertinence par offre
+-  **Redirection directe vers les sites d'offres**
+-  Système de favoris
+-  Comparaison d'offres
 
 </td>
 <td width="40%">
 
 ```
-📊 2,520 offres analysées
-🏢 890+ entreprises
-🗺️ 53 régions françaises
-💎 500+ compétences uniques
-🎯 Mise à jour quotidienne
+ 2,520 offres analysées
+ 890+ entreprises
+ 53 régions françaises
+ 500+ compétences uniques
+ Mise à jour quotidienne
 ```
 
 </td>
 </tr>
 </table>
 
-### 🗺️ Géographie – Cartographie interactive
+###  Géographie – Cartographie interactive
 
-- 📍 Carte de France interactive (Folium)
-- 🔥 Heatmap des offres par région
-- 📊 Distribution géographique des compétences
-- 🎯 Zones de concentration des emplois
-- 📈 Analyse comparative inter-régions
+-  Carte de France interactive (Folium)
+-  Heatmap des offres par région
+-  Distribution géographique des compétences
+-  Zones de concentration des emplois
+-  Analyse comparative inter-régions
 
-### 📊 Analytics – Statistiques avancées
+###  Analytics – Statistiques avancées
 
-- 📈 Évolution temporelle des offres
-- 🏆 Top compétences par région
-- 💼 Répartition par type de contrat
-- 🏠 Taux de télétravail par région
-- 📊 Graphiques interactifs (Plotly)
-- 📥 Export des données (CSV, JSON)
+-  Évolution temporelle des offres
+-  Top compétences par région
+-  Répartition par type de contrat
+-  Taux de télétravail par région
+-  Graphiques interactifs (Plotly)
+-  Export des données (CSV, JSON)
 
-### 🧠 Intelligence – NLP & Text Mining
+###  Intelligence – NLP & Text Mining
 
 <table>
 <tr>
 <td width="50%">
 
 **Analyses NLP :**
-- 📝 Extraction automatique de compétences
-- 🎯 Analyse TF-IDF
-- 🔍 Recherche par similarité
-- 🧩 Clustering K-Means
-- ☁️ Nuages de mots interactifs
-- 📊 Analyse de co-occurrence
+-  Extraction automatique de compétences
+-  Analyse TF-IDF
+-  Recherche par similarité
+-  Clustering K-Means
+-  Nuages de mots interactifs
+-  Analyse de co-occurrence
 
 </td>
 <td width="50%">
@@ -234,24 +234,24 @@ Université Lumière Lyon 2 | 2024-2025
 </tr>
 </table>
 
-### 🤖 Assistant – IA conversationnelle
+###  Assistant – IA conversationnelle
 
-- 💬 Assistant intelligent (Mistral AI)
-- 🎯 Recommandations personnalisées
-- 📊 Analyse de profil
-- 💡 Suggestions de compétences à acquérir
-- 🗣️ Interface conversationnelle naturelle
+-  Assistant intelligent (Mistral AI)
+-  Recommandations personnalisées
+-  Analyse de profil
+-  Suggestions de compétences à acquérir
+-  Interface conversationnelle naturelle
 
-### ➕ Contribuer – Enrichissement dynamique
+###  Contribuer – Enrichissement dynamique
 
-- ✏️ Ajout manuel d'offres
-- 🔄 Enrichissement automatique
-- ✅ Validation et détection de doublons
-- 📊 Mise à jour en temps réel
+-  Ajout manuel d'offres
+-  Enrichissement automatique
+-  Validation et détection de doublons
+-  Mise à jour en temps réel
 
 ---
 
-## 🔬 Technologies & NLP
+##  Technologies & NLP
 
 ### Stack Technique
 
@@ -288,32 +288,32 @@ Université Lumière Lyon 2 | 2024-2025
 ```
 
 **Algorithmes utilisés :**
-- 🎯 **TF-IDF** : Extraction de termes importants
-- 🧩 **K-Means** : Clustering d'offres similaires
-- 📏 **Similarité cosinus** : Recommandation d'offres
-- 🔍 **NER** : Reconnaissance d'entités nommées
-- ☁️ **WordCloud** : Visualisation de fréquences
+-  **TF-IDF** : Extraction de termes importants
+-  **K-Means** : Clustering d'offres similaires
+-  **Similarité cosinus** : Recommandation d'offres
+-  **NER** : Reconnaissance d'entités nommées
+-  **WordCloud** : Visualisation de fréquences
 
 ---
 
-## 🐳 Installation Docker
+##  Installation Docker
 
 ### Prérequis
 
-- ✅ [Docker Desktop](https://www.docker.com/products/docker-desktop) installé
-- ✅ Connexion Internet
-- ✅ 4 GB RAM minimum
+-  [Docker Desktop](https://www.docker.com/products/docker-desktop) installé
+-  Connexion Internet
+-  4 GB RAM minimum
 
 ### Installation rapide (3 étapes)
 
-#### 1️⃣ Cloner le dépôt
+#### 1️ Cloner le dépôt
 
 ```bash
 git clone https://github.com/votre-username/job-radar.git
 cd job-radar
 ```
 
-#### 2️⃣ Configurer les variables d'environnement
+#### 2️ Configurer les variables d'environnement
 
 ```bash
 # Copier le fichier exemple
@@ -334,7 +334,7 @@ FRANCE_TRAVAIL_CLIENT_ID=votre_client_id
 FRANCE_TRAVAIL_CLIENT_SECRET=votre_client_secret
 ```
 
-#### 3️⃣ Lancer l'application
+#### 3️ Lancer l'application
 
 ```bash
 # Construire et lancer en une commande
@@ -345,13 +345,13 @@ docker build -t job-radar .
 docker run -p 8501:8501 --env-file .env job-radar
 ```
 
-#### 🎉 Accéder à l'application
+####  Accéder à l'application
 
 ```
-🌐 http://localhost:8501
+ http://localhost:8501
 ```
 
-### 💾 Persistance des données (Recommandé)
+###  Persistance des données (Recommandé)
 
 Pour conserver les données entre les redémarrages :
 
@@ -373,7 +373,7 @@ docker run -p 8501:8501 \
 
 ---
 
-## ⚙️ Installation Locale
+##  Installation Locale
 
 ### Prérequis
 
@@ -405,7 +405,7 @@ nano .env
 streamlit run app/home.py
 ```
 
-### 🔧 Configuration avancée
+###  Configuration avancée
 
 **Créer la base de données :**
 
@@ -419,35 +419,35 @@ python geographic_enrichment/enrich_geo.py
 
 ---
 
-## 📊 Sources de données
+##  Sources de données
 
-### 🏢 France Travail API
+###  France Travail API
 
 - **Type** : API officielle
 - **Volume** : ~1 500 offres
 - **Mise à jour** : Quotidienne
 - **Couverture** : France entière
 
-### 🕷️ HelloWork (Scraping)
+###  HelloWork (Scraping)
 
 - **Type** : Web scraping
 - **Volume** : ~1 000 offres
 - **Mise à jour** : Hebdomadaire
 - **Focus** : Métiers Data/IA
 
-### 📈 Statistiques de collecte
+###  Statistiques de collecte
 
 ```
-📊 Total : 2,520 offres
-🏢 Entreprises : 890+
-🗺️ Régions : 53
-💎 Compétences : 500+
-📅 Période : Janvier 2025
+ Total : 2,520 offres
+ Entreprises : 890+
+ Régions : 53
+ Compétences : 500+
+ Période : Janvier 2025
 ```
 
 ---
 
-## 🗄️ Modélisation des données
+##  Modélisation des données
 
 ### Architecture en étoile (Star Schema)
 
@@ -492,17 +492,17 @@ python geographic_enrichment/enrich_geo.py
 
 ---
 
-## 🤖 Intelligence Artificielle
+##  Intelligence Artificielle
 
 ### Mistral AI Integration
 
 L'assistant utilise **Mistral AI** pour :
 
-- 💬 Dialogue naturel avec l'utilisateur
-- 🎯 Recommandations personnalisées
-- 📊 Analyse de profil et compétences
-- 💡 Suggestions de formations
-- 🔍 Recherche sémantique d'offres
+-  Dialogue naturel avec l'utilisateur
+-  Recommandations personnalisées
+-  Analyse de profil et compétences
+-  Suggestions de formations
+-  Recherche sémantique d'offres
 
 **Exemple d'utilisation :**
 
@@ -518,7 +518,7 @@ assistant : "D'après l'analyse du marché, je vous recommande..."
 
 ---
 
-## 📸 Captures d'écran
+##  Captures d'écran
 
 <div align="center">
 
@@ -542,7 +542,7 @@ assistant : "D'après l'analyse du marché, je vous recommande..."
 
 ---
 
-## 🔐 Configuration
+##  Configuration
 
 ### Variables d'environnement requises
 
@@ -568,9 +568,9 @@ assistant : "D'après l'analyse du marché, je vous recommande..."
 
 ---
 
-## 📈 Roadmap
+##  Roadmap
 
-### Version 1.0 ✅ (Actuelle)
+### Version 1.0  (Actuelle)
 
 - [x] Pipeline ETL complet
 - [x] Interface Streamlit professionnelle
@@ -579,7 +579,7 @@ assistant : "D'après l'analyse du marché, je vous recommande..."
 - [x] Assistant IA (Mistral)
 - [x] Dockerisation
 
-### Version 1.1 🚧 (En cours)
+### Version 1.1  (En cours)
 
 - [ ] Amélioration du scraping (plus de sources)
 - [ ] Analyse prédictive des tendances
@@ -587,7 +587,7 @@ assistant : "D'après l'analyse du marché, je vous recommande..."
 - [ ] API REST pour les développeurs
 - [ ] Export PDF des analyses
 
-### Version 2.0 🔮 (Futur)
+### Version 2.0  (Futur)
 
 - [ ] Machine Learning (prédiction de salaires)
 - [ ] Recommandation personnalisée avancée
@@ -600,7 +600,7 @@ assistant : "D'après l'analyse du marché, je vous recommande..."
 
 ## 🤝 Contribution
 
-Les contributions sont les bienvenues ! 🎉
+Les contributions sont les bienvenues ! 
 
 ### Comment contribuer ?
 
@@ -620,39 +620,35 @@ Les contributions sont les bienvenues ! 🎉
 ### Bugs & Suggestions
 
 Ouvrir une **issue** sur GitHub avec :
-- 🐛 Description du bug
-- 📝 Étapes de reproduction
-- 💡 Solution proposée (si applicable)
+-  Description du bug
+-  Étapes de reproduction
+-  Solution proposée (si applicable)
 
 ---
 
-## 👥 Équipe
+##  Équipe
 
 <div align="center">
 
 **Développé par :**
 
-[Votre Nom](https://github.com/votre-username)  
-Master SISE – NLP & Text Mining  
-Université Lumière Lyon 2
-
-**Contact :**  
-📧 email@example.com  
-💼 [LinkedIn](https://linkedin.com/in/votre-profil)  
-🐙 [GitHub](https://github.com/votre-username)
+[Bah Mohamed Habib]()  
+[Thibaud Lecomte]()
+[Aya Mecheri]()
+[Rina Razafimahefa]()
 
 </div>
 
 ---
 
-## 📄 Licence
+##  Licence
 
 Ce projet est sous licence **MIT**.
 
 ```
 MIT License
 
-Copyright (c) 2025 Votre Nom
+Copyright (c) 2025 Votre Bah 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -665,29 +661,29 @@ Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ## 🙏 Remerciements
 
-- 🎓 **Université Lumière Lyon 2** - Master SISE
-- 🏢 **France Travail** - API officielle
-- 🕷️ **HelloWork** - Source de données
-- 🤖 **Mistral AI** - Intelligence artificielle
-- 🐍 **Communauté Python** - Bibliothèques open source
-- 📊 **Streamlit** - Framework web
+-  **Université Lumière Lyon 2** - Master SISE
+-  **France Travail** - API officielle
+-  **HelloWork** - Source de données
+-  **Mistral AI** - Intelligence artificielle
+-  **Communauté Python** - Bibliothèques open source
+-  **Streamlit** - Framework web
 
 ---
 
-## 📚 Ressources
+##  Ressources
 
 ### Documentation
 
-- 📖 [Guide utilisateur](docs/USER_GUIDE.md)
-- 🔧 [Guide développeur](docs/DEVELOPER_GUIDE.md)
-- 🐳 [Guide Docker](docs/DOCKER_GUIDE.md)
-- 📊 [Guide des données](docs/DATA_GUIDE.md)
+-  [Guide utilisateur](docs/USER_GUIDE.md)
+-  [Guide développeur](docs/DEVELOPER_GUIDE.md)
+-  [Guide Docker](docs/DOCKER_GUIDE.md)
+-  [Guide des données](docs/DATA_GUIDE.md)
 
 ### Articles & Références
 
-- 📄 [Rapport de projet](docs/RAPPORT.pdf)
-- 📊 [Présentation](docs/PRESENTATION.pptx)
-- 🎥 [Démo vidéo](https://youtube.com/...)
+-  [Rapport de projet](docs/RAPPORT.pdf)
+-  [Présentation](docs/PRESENTATION.pptx)
+-  [Démo vidéo](https://youtube.com/...)
 
 ---
 
@@ -695,9 +691,6 @@ Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ### ⭐ Si ce projet vous plaît, n'hésitez pas à lui donner une étoile !
 
-[![Star](https://img.shields.io/github/stars/votre-username/job-radar?style=social)](https://github.com/votre-username/job-radar/stargazers)
-[![Fork](https://img.shields.io/github/forks/votre-username/job-radar?style=social)](https://github.com/votre-username/job-radar/network/members)
-[![Watch](https://img.shields.io/github/watchers/votre-username/job-radar?style=social)](https://github.com/votre-username/job-radar/watchers)
 
 ---
 
