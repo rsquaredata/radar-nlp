@@ -1,7 +1,3 @@
-"""
-🏠 HOME - Page d'accueil ultra-moderne et captivante
-"""
-
 import streamlit as st
 import sys
 from pathlib import Path
@@ -25,9 +21,7 @@ inject_premium_css()
 premium_navbar(active_page="Home")
 
 
-# ============================================================================
-# HERO SECTION - EXTRAORDINAIRE
-# ============================================================================
+
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -49,7 +43,7 @@ with col_badge2:
             box-shadow: 0 10px 40px rgba(124, 58, 237, 0.6);
             border: 2px solid rgba(236, 72, 153, 0.3);
         ">
-            🚀 PLATEFORME #1 DATA & IA EN FRANCE
+            PLATEFORME #1 DATA & IA EN FRANCE
         </span>
     </div>
     """, unsafe_allow_html=True)
@@ -103,12 +97,12 @@ st.markdown("<br>", unsafe_allow_html=True)
 col_cta1, col_cta2, col_cta3, col_cta4, col_cta5 = st.columns([1, 1, 0.6, 1, 1])
 
 with col_cta2:
-    if st.button("🎯 Explorer les Offres", use_container_width=True, key="cta_explore"):
-        st.info("🚧 Page en cours de développement")
+    if st.button("Explorer les Offres", use_container_width=True, key="cta_explore"):
+        st.info("Page en cours de développement")
 
 with col_cta4:
-    if st.button("📊 Analytics Avancés", use_container_width=True, key="cta_analytics"):
-        st.info("🚧 Page en cours de développement")
+    if st.button(" Analytics Avancés", use_container_width=True, key="cta_analytics"):
+        st.info(" Page en cours de développement")
 
 
 # ============================================================================
@@ -134,7 +128,7 @@ except:
 st.markdown("""
 <div style="animation: fadeIn 1.4s ease-out 0.6s backwards;">
     <h2 style="text-align: center; margin-bottom: 2rem;">
-        📊 Plateforme en Temps Réel
+         Plateforme en Temps Réel
     </h2>
 </div>
 """, unsafe_allow_html=True)
@@ -143,7 +137,7 @@ metric_col1, metric_col2, metric_col3, metric_col4 = st.columns(4)
 
 with metric_col1:
     st.metric(
-        "💼 Offres d'Emploi",
+        " Offres d'Emploi",
         f"{total_offers:,}",
         delta="+247 cette semaine",
         delta_color="normal"
@@ -151,7 +145,7 @@ with metric_col1:
 
 with metric_col2:
     st.metric(
-        "🎯 Compétences Détectées",
+        " Compétences Détectées",
         f"{total_skills}",
         delta="NLP Auto-Extraction",
         delta_color="off"
@@ -159,7 +153,7 @@ with metric_col2:
 
 with metric_col3:
     st.metric(
-        "🗺️ Régions Couvertes",
+        " Régions Couvertes",
         f"{total_regions}",
         delta="100% France",
         delta_color="off"
@@ -167,16 +161,13 @@ with metric_col3:
 
 with metric_col4:
     st.metric(
-        "📈 Moy. Skills/Offre",
+        " Moy. Skills/Offre",
         f"{avg_skills:.1f}",
         delta="Précision 94%",
         delta_color="normal"
     )
 
 
-# ============================================================================
-# FEATURES - POURQUOI NOUS CHOISIR
-# ============================================================================
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
@@ -317,9 +308,6 @@ with feat_col6:
     """, unsafe_allow_html=True)
 
 
-# ============================================================================
-# TECHNOLOGIES UTILISÉES
-# ============================================================================
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
@@ -358,9 +346,7 @@ for col, (tech, icon) in zip([tech_col1, tech_col2, tech_col3, tech_col4, tech_c
         """, unsafe_allow_html=True)
 
 
-# ============================================================================
-# CALL TO ACTION FINAL
-# ============================================================================
+
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
@@ -403,8 +389,8 @@ st.markdown("<br>", unsafe_allow_html=True)
 col_final1, col_final2, col_final3 = st.columns([1, 0.8, 1])
 
 with col_final2:
-    if st.button("🚀 Commencer l'Exploration", use_container_width=True, key="cta_final"):
-        st.info("🚧 Page en cours de développement")
+    if st.button(" Commencer l'Exploration", use_container_width=True, key="cta_final"):
+        st.info(" Page en cours de développement")
 
 
 # ============================================================================

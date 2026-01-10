@@ -1,9 +1,4 @@
 from __future__ import annotations
-
-"""
-HelloWork HTML collector AMÉLIORÉ - extrait UNIQUEMENT la description de l'offre.
-"""
-
 import json
 import re
 import time
@@ -16,7 +11,7 @@ from urllib.parse import urljoin, urlencode, urlparse, urlunparse, parse_qs
 import pandas as pd
 from bs4 import BeautifulSoup
 
-# Assuming http_utils is available
+
 try:
     from http_utils import RobustSession
 except ImportError:
@@ -92,19 +87,7 @@ def html_to_text(html: str) -> str:
 
 
 def extract_description_only(soup: BeautifulSoup) -> str:
-    """
-    🆕 NOUVELLE FONCTION : Extrait UNIQUEMENT la description de l'offre.
-    
-    Stratégie multi-niveaux :
-    1. Chercher via JSON-LD structuré (le plus propre)
-    2. Chercher via sélecteurs CSS spécifiques
-    3. Fallback : extraire le plus grand bloc de texte pertinent
-    """
     description_text = ""
-    
-    # ===========================
-    # NIVEAU 1 : JSON-LD (structuré, le meilleur)
-    # ===========================
     for script in soup.select('script[type="application/ld+json"]'):
         try:
             data = json.loads(script.get_text(strip=True) or "{}")
@@ -116,9 +99,6 @@ def extract_description_only(soup: BeautifulSoup) -> str:
         except Exception:
             continue
     
-    # ===========================
-    # NIVEAU 2 : Sélecteurs CSS spécifiques HelloWork
-    # ===========================
     if not description_text:
         selectors = [
             'div[class*="job-description"]',
@@ -135,9 +115,6 @@ def extract_description_only(soup: BeautifulSoup) -> str:
                 if len(text) > len(description_text):
                     description_text = text
     
-    # ===========================
-    # NIVEAU 3 : Extraction intelligente par marqueurs
-    # ===========================
     if not description_text or len(description_text) < 100:
         # Prendre tout le texte et extraire entre marqueurs
         full_text = soup.get_text("\n", strip=True)
@@ -179,10 +156,7 @@ def extract_description_only(soup: BeautifulSoup) -> str:
         if end_pos > start_pos:
             description_text = full_text[start_pos:end_pos].strip()
     
-    # ===========================
-    # NETTOYAGE FINAL
-    # ===========================
-    # Supprimer fragments HTML
+    
     description_text = re.sub(r'<[^>]+>', '', description_text)
     
     # Supprimer URLs
@@ -242,7 +216,7 @@ class Offer:
     salary: Optional[str]
     remote: str
     published_relative: Optional[str]
-    description: str  # 🆕 Champ renommé (était raw_text)
+    description: str 
 
 
 def _text_or_none(el) -> Optional[str]:
@@ -253,9 +227,6 @@ def _text_or_none(el) -> Optional[str]:
 
 
 def parse_offer_page(html: str, url: str) -> Offer:
-    """
-    🆕 VERSION AMÉLIORÉE : extrait description propre + metadata
-    """
     soup = BeautifulSoup(html, "lxml")
 
     m = re.search(r"/emplois/(\d+)\.html", url)
@@ -322,7 +293,7 @@ def parse_offer_page(html: str, url: str) -> Offer:
         salary=salary,
         remote=remote,
         published_relative=published_relative,
-        description=description,  # 🆕 Description propre uniquement
+        description=description,  
     )
 
 
@@ -336,7 +307,6 @@ def save_jsonl(rows: List[Dict[str, Any]], path: Path) -> None:
 def save_csv(rows: List[Dict[str, Any]], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     df = pd.DataFrame(rows)
-    # Plus besoin de tronquer, la description est déjà propre et limitée
     df.to_csv(path, index=False, encoding="utf-8")
 
 
@@ -350,9 +320,6 @@ def scrape_hellowork(
     sleep_s: float = 0.4,
     out_dir: str = "../data",
 ) -> Dict[str, Any]:
-    """
-    Main function - version améliorée avec descriptions propres
-    """
     rs = RobustSession()
     urls: Set[str] = set()
 
@@ -403,7 +370,7 @@ def scrape_hellowork(
     save_jsonl(rows, jsonl_path)
     save_csv(rows, csv_path)
 
-    print(f"✅ Sauvegardé: {len(rows)} offres avec descriptions propres")
+    print(f"Sauvegardé: {len(rows)} offres avec descriptions propres")
     return {
         "count": len(rows),
         "jsonl": str(jsonl_path),

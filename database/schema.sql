@@ -9,9 +9,7 @@ DROP TABLE IF EXISTS dim_contract;
 DROP TABLE IF EXISTS dim_skill;
 DROP TABLE IF EXISTS dim_date;
 
--- ============================================================================
--- TABLES DE DIMENSIONS
--- ============================================================================
+
 
 -- Dimension : Sources de données
 CREATE TABLE dim_source (
@@ -67,9 +65,7 @@ CREATE TABLE dim_date (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- ============================================================================
--- TABLE DE FAITS (CENTRALE)
--- ============================================================================
+
 
 CREATE TABLE fact_offers (
     offer_key INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -112,9 +108,7 @@ CREATE TABLE fact_offers (
     FOREIGN KEY (date_key) REFERENCES dim_date(date_key)
 );
 
--- ============================================================================
--- TABLE DE FAITS ASSOCIATIVE (MANY-TO-MANY)
--- ============================================================================
+
 
 -- Relation offre ↔ compétence
 CREATE TABLE fact_offer_skill (
@@ -126,9 +120,7 @@ CREATE TABLE fact_offer_skill (
     FOREIGN KEY (skill_key) REFERENCES dim_skill(skill_key) ON DELETE CASCADE
 );
 
--- ============================================================================
--- INDEX POUR PERFORMANCES
--- ============================================================================
+
 
 -- ⭐ Index UNIQUE sur uid (évite doublons)
 CREATE UNIQUE INDEX idx_fact_offers_uid_unique ON fact_offers(uid);
@@ -235,11 +227,7 @@ SELECT
     (SELECT COUNT(*) FROM dim_skill WHERE skill_type = 'savoir_etre') AS total_savoir_etre,
     (SELECT AVG(skills_count) FROM fact_offers) AS avg_skills_per_offer;
 
--- ============================================================================
--- TRIGGERS POUR AUTO-UPDATE
--- ============================================================================
 
--- Trigger : Mise à jour automatique de updated_at
 CREATE TRIGGER update_fact_offers_timestamp 
 AFTER UPDATE ON fact_offers
 BEGIN
@@ -248,6 +236,3 @@ BEGIN
     WHERE offer_key = NEW.offer_key;
 END;
 
--- ============================================================================
--- FIN DU SCHEMA
--- ============================================================================

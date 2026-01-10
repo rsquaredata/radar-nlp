@@ -9,22 +9,12 @@ from config import CONTRACT_TYPES, REMOTE_OPTIONS
 
 
 def create_sidebar_filters(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, Any]]:
-    """
-    Crée les filtres dans la sidebar et retourne le DataFrame filtré.
-    
-    Args:
-        df: DataFrame à filtrer
-    
-    Returns:
-        Tuple (DataFrame filtré, dict des filtres actifs)
-    """
+   
     st.sidebar.header("🔍 Filtres")
     
     filters = {}
     
-    # ========================================================================
-    # RÉGION
-    # ========================================================================
+   
     
     if 'region_name' in df.columns:
         regions = ['Toutes'] + sorted(df['region_name'].dropna().unique().tolist())
@@ -41,9 +31,7 @@ def create_sidebar_filters(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, An
         selected_regions = ['Toutes']
         filters['regions'] = selected_regions
     
-    # ========================================================================
-    # TYPE DE CONTRAT
-    # ========================================================================
+ 
     
     if 'contract_type' in df.columns:
         contracts = ['Tous'] + sorted(df['contract_type'].dropna().unique().tolist())
@@ -59,10 +47,7 @@ def create_sidebar_filters(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, An
         selected_contract = 'Tous'
         filters['contract'] = selected_contract
     
-    # ========================================================================
-    # TÉLÉTRAVAIL
-    # ========================================================================
-    
+
     if 'remote' in df.columns:
         remote_opts = ['Tous'] + sorted(df['remote'].dropna().unique().tolist())
         
@@ -77,9 +62,7 @@ def create_sidebar_filters(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, An
         selected_remote = 'Tous'
         filters['remote'] = selected_remote
     
-    # ========================================================================
-    # SOURCE
-    # ========================================================================
+
     
     if 'source_name' in df.columns:
         sources = ['Toutes'] + sorted(df['source_name'].dropna().unique().tolist())
@@ -96,16 +79,7 @@ def create_sidebar_filters(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, An
         selected_sources = ['Toutes']
         filters['sources'] = selected_sources
     
-    # ========================================================================
-    # COMPÉTENCES (si disponible)
-    # ========================================================================
-    
-    # On ne filtre pas ici car trop complexe, géré dans search_offers de db.py
-    
-    # ========================================================================
-    # RECHERCHE TEXTE
-    # ========================================================================
-    
+ 
     search_text = st.sidebar.text_input(
         "🔎 Recherche libre",
         placeholder="Mots-clés dans titre ou description",
@@ -114,9 +88,6 @@ def create_sidebar_filters(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, An
     
     filters['search_text'] = search_text
     
-    # ========================================================================
-    # APPLIQUER LES FILTRES
-    # ========================================================================
     
     filtered_df = df.copy()
     
@@ -145,13 +116,11 @@ def create_sidebar_filters(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict[str, An
             )
             filtered_df = filtered_df[mask]
     
-    # ========================================================================
-    # AFFICHER NOMBRE DE RÉSULTATS
-    # ========================================================================
+  
     
     st.sidebar.markdown("---")
     st.sidebar.metric(
-        "📊 Résultats",
+        " Résultats",
         f"{len(filtered_df):,}",
         delta=f"{len(filtered_df) - len(df):,}" if len(filtered_df) != len(df) else None
     )
@@ -169,7 +138,7 @@ def create_comparison_filters() -> Dict[str, List[str]]:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.subheader("🗺️ Comparer des régions")
+        st.subheader("Comparer des régions")
         # Charger régions depuis DB
         from utils.db import get_db_manager
         db = get_db_manager()
@@ -183,7 +152,7 @@ def create_comparison_filters() -> Dict[str, List[str]]:
         )
     
     with col2:
-        st.subheader("🎯 Comparer des profils")
+        st.subheader("Comparer des profils")
         from config import PROFILE_NAMES
         
         selected_profiles = st.multiselect(
@@ -211,7 +180,7 @@ def create_skill_filter(all_skills: List[str], key: str = "skill_filter") -> Lis
         Liste des compétences sélectionnées
     """
     selected_skills = st.multiselect(
-        "🎯 Filtrer par compétences",
+        "Filtrer par compétences",
         options=sorted(all_skills),
         help="Sélectionner une ou plusieurs compétences",
         key=key

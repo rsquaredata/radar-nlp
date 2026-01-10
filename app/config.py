@@ -24,17 +24,13 @@ CLUSTERING_MODEL_PATH = MODELS_DIR / "clustering_model.pkl"
 ASSETS_DIR = PROJECT_ROOT / "app" / "assets"
 WORDCLOUDS_DIR = PROJECT_ROOT / "nlp_analysis" / "wordclouds"
 
-# ============================================================================
-# CONFIGURATION STREAMLIT
-# ============================================================================
+
 
 PAGE_TITLE = "Data Jobs Analytics - France"
 PAGE_ICON = "📊"
 LAYOUT = "wide"
 
-# ============================================================================
-# CONFIGURATION VISUALISATIONS
-# ============================================================================
+
 
 # Palette de couleurs
 COLOR_PALETTE = {
@@ -87,9 +83,7 @@ REMOTE_OPTIONS = ['Oui', 'Non', 'Hybride', 'Unknown']
 # Sources de données
 DATA_SOURCES = ['France Travail', 'HelloWork', 'Adzuna']
 
-# ============================================================================
-# CONFIGURATION NLP
-# ============================================================================
+
 
 # Nombre de topics/clusters
 N_TOPICS = 6
@@ -101,31 +95,23 @@ CUSTOM_STOPWORDS = [
     'recherche', 'candidat', 'profil', 'mission', 'entreprise'
 ]
 
-# ============================================================================
-# CONFIGURATION CARTE
-# ============================================================================
+
 
 # Centre de la France pour la carte
 FRANCE_CENTER = [46.603354, 1.888334]
 FRANCE_ZOOM = 6
 
-# ============================================================================
-# CONFIGURATION API (pour génération lettres)
-# ============================================================================
+
 
 # Mistral AI (à configurer avec variable d'environnement)
 MISTRAL_API_KEY = os.getenv('MISTRAL_API_KEY', '')
 MISTRAL_MODEL = 'mistral-medium'
 
-# ============================================================================
-# PAGINATION
-# ============================================================================
+
 
 ITEMS_PER_PAGE = 20
 MAX_ITEMS_PER_PAGE = 100
 
-# ============================================================================
-# CACHE
-# ============================================================================
+
 
 CACHE_TTL = 3600  # 1 heure

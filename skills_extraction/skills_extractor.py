@@ -8,17 +8,14 @@ from collections import defaultdict
 
 @dataclass
 class Skill:
-    """Représentation d'une compétence extraite"""
     name: str
-    category: str  # ex: 'languages', 'cloud', 'communication'
-    type: str      # 'competences' ou 'savoir_etre'
-    confidence: float  # 0-1
+    category: str  
+    type: str      
+    confidence: float  
 
 
 class SkillsExtractor:
-    """
-    Extracteur de compétences avec approche par dictionnaire.
-    """
+
     
     def __init__(self, skills_dict_path: str = None):
         """
@@ -228,9 +225,7 @@ class SkillsExtractor:
         return dict(by_category)
 
 
-# ============================================================================
-# FONCTIONS UTILITAIRES POUR BATCH PROCESSING
-# ============================================================================
+
 
 def extract_skills_from_dataframe(df, text_column: str = 'description'):
     """
@@ -245,7 +240,7 @@ def extract_skills_from_dataframe(df, text_column: str = 'description'):
     
     extractor = SkillsExtractor()
     
-    print(f"🔍 Extraction des compétences sur {len(df)} offres...")
+    print(f"Extraction des compétences sur {len(df)} offres...")
     
     results = []
     for idx, row in df.iterrows():
@@ -272,8 +267,8 @@ def extract_skills_from_dataframe(df, text_column: str = 'description'):
     results_df = pd.DataFrame(results)
     df_enriched = pd.concat([df, results_df], axis=1)
     
-    print(f"✅ Extraction terminée!")
-    print(f"   Moyenne: {df_enriched['skills_count'].mean():.1f} compétences/offre")
+    print(f"Extraction terminée!")
+    print(f"Moyenne: {df_enriched['skills_count'].mean():.1f} compétences/offre")
     
     return df_enriched
 
@@ -340,14 +335,14 @@ if __name__ == "__main__":
     
     by_type = extractor.extract_by_type(test_text)
     
-    print("🔧 COMPÉTENCES (Hard Skills):")
+    print("COMPÉTENCES (Hard Skills):")
     for skill in by_type['competences']:
-        print(f"   • {skill}")
+        print(f"• {skill}")
     
     print()
-    print("🌟 SAVOIR-ÊTRE (Soft Skills):")
+    print("SAVOIR-ÊTRE (Soft Skills):")
     for skill in by_type['savoir_etre']:
-        print(f"   • {skill}")
+        print(f"• {skill}")
     
     print()
     print("=" * 80)

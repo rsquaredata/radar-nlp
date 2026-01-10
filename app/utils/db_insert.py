@@ -24,20 +24,9 @@ class ContributionManager:
         """Retourne une connexion à la base de données"""
         return sqlite3.connect(self.db_path)
     
-    # ========================================================================
-    # INSERTION DES OFFRES
-    # ========================================================================
-    
+
     def insert_offers(self, offers: List[Dict[str, Any]]) -> Tuple[int, int, str]:
-        """
-        Insère des offres dans la base de données.
-        
-        Args:
-            offers: Liste de dictionnaires avec les données des offres
-        
-        Returns:
-            (nombre d'offres insérées, nombre de doublons, message)
-        """
+       
         conn = self.get_connection()
         cursor = conn.cursor()
         
@@ -121,14 +110,12 @@ class ContributionManager:
             
         except Exception as e:
             conn.rollback()
-            return 0, 0, f"❌ Erreur lors de l'insertion: {str(e)}"
+            return 0, 0, f"Erreur lors de l'insertion: {str(e)}"
         
         finally:
             conn.close()
     
-    # ========================================================================
-    # VÉRIFICATION DES DOUBLONS
-    # ========================================================================
+ 
     
     def check_duplicate_by_uid(self, uid: str) -> bool:
         """Vérifie si un UID existe déjà dans fact_offers"""
@@ -147,9 +134,7 @@ class ContributionManager:
         key = f"{offer.get('title', '')}|{offer.get('company_name', '')}|{offer.get('location', '')}"
         return hashlib.md5(key.lower().encode()).hexdigest()
     
-    # ========================================================================
-    # GESTION DES DIMENSIONS (PRIVATE)
-    # ========================================================================
+  
     
     def _get_or_create_source(self, cursor, source_name: str) -> int:
         """Récupère ou crée une source dans dim_source"""
@@ -261,9 +246,7 @@ class ContributionManager:
         return skills_added
 
 
-# ============================================================================
-# FONCTIONS PUBLIQUES POUR LA PAGE CONTRIBUER
-# ============================================================================
+
 
 def get_contribution_manager() -> ContributionManager:
     """Retourne une instance du ContributionManager"""

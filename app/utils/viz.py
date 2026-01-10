@@ -12,26 +12,13 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from config import COLOR_PALETTE, PROFILE_COLORS, PROFILE_NAMES
 
 
-# ============================================================================
-# GRAPHIQUES COMPARATIFS
-# ============================================================================
+
 
 def plot_top_skills_comparison(df: pd.DataFrame, 
                                group_by: str,
                                groups: List[str],
                                n_skills: int = 10) -> go.Figure:
-    """
-    Compare les top compétences entre groupes (régions, profils, etc.).
-    
-    Args:
-        df: DataFrame avec colonnes 'skill_name', group_by
-        group_by: Colonne de regroupement ('region_name', 'profile', etc.)
-        groups: Liste des groupes à comparer
-        n_skills: Nombre de compétences par groupe
-    
-    Returns:
-        Figure Plotly
-    """
+  
     fig = make_subplots(
         rows=1, 
         cols=len(groups),
@@ -72,16 +59,7 @@ def plot_top_skills_comparison(df: pd.DataFrame,
 
 
 def plot_regional_heatmap(df: pd.DataFrame, metric: str = 'count') -> go.Figure:
-    """
-    Heatmap des offres par région.
-    
-    Args:
-        df: DataFrame avec colonnes 'region_name' et metric
-        metric: Métrique à afficher ('count', 'avg_salary', etc.)
-    
-    Returns:
-        Figure Plotly
-    """
+   
     # Grouper par région
     if metric == 'count':
         region_data = df['region_name'].value_counts().reset_index()
@@ -112,16 +90,7 @@ def plot_regional_heatmap(df: pd.DataFrame, metric: str = 'count') -> go.Figure:
 
 def plot_profile_distribution(df: pd.DataFrame, 
                               profile_column: str = 'dominant_profile') -> go.Figure:
-    """
-    Distribution des profils NLP.
-    
-    Args:
-        df: DataFrame avec colonne profile_column
-        profile_column: Nom de la colonne des profils
-    
-    Returns:
-        Figure Plotly (pie chart)
-    """
+
     profile_counts = df[profile_column].value_counts()
     
     # Mapper les IDs aux noms
@@ -149,17 +118,7 @@ def plot_profile_distribution(df: pd.DataFrame,
 def plot_cluster_scatter(coords_2d: np.ndarray, 
                          labels: np.ndarray,
                          hover_data: pd.DataFrame = None) -> go.Figure:
-    """
-    Scatter plot 2D des clusters.
-    
-    Args:
-        coords_2d: Coordonnées 2D (n_samples, 2)
-        labels: Labels des clusters (n_samples,)
-        hover_data: DataFrame avec infos supplémentaires pour hover
-    
-    Returns:
-        Figure Plotly interactive
-    """
+   
     df_plot = pd.DataFrame({
         'x': coords_2d[:, 0],
         'y': coords_2d[:, 1],
@@ -204,17 +163,7 @@ def plot_cluster_scatter(coords_2d: np.ndarray,
 def plot_skill_frequency(skill_counts: pd.Series, 
                         top_n: int = 20,
                         title: str = "Top Compétences") -> go.Figure:
-    """
-    Graphique en barres horizontales des compétences.
     
-    Args:
-        skill_counts: Series avec skill_name en index et counts en valeurs
-        top_n: Nombre de compétences à afficher
-        title: Titre du graphique
-    
-    Returns:
-        Figure Plotly
-    """
     top_skills = skill_counts.head(top_n)
     
     fig = go.Figure(go.Bar(
@@ -240,17 +189,7 @@ def plot_skill_frequency(skill_counts: pd.Series,
 def plot_regional_comparison_radar(df: pd.DataFrame, 
                                    regions: List[str],
                                    skills: List[str]) -> go.Figure:
-    """
-    Radar chart comparant les compétences entre régions.
     
-    Args:
-        df: DataFrame avec 'region_name', 'skill_name'
-        regions: Liste des régions à comparer
-        skills: Liste des compétences à comparer
-    
-    Returns:
-        Figure Plotly (radar chart)
-    """
     fig = go.Figure()
     
     for region in regions:
@@ -286,15 +225,7 @@ def plot_regional_comparison_radar(df: pd.DataFrame,
 
 
 def plot_contract_distribution(df: pd.DataFrame) -> go.Figure:
-    """
-    Distribution des types de contrat.
-    
-    Args:
-        df: DataFrame avec colonne 'contract_type'
-    
-    Returns:
-        Figure Plotly
-    """
+   
     contract_counts = df['contract_type'].value_counts()
     
     fig = go.Figure(data=[go.Pie(
@@ -314,17 +245,7 @@ def plot_contract_distribution(df: pd.DataFrame) -> go.Figure:
 def plot_time_series(df: pd.DataFrame, 
                      date_column: str = 'published_date',
                      freq: str = 'M') -> go.Figure:
-    """
-    Évolution temporelle des offres.
     
-    Args:
-        df: DataFrame avec colonne date
-        date_column: Nom de la colonne date
-        freq: Fréquence d'agrégation ('D', 'W', 'M')
-    
-    Returns:
-        Figure Plotly
-    """
     df_copy = df.copy()
     df_copy[date_column] = pd.to_datetime(df_copy[date_column])
     
@@ -352,18 +273,8 @@ def plot_time_series(df: pd.DataFrame,
 
 def plot_salary_distribution(df: pd.DataFrame, 
                              salary_column: str = 'salary') -> go.Figure:
-    """
-    Distribution des salaires (si disponible).
     
-    Args:
-        df: DataFrame avec colonne salary
-        salary_column: Nom de la colonne salary
     
-    Returns:
-        Figure Plotly
-    """
-    # Nettoyer et extraire les salaires numériques
-    # (simplifié, à adapter selon format réel)
     
     fig = go.Figure(data=[go.Histogram(
         x=df[salary_column].dropna(),
@@ -381,9 +292,6 @@ def plot_salary_distribution(df: pd.DataFrame,
     return fig
 
 
-# ============================================================================
-# MÉTRIQUES STREAMLIT
-# ============================================================================
 
 def display_metrics_row(stats: Dict[str, Any]):
     """
@@ -404,7 +312,7 @@ def display_metrics_row(stats: Dict[str, Any]):
     
     with col2:
         st.metric(
-            "🎯 Compétences",
+            "🎯Compétences",
             f"{stats.get('total_skills', 0):,}"
         )
     

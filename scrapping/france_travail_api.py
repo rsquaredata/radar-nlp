@@ -129,9 +129,7 @@ class FranceTravailClient:
         self._token = tok
         return self._token
 
-    # -------------------------
-    # GET avec fallback hosts + refresh token si 401/403
-    # -------------------------
+   
     def _get_with_fallback(
         self,
         path: str,
@@ -169,9 +167,6 @@ class FranceTravailClient:
 
         raise RuntimeError(f"Impossible de joindre l'API France Travail. DerniÃ¨re erreur: {last_error}")
 
-    # -------------
-    # Search (1 page via Range)
-    # -------------
     def search(self, params: Optional[Dict[str, Any]] = None, range_header: str = "0-149") -> Dict[str, Any]:
         r = self._get_with_fallback(SEARCH_PATH, params=params, range_header=range_header)
 
@@ -187,9 +182,7 @@ class FranceTravailClient:
         out["_content_range"] = r.headers.get("Content-Range")
         return out
 
-    # -------------
-    # Detail (1 offre)
-    # -------------
+   
     def detail(self, offer_id: str) -> Dict[str, Any]:
         r = self._get_with_fallback(DETAIL_PATH + offer_id)
 
@@ -197,9 +190,7 @@ class FranceTravailClient:
             raise RuntimeError(f"Detail error {r.status_code}: {r.text[:400]}")
         return r.json()
 
-    # ============================================================
-    # BULK: rÃ©cupÃ©rer plusieurs pages via Range (0-149, 150-299...)
-    # ============================================================
+   
     def search_all(
         self,
         params: Optional[Dict[str, Any]] = None,
@@ -225,9 +216,7 @@ class FranceTravailClient:
 
         return all_results
 
-    # ==========================================
-    # Normalisation offre (format plat)
-    # ==========================================
+
     @staticmethod
     def normalize_offer(raw: Dict[str, Any], query: Optional[str] = None) -> Dict[str, Any]:
         title = raw.get("intitule")
@@ -257,9 +246,7 @@ class FranceTravailClient:
             "description": desc,
         }
 
-    # ============================================================
-    # COLLECT Data & IA : multi-queries + detail + dÃ©dup + filtre
-    # ============================================================
+  
     def collect_data_ai_offers(
         self,
         queries: List[str] = DATA_AI_QUERIES,

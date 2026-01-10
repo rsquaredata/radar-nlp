@@ -12,9 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from config import TOPIC_MODEL_PATH, CLUSTERING_MODEL_PATH, PROFILE_NAMES
 
 
-# ============================================================================
-# CHARGEMENT DES MODÈLES
-# ============================================================================
+
 
 def load_topic_model():
     """Charge le modèle de topic modeling"""
@@ -38,9 +36,7 @@ def load_clustering_model():
     return model_data
 
 
-# ============================================================================
-# TOPIC MODELING
-# ============================================================================
+
 
 def get_topic_distribution(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -91,17 +87,7 @@ def get_topic_keywords(topic_model, topic_id: int, n_words: int = 10) -> List[st
 def get_representative_offers(df: pd.DataFrame, 
                               topic_id: int,
                               n: int = 5) -> pd.DataFrame:
-    """
-    Retourne les offres les plus représentatives d'un topic.
-    
-    Args:
-        df: DataFrame avec 'dominant_profile' et 'profile_probability'
-        topic_id: ID du topic
-        n: Nombre d'offres
-    
-    Returns:
-        DataFrame avec les n meilleures offres
-    """
+ 
     topic_col = 'dominant_profile' if 'dominant_profile' in df.columns else 'dominant_topic'
     prob_col = 'profile_probability' if 'profile_probability' in df.columns else 'topic_probability'
     
@@ -115,20 +101,11 @@ def get_representative_offers(df: pd.DataFrame,
     return topic_df.nlargest(n, prob_col)
 
 
-# ============================================================================
-# CLUSTERING
-# ============================================================================
+
 
 def get_cluster_centers_2d(clustering_model) -> np.ndarray:
-    """
-    Retourne les centres des clusters en 2D.
+   
     
-    Args:
-        clustering_model: Modèle chargé
-    
-    Returns:
-        Array (n_clusters, 2)
-    """
     if not clustering_model or 'cluster_centers' not in clustering_model:
         return np.array([])
     
@@ -136,15 +113,7 @@ def get_cluster_centers_2d(clustering_model) -> np.ndarray:
 
 
 def get_cluster_coordinates(df: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray]:
-    """
-    Extrait les coordonnées 2D et labels des clusters.
-    
-    Args:
-        df: DataFrame avec 'coord_x', 'coord_y', 'cluster_id'
-    
-    Returns:
-        Tuple (coords_2d, labels)
-    """
+ 
     if 'coord_x' not in df.columns or 'coord_y' not in df.columns:
         return np.array([]), np.array([])
     
@@ -154,26 +123,13 @@ def get_cluster_coordinates(df: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray]:
     return coords, labels
 
 
-# ============================================================================
-# WORD CLOUDS
-# ============================================================================
+
 
 def generate_wordcloud_image(text: str, 
                              width: int = 800,
                              height: int = 400,
                              colormap: str = 'viridis') -> bytes:
-    """
-    Génère un word cloud et retourne l'image en bytes.
     
-    Args:
-        text: Texte source
-        width: Largeur
-        height: Hauteur
-        colormap: Palette de couleurs
-    
-    Returns:
-        Image en bytes (PNG)
-    """
     if not text or len(text.strip()) == 0:
         return None
     
@@ -204,16 +160,7 @@ def generate_wordcloud_image(text: str,
 
 
 def generate_wordcloud_from_skills(skills: List[str], **kwargs) -> bytes:
-    """
-    Génère un word cloud depuis une liste de compétences.
-    
-    Args:
-        skills: Liste de compétences
-        **kwargs: Arguments pour generate_wordcloud_image
-    
-    Returns:
-        Image en bytes
-    """
+ 
     if not skills:
         return None
     
@@ -233,17 +180,7 @@ def generate_wordcloud_from_skills(skills: List[str], **kwargs) -> bytes:
 def generate_regional_wordcloud(df: pd.DataFrame, 
                                 region: str,
                                 skill_column: str = 'all_skills') -> bytes:
-    """
-    Génère un word cloud pour une région spécifique.
     
-    Args:
-        df: DataFrame avec 'region_name' et skill_column
-        region: Nom de la région
-        skill_column: Colonne contenant les compétences
-    
-    Returns:
-        Image en bytes
-    """
     # Filtrer région
     region_df = df[df['region_name'] == region]
     
@@ -343,26 +280,13 @@ def compare_regional_tfidf(df: pd.DataFrame,
     }
 
 
-# ============================================================================
-# ANALYSE DE COMPÉTENCES
-# ============================================================================
+
 
 def extract_top_skills_by_group(df: pd.DataFrame,
                                 group_column: str,
                                 skill_column: str = 'all_skills',
                                 n_skills: int = 10) -> Dict[str, List[Tuple[str, int]]]:
-    """
-    Extrait les top compétences par groupe.
     
-    Args:
-        df: DataFrame
-        group_column: Colonne de regroupement
-        skill_column: Colonne des compétences
-        n_skills: Nombre de compétences
-    
-    Returns:
-        Dict {group: [(skill, count), ...]}
-    """
     from collections import Counter
     
     results = {}
@@ -383,16 +307,7 @@ def extract_top_skills_by_group(df: pd.DataFrame,
 
 def calculate_skill_correlation(df: pd.DataFrame,
                                 skill_column: str = 'all_skills') -> pd.DataFrame:
-    """
-    Calcule la corrélation entre compétences.
-    
-    Args:
-        df: DataFrame avec skill_column
-        skill_column: Colonne des compétences
-    
-    Returns:
-        DataFrame de corrélation (matrice)
-    """
+  
     from sklearn.feature_extraction.text import CountVectorizer
     
     documents = df[skill_column].dropna().tolist()

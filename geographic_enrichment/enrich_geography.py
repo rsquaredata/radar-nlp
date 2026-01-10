@@ -63,10 +63,10 @@ class GeographicEnricher:
     
     def enrich_dataframe(self, df: pd.DataFrame, location_column: str = 'location') -> pd.DataFrame:
         """Enrichit un DataFrame"""
-        print(f"🗺️  Enrichissement géographique sur {len(df):,} offres...")
+        print(f"Enrichissement géographique sur {len(df):,} offres...")
         
         if location_column not in df.columns:
-            print(f"⚠️  Colonne '{location_column}' introuvable")
+            print(f"Colonne '{location_column}' introuvable")
             return df
         
         results = df[location_column].apply(self.extract_region)
@@ -79,11 +79,11 @@ class GeographicEnricher:
         with_region = df['region'].notna().sum()
         coverage = (with_region / total) * 100 if total > 0 else 0
         
-        print(f"   ✅ Régions identifiées : {with_region:,}/{total:,} ({coverage:.1f}%)")
+        print(f"Régions identifiées : {with_region:,}/{total:,} ({coverage:.1f}%)")
         
         if with_region > 0:
             print()
-            print("📊 Répartition par région :")
+            print("Répartition par région :")
             top_regions = df['region'].value_counts().head(10)
             for region, count in top_regions.items():
                 pct = (count / total) * 100
@@ -92,7 +92,7 @@ class GeographicEnricher:
         missing = df[df['region'].isna()]
         if len(missing) > 0:
             print()
-            print(f"⚠️  {len(missing):,} offres sans région identifiée")
+            print(f"{len(missing):,} offres sans région identifiée")
             print("   Exemples :")
             for loc in missing[location_column].dropna().head(5):
                 print(f"   - {loc}")
@@ -113,17 +113,17 @@ def main():
         args.output = str(input_path.parent / f"{input_path.stem}_final.csv")
     
     print("=" * 80)
-    print("🗺️  ENRICHISSEMENT GÉOGRAPHIQUE")
+    print("ENRICHISSEMENT GÉOGRAPHIQUE")
     print("=" * 80)
     print()
-    print(f"📂 Fichier d'entrée  : {args.input}")
-    print(f"💾 Fichier de sortie : {args.output}")
+    print(f"Fichier d'entrée  : {args.input}")
+    print(f"Fichier de sortie : {args.output}")
     print()
     
     # Charger
-    print("📂 Chargement...")
+    print("Chargement...")
     df = pd.read_csv(args.input)
-    print(f"   ✅ {len(df):,} lignes chargées")
+    print(f"{len(df):,} lignes chargées")
     print()
     
     # Enrichir
@@ -132,13 +132,13 @@ def main():
     
     # Sauvegarder
     print()
-    print(f"💾 Sauvegarde dans : {args.output}")
+    print(f"Sauvegarde dans : {args.output}")
     df_enriched.to_csv(args.output, index=False, encoding='utf-8')
-    print(f"   ✅ Sauvegardé : {len(df_enriched):,} lignes")
+    print(f"Sauvegardé : {len(df_enriched):,} lignes")
     
     # Aperçu
     print()
-    print("👀 APERÇU (première offre avec région) :")
+    print("APERÇU (première offre avec région) :")
     print("-" * 80)
     with_region = df_enriched[df_enriched['region'].notna()]
     if len(with_region) > 0:
@@ -150,7 +150,7 @@ def main():
     
     print()
     print("=" * 80)
-    print("✅ ENRICHISSEMENT TERMINÉ")
+    print("ENRICHISSEMENT TERMINÉ")
     print("=" * 80)
 
 

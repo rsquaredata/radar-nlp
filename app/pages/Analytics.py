@@ -13,23 +13,13 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from utils.components import inject_premium_css, premium_navbar
 from utils.db import load_offers_with_skills
 
-# ============================================================================
-# CONFIG
-# ============================================================================
 
-st.set_page_config(
-    page_title="Analytics Terminal | DataJobs",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
+
 
 inject_premium_css()
 premium_navbar(active_page="Analytics")
 
-# ============================================================================
-# CSS BLOOMBERG TERMINAL STYLE
-# ============================================================================
+
 
 st.markdown("""
 <style>
@@ -187,9 +177,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ============================================================================
-# HEADER
-# ============================================================================
+
 
 st.markdown("""
 <div class="terminal-header">
@@ -224,9 +212,9 @@ updateClock();
 </script>
 """, unsafe_allow_html=True)
 
-# ============================================================================
+
 # CHARGER DONNÉES
-# ============================================================================
+
 
 @st.cache_data(ttl=300)
 def load_analytics_data():
@@ -254,9 +242,9 @@ if df.empty:
     st.error("⚠️ ERREUR: Aucune donnée")
     st.stop()
 
-# ============================================================================
+
 # FILTRES DANS LA PAGE PRINCIPALE
-# ============================================================================
+
 
 st.markdown('<div class="section-header"><h2 class="section-title">🎛️ PANNEAU DE CONTRÔLE</h2></div>', unsafe_allow_html=True)
 

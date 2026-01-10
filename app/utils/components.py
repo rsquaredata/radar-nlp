@@ -2,9 +2,6 @@ import streamlit as st
 from typing import Optional, List, Dict, Any
 
 
-# ============================================================================
-# CSS GLOBAL ULTRA-PREMIUM
-# ============================================================================
 
 def inject_premium_css():
     """Injecte le CSS global moderne et professionnel"""
@@ -307,7 +304,7 @@ def inject_premium_css():
 # ============================================================================
 
 def premium_navbar(active_page: str = "Home"):
-    """Navbar moderne et robuste avec navigation """
+    
     
     # Container principal
     st.markdown("""
@@ -351,7 +348,7 @@ def premium_navbar(active_page: str = "Home"):
                             -webkit-text-fill-color: transparent;
                         '>RadarJobs Analytics</div>
                         <div style='font-size: 0.85rem; color: #94a3b8; font-weight: 500; margin-top: 0.15rem;'>
-                            France Travail • HelloWork • Adzuna
+                            France Travail • HelloWork 
                         </div>
                     </div>
                 </div>
@@ -390,7 +387,6 @@ def premium_navbar(active_page: str = "Home"):
     
     for col, (label, icon, page_path) in zip(cols, pages):
         with col:
-            # Si c'est la page active, afficher en surbrillance (sans lien)
             if active_page == label:
                 st.markdown(f"""
                 <div style='
@@ -408,7 +404,6 @@ def premium_navbar(active_page: str = "Home"):
                 </div>
                 """, unsafe_allow_html=True)
             else:
-                # Lien cliquable pour les autres pages
                 st.page_link(
                     page_path,
                     label=f"{icon} {label}",

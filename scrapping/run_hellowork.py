@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-# Ajouter le dossier scrapers au path
+# Ajout du dossier scrapers au path
 sys.path.insert(0, str(Path(__file__).parent / "scrapers"))
 
 from hellowork_html_improved import scrape_hellowork
@@ -32,16 +32,16 @@ DATA_IA_KEYWORDS = [
 
 def main():
     print("=" * 80)
-    print("🚀 SCRAPING HELLOWORK - VERSION AMÉLIORÉE")
+    print("SCRAPING HELLOWORK ")
     print("=" * 80)
     print()
-    print("📋 Configuration :")
-    print(f"   • Mots-clés : {len(DATA_IA_KEYWORDS)}")
-    print(f"   • Zone : France entière")
-    print(f"   • Type : Emploi (CDI/CDD)")
-    print(f"   • Objectif : ~500-1000 offres")
+    print("Configuration :")
+    print(f"• Mots-clés : {len(DATA_IA_KEYWORDS)}")
+    print(f"• Zone : France entière")
+    print(f"• Type : Emploi (CDI/CDD)")
+    print(f"• Objectif : ~500-1000 offres")
     print()
-    print("⏳ Lancement du scraping... (cela peut prendre 10-20 minutes)")
+    print("Lancement du scraping... )")
     print()
     
     result = scrape_hellowork(
@@ -49,28 +49,28 @@ def main():
         city=None,  # France entière
         postal=None,
         mode="emploi",
-        max_pages=30,  # 30 pages par mot-clé
-        max_urls=1500,  # Maximum 1500 URLs au total
-        sleep_s=0.5,  # 0.5s entre chaque requête (respectueux)
+        max_pages=30,  
+        max_urls=1500,  
+        sleep_s=0.5,  
         out_dir="./data",
     )
     
     print()
     print("=" * 80)
-    print("✅ SCRAPING TERMINÉ")
+    print("SCRAPING TERMINÉ")
     print("=" * 80)
     print()
-    print(f"📊 Résultats :")
-    print(f"   • Offres collectées : {result['count']}")
-    print(f"   • Fichier JSONL : {result['jsonl']}")
-    print(f"   • Fichier CSV : {result['csv']}")
+    print(f"Résultats :")
+    print(f"• Offres collectées : {result['count']}")
+    print(f"• Fichier JSONL : {result['jsonl']}")
+    print(f"• Fichier CSV : {result['csv']}")
     print()
-    print("💡 Les descriptions sont maintenant PROPRES (sans HTML/navigation)")
+    print("Les descriptions sont maintenant PROPRES (sans HTML/navigation)")
     print()
     
-    # Afficher un aperçu
+    # Affichons un aperçu
     if result['count'] > 0:
-        print("📄 Aperçu de la première offre :")
+        print("Aperçu de la première offre :")
         print("-" * 80)
         
         import pandas as pd

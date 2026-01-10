@@ -315,9 +315,7 @@ class DatabaseManager:
         return result.iloc[0]['count'] > 0
 
 
-# ============================================================================
-# CACHE STREAMLIT
-# ============================================================================
+
 
 @st.cache_resource
 def get_db_manager():
