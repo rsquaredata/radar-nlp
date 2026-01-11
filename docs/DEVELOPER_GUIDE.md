@@ -12,30 +12,30 @@
 
 </div>
 
-##  Table des matières
+## Table des matières
 
-1. [Architecture](#-architecture)
-2. [Installation Dev](#-installation-développeur)
-3. [Structure du Code](#-structure-du-code)
-4. [Base de Données](#-base-de-données)
-5. [Pipeline ETL](#-pipeline-etl)
-6. [APIs & Intégrations](#-apis--intégrations)
-7. [NLP & Machine Learning](#-nlp--machine-learning)
-8. [Frontend Streamlit](#-frontend-streamlit)
-9. [Tests](#-tests)
-10. [CI/CD](#-cicd)
-11. [Contribution](#-contribution)
-12. [Bonnes Pratiques](#-bonnes-pratiques)
+1. [Architecture](#architecture)
+2. [Installation Dev](#installation-développeur)
+3. [Structure du Code](#structure-du-code)
+4. [Base de Données](#base-de-données)
+5. [Pipeline ETL](#pipeline-etl)
+6. [APIs & Intégrations](#apis--intégrations)
+7. [NLP & Machine Learning](#nlp--machine-learning)
+8. [Frontend Streamlit](#frontend-streamlit)
+9. [Tests](#tests)
+10. [CI/CD](#cicd)
+11. [Contribution](#contribution)
+12. [Bonnes Pratiques](#bonnes-pratiques)
 
 ---
 
-## 🏛️ Architecture
+## Architecture
 
 ### Vue d'ensemble
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                      ARCHITECTURE GLOBALE                    │
+│                      ARCHITECTURE GLOBALE                   │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
@@ -79,7 +79,7 @@
 
 ---
 
-##  Installation Développeur
+## Installation Développeur
 
 ### Prérequis
 
@@ -137,7 +137,7 @@ jupyter>=1.0.0
 
 ---
 
-## 📁 Structure du Code
+## Structure du Code
 
 ### Arborescence Détaillée
 
@@ -223,7 +223,7 @@ MAX_RESULTS = 1000
 
 ---
 
-## 🗄️ Base de Données
+## Base de Données
 
 ### Schéma Relationnel
 
@@ -439,7 +439,7 @@ class DatabaseManager:
 
 ---
 
-## 🔄 Pipeline ETL
+## Pipeline ETL
 
 ### Architecture ETL
 
@@ -555,7 +555,7 @@ def insert_offer(self, row: dict):
 
 ---
 
-## 🔌 APIs & Intégrations
+## APIs & Intégrations
 
 ### France Travail API
 

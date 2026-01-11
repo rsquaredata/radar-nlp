@@ -14,18 +14,18 @@
 
 ## 📋 Table des matières
 
-1. [Vue d'ensemble](#-vue-densemble)
-2. [Sources de données](#-sources-de-données)
-3. [Modèle de données](#-modèle-de-données)
-4. [Pipeline ETL](#-pipeline-etl)
-5. [Qualité des données](#-qualité-des-données)
-6. [Requêtes SQL](#-requêtes-sql)
-7. [Export & APIs](#-export--apis)
-8. [Maintenance](#-maintenance)
+1. [Vue d'ensemble](#vue-densemble)
+2. [Sources de données](#sources-de-données)
+3. [Modèle de données](#modèle-de-données)
+4. [Pipeline ETL](#pipeline-etl)
+5. [Qualité des données](#qualité-des-données)
+6. [Requêtes SQL](#requêtes-sql)
+7. [Export & APIs](#export--apis)
+8. [Maintenance](#maintenance)
 
 ---
 
-##  Vue d'ensemble
+## Vue d'ensemble
 
 ### Chiffres clés
 
@@ -42,25 +42,25 @@
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                  ARCHITECTURE DONNÉES                     │
+│                  ARCHITECTURE DONNÉES                   │
 └─────────────────────────────────────────────────────────┘
 
   Sources                ETL              Stockage
-┌─────────┐          ┌────────┐        ┌──────────┐
-│ France  │─────────▶│Extract │───────▶│          │
-│Travail  │          │        │        │ SQLite   │
+┌─────────┐          ┌─────────┐        ┌──────────┐
+│ France  │─────────▶│Extract  │───────▶│          │
+│Travail  │          │         │        │ SQLite   │
 │  API    │          │Transform│        │  Star    │
-└─────────┘          │        │        │ Schema   │
-                     │ Load   │        │          │
-┌─────────┐          │        │        │  2,520   │
-│HelloWork│─────────▶│NLP/Geo │───────▶│  Rows    │
-│Scraping │          │Enrich  │        │          │
-└─────────┘          └────────┘        └──────────┘
+└─────────┘          │         │        │ Schema   │
+                     │ Load    │        │          │
+┌─────────┐          │         │        │  2,520   │
+│HelloWork│─────────▶│NLP/Geo  │───────▶│  Rows    │
+│Scraping │          │Enrich   │        │          │
+└─────────┘          └─────────┘        └──────────┘
 ```
 
 ---
 
-## 🔌 Sources de données
+## Sources de données
 
 ### 1. France Travail API
 
@@ -377,7 +377,7 @@ CREATE INDEX idx_offers_remote ON fact_offers(remote);
 
 ---
 
-##  Pipeline ETL
+## Pipeline ETL
 
 ### Processus complet
 
@@ -501,7 +501,7 @@ class ETLPipeline:
 
 ---
 
-##  Qualité des données
+## Qualité des données
 
 ### Métriques de qualité
 
@@ -555,7 +555,7 @@ FROM fact_offers;
 
 ---
 
-## 🔍 Requêtes SQL
+## Requêtes SQL
 
 ### Requêtes utiles
 
@@ -616,7 +616,7 @@ ORDER BY remote_pct DESC;
 
 ---
 
-## 📤 Export & APIs
+## Export & APIs
 
 ### Export CSV
 
@@ -668,7 +668,7 @@ def get_stats():
 
 ---
 
-## 🔧 Maintenance
+## Maintenance
 
 ### Backup régulier
 
@@ -712,6 +712,6 @@ VACUUM;
 
 ** Données structurées = Analyses puissantes !**
 
-[⬆️ Retour en haut](#-guide-des-données---job-radar)
+[⬆️ Retour en haut](#guide-des-données---job-radar)
 
 </div>

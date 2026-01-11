@@ -14,15 +14,15 @@
 
 ##  Table des matières
 
-1. [Introduction](#-introduction)
-2. [Installation Docker](#-installation-docker)
-3. [Dockerfile](#-dockerfile)
-4. [Docker Compose](#-docker-compose)
-5. [Build & Run](#-build--run)
-6. [Volumes & Persistance](#-volumes--persistance)
-7. [Environnement Production](#-environnement-production)
-8. [Optimisations](#-optimisations)
-9. [Troubleshooting](#-troubleshooting)
+1. [Introduction](#introduction)
+2. [Installation Docker](#installation-docker)
+3. [Dockerfile](#dockerfile)
+4. [Docker Compose](#docker-compose)
+5. [Build & Run](#build--run)
+6. [Volumes & Persistance](#volumes--persistance)
+7. [Environnement Production](#environnement-production)
+8. [Optimisations](#optimisations)
+9. [Ressources](#ressources)
 
 ---
 
@@ -39,7 +39,7 @@
 
 ```
 ┌────────────────────────────────────────────┐
-│         DOCKER CONTAINER                    │
+│         DOCKER CONTAINER                   │
 │  ┌──────────────────────────────────────┐  │
 │  │  Streamlit App (Port 8501)           │  │
 │  │  - Python 3.11                       │  │
@@ -767,6 +767,6 @@ docker system prune -a               # Clean all
 
 **🐳 Docker rend le déploiement simple et reproductible !**
 
-[⬆️ Retour en haut](#-guide-docker---job-radar)
+[⬆️ Retour en haut](#guide-docker---job-radar)
 
 </div>

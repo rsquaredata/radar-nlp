@@ -299,7 +299,7 @@
 
 ##  La Documentation est Votre Meilleur Ami
 
-**Bonne lecture et bon développement ! **
+**Bonne lecture et bon développement !**
 
 ---
 
