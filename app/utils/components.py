@@ -374,7 +374,7 @@ def premium_navbar(active_page: str = "Home"):
     
     # Navigation avec liens ACTIFS
     pages = [
-        ("Home", "🏠", "Home.py"),
+        ("Home", "🏠", "home.py"),
         ("Explorer", "🔍", "pages/Explorer.py"),
         ("Analytics", "📊", "pages/Analytics.py"),
         ("Intelligence", "🧠", "pages/Intelligence.py"),
