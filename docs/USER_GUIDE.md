@@ -1,4 +1,4 @@
-#  Guide Utilisateur - Job Radar
+#  Guide Utilisateur - RADAR
 
 <div align="center">
 
@@ -871,6 +871,6 @@ Intégration dans vos propres outils
 
 *N'hésitez pas à partager ce guide avec vos collègues*
 
-[⬆️ Retour en haut](#guide-utilisateur---job-radar)
+[⬆️ Retour en haut](#guide-utilisateur---radar)
 
 </div>
