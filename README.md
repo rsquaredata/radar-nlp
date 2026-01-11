@@ -112,7 +112,7 @@ Université Lumière Lyon 2 | 2025-2026
 ```
  projet_nlp/
 │
-├──  app/                          # Application Streamlit
+├──  app/                            # Application Streamlit
 │   ├── home.py                      # Page d'accueil
 │   ├── pages/
 │   │   ├── Explorer.py              #  Exploration des 2500+ offres
@@ -128,35 +128,37 @@ Université Lumière Lyon 2 | 2025-2026
 │       ├── nlp_utils.py             # Outils NLP
 │       └── viz.py                   # Visualisations
 │
-├──  database/                     # Base de données
+├──  database/                       # Base de données
 │   ├── schema.sql                   # Schéma SQL (Star Schema)
 │   ├── etl_pipeline.py              # Pipeline ETL complet
 │   └── jobs.db                      # Base SQLite (2520 offres)
 │
-├──  scraping/                     # Collecte de données
+├──  scraping/                       # Collecte de données
     ├──  data/
-    /  ├──  unify_sources_v2.py      # fusionner les deux sources de données 
+    /  ├──  unify_sources_v2.py      # fusionner les sources de données FT & HW
 │   ├── processed/                   # Données traitées
 │   ├── france_travail_api.py        # API France Travail                         # Données
 │   ├── processed/                   # Données traitées
 │   ├── france_travail_api.py        # API France Travail
-│   └── hellowork_scraper.py         # Scraper HelloWork
+│   ├── hellowork_scraper.py         # Scraper HelloWork
+│   ├── mistral_test.py              # Scraper Emploi Territorial
+│   └── config_metiers.py
 │
-├──  geographic_enrichment/        # Enrichissement géo
+├──  geographic_enrichment/          # Enrichissement géo
 │   ├── enrich_geo.py                # Géolocalisation
 │   └── regions_france.json          # Référentiel régions
 │
-├──  data/                         # Données
+├──  data/                           # Données
 │   ├── processed/                   # Données traitées
 ├──  skills_extraction/              # Données
 │   ├── skills_extractor.py          # extraires les compétences 
 │   ├── apply_skills_extraction      # Données avec compétences et savoir-faire                      
 │
-├──  Dockerfile                    # Image Docker
-├──  requirements.txt              # Dépendances Python
-├── config.py                      # Configuration
-├──  .env.example                  # Variables d'environnement
-└──  README.md                     # Ce fichier
+├──  Dockerfile                      # Image Docker
+├──  requirements.txt                # Dépendances Python
+├── config.py                        # Configuration
+├──  .env.example                    # Variables d'environnement
+└──  README.md                       # Ce fichier
 ```
 
 ---
@@ -440,6 +442,13 @@ python geographic_enrichment/enrich_geo.py
 - **Volume** : ~1 000 offres
 - **Mise à jour** : Hebdomadaire
 - **Focus** : Métiers Data/IA
+
+### Emploi Territorial (Scraping
+
+- **Type** : Web scraping avec un agent IA
+- **Volume** : 90 offres
+- **Mise à jour** : Hebdomadaire
+- **Focus** : Métiers Data/IA du secteur public
 
 ###  Statistiques de collecte
 
