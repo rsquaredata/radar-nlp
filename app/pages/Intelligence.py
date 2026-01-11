@@ -362,13 +362,30 @@ GEOGRAPHIC_STOPWORDS = {
 }
 
 TECH_SKILLS = {
-    'python', 'java', 'javascript', 'typescript', 'sql', 'nosql', 'mongodb', 'postgresql',
-    'mysql', 'oracle', 'aws', 'azure', 'gcp', 'docker', 'kubernetes', 'git', 'jenkins',
-    'ci', 'cd', 'devops', 'agile', 'scrum', 'machine', 'learning', 'deep', 'tensorflow',
-    'pytorch', 'scikit', 'pandas', 'numpy', 'spark', 'hadoop', 'kafka', 'airflow',
-    'tableau', 'powerbi', 'excel', 'r', 'scala', 'react', 'angular', 'vue', 'nodejs',
-    'django', 'flask', 'fastapi', 'spring', 'rest', 'api', 'graphql', 'microservices',
-    'cloud', 'bigdata', 'analytics', 'nlp', 'data', 'scientist', 'engineer', 'analyst'
+    # Langages
+    'python', 'r', 'java', 'c', 'javascript', 'typescript', 'sql', 'scala', 'golang',
+    # Bases de données
+    'nosql', 'mongodb', 'postgresql', 'mysql', 'oracle', 'redis', 'elasticsearch',
+    # Cloud & DevOps
+    'aws', 'azure', 'gcp', 'docker', 'kubernetes', 'terraform', 'ansible',
+    'git', 'jenkins', 'gitlab', 'github', 'devops', 'cicd',
+    # Méthodologies
+    'agile', 'scrum', 'kanban',
+    # Machine Learning & AI
+    'machinelearning', 'deeplearning', 'tensorflow', 'pytorch', 'keras',
+    'scikit-learn', 'pandas', 'numpy', 'opencv', 'huggingface',
+    # Big Data
+    'spark', 'hadoop', 'kafka', 'airflow', 'databricks', 'snowflake',
+    'pyspark', 'hive', 'flink',
+    # BI & Analytics  
+    'tableau', 'powerbi', 'qlik', 'looker', 'metabase',
+    # Frameworks Web
+    'react', 'angular', 'vue', 'nodejs', 'django', 'flask', 'fastapi',
+    'spring', 'springboot', 'express',
+    # APIs & Architecture
+    'rest', 'restapi', 'graphql', 'microservices', 'api',
+    # Autres
+    'excel', 'linux', 'bash', 'selenium', 'junit', 'pytest'
 }
 
 # ============================================================================
@@ -654,7 +671,37 @@ all_text = ' '.join(filtered['text_clean'])
 skill_counts = {}
 
 for skill in TECH_SKILLS:
-    count = all_text.count(skill)
+    # Chercher le mot avec espaces autour (word boundary simple)
+    count = 0
+    skill_lower = skill.lower()
+    text_lower = ' ' + all_text.lower() + ' '
+    
+    # CAS SPÉCIAL pour R, C, Go (langages d'1-2 lettres)
+    if skill_lower in ['r', 'c', 'go']:
+        # Pour R : chercher " r " (espace + majuscule + espace)
+        # Évite "for", "or", "programmer"
+        import re
+        if skill_lower == 'r':
+            # Chercher R en MAJUSCULE uniquement
+            pattern = r'(?:^|\s)R(?:\s|$|,|\.)'
+            matches = re.findall(pattern, all_text)
+            count = len(matches)
+        elif skill_lower == 'c':
+            # Chercher C en contexte (pas dans "recherche", "sciences")
+            pattern = r'(?:^|\s)C(?:\s|$|,|\.|/|\+)'
+            matches = re.findall(pattern, all_text)
+            count = len(matches)
+        elif skill_lower == 'go':
+            # Go est OK avec la méthode normale
+            count = text_lower.count(' go ')
+            count += text_lower.count(' golang ')
+    else:
+        # Méthode normale pour les autres compétences
+        count += text_lower.count(' ' + skill_lower + ' ')
+        count += text_lower.count(' ' + skill_lower + '.')
+        count += text_lower.count(' ' + skill_lower + ',')
+        count += text_lower.count(' ' + skill_lower + ';')
+    
     if count > 0:
         skill_counts[skill] = count
 
@@ -690,7 +737,7 @@ with graph_col1:
         
         fig_bar.update_layout(
             template='plotly_dark',
-            height=600,
+            height=900,
             paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             font=dict(color='#00ff41', family='Orbitron'),
@@ -710,17 +757,18 @@ with graph_col2:
     
     if skill_counts:
         wordcloud = WordCloud(
-            width=800,
-            height=600,
+            width=1200,
+            height=800,
             background_color='#0a0e27',
             colormap='plasma',
-            relative_scaling=0.5,
+            relative_scaling=0.3,
             min_font_size=12,
-            max_font_size=100,
-            prefer_horizontal=0.7
+            max_font_size=80,
+            prefer_horizontal=0.7,
+            max_words=50
         ).generate_from_frequencies(skill_counts)
         
-        fig_wc, ax = plt.subplots(figsize=(10, 8))
+        fig_wc, ax = plt.subplots(figsize=(14, 10))
         ax.imshow(wordcloud, interpolation='bilinear')
         ax.axis('off')
         fig_wc.patch.set_facecolor('#0a0e27')
@@ -802,7 +850,37 @@ for idx, row in filtered.iterrows():
     contract = row.get('contract_type', 'Type Inconnu')
     text = str(row.get('text_clean', '')).lower()
     
-    doc_skills = [skill for skill in TECH_SKILLS if skill in text]
+    # 🔧 CORRECTION : Utiliser la même logique que skill_counts
+    doc_skills = []
+    text_with_spaces = ' ' + text + ' '
+    
+    for skill in TECH_SKILLS:
+        found = False
+        skill_lower = skill.lower()
+        
+        # CAS SPÉCIAL pour R, C (langages d'1 lettre)
+        if skill_lower in ['r', 'c']:
+            import re
+            if skill_lower == 'r':
+                # Chercher R MAJUSCULE uniquement dans le texte ORIGINAL
+                pattern = r'(?:^|\s)R(?:\s|$|,|\.)'
+                original_text = str(row.get('title', '')) + ' ' + str(row.get('description', ''))
+                if re.search(pattern, original_text):
+                    found = True
+            elif skill_lower == 'c':
+                pattern = r'(?:^|\s)C(?:\s|$|,|\.|/|\+)'
+                original_text = str(row.get('title', '')) + ' ' + str(row.get('description', ''))
+                if re.search(pattern, original_text):
+                    found = True
+        else:
+            # Méthode normale : chercher avec espaces
+            if (' ' + skill_lower + ' ' in text_with_spaces or
+                ' ' + skill_lower + '.' in text_with_spaces or
+                ' ' + skill_lower + ',' in text_with_spaces):
+                found = True
+        
+        if found:
+            doc_skills.append(skill)
     
     if doc_skills:
         for skill in doc_skills[:3]:
@@ -1041,7 +1119,7 @@ if use_mistral:
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ============================================================================
-# FOOTER SPECTACULAIRE
+# FOOTER 
 # ============================================================================
 
 st.markdown("---")
