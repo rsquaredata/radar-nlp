@@ -162,6 +162,7 @@ projet_nlp/
 │       ├── tfidf_analysis.py     # Analyse TF-IDF
 │       ├── viz.py                # Graphiques Plotly
 │       ├── filters.py            # Filtres de données
+│       ├── llm_enricher.py       # Agent IA Mistral pour Emploi Territorial
 │       └── config.py             # Configuration globale
 │
 ├── database/                     # Base de données
