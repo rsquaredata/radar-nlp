@@ -1,8 +1,8 @@
 <div align="center">
 
-#  Job Radar
+#  RADAR
 
-### *Analyse Territoriale des Offres d'Emploi par NLP & IA*
+### *Analyse Territoriale des Offres d'emploi par NLP & IA*
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-red.svg)](https://streamlit.io/)
@@ -10,10 +10,10 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![NLP](https://img.shields.io/badge/NLP-Text%20Mining-orange.svg)]()
 
-*Un projet de Master SISE – NLP & Text Mining*  
+*Un projet de Master 2 SISE – NLP & Text Mining*  
 *Université Lumière Lyon 2*
 
-[ Démo](#-démo) • [ Documentation](#-documentation) • [ Installation](#-installation-docker) • [ Fonctionnalités](#-fonctionnalités)
+[ Démo](#démo) • [ Documentation](#documentation) • [ Installation](#installation-docker) • [ Fonctionnalités](#fonctionnalités)
 
 ---
 
@@ -21,42 +21,42 @@
 
 ##  Table des matières
 
-- [ Vue d'ensemble](#-vue-densemble)
-- [ Points forts du projet](#-points-forts-du-projet)
-- [ Architecture](#️-architecture)
-- [ Fonctionnalités](#-fonctionnalités)
-- [ Technologies & NLP](#-technologies--nlp)
-- [ Installation Docker](#-installation-docker)
-- [ Installation Locale](#️-installation-locale)
-- [ Sources de données](#-sources-de-données)
-- [ Modélisation des données](#️-modélisation-des-données)
-- [ Intelligence Artificielle](#-intelligence-artificielle)
-- [ Captures d'écran](#-captures-décran)
-- [ Configuration](#-configuration)
-- [ Roadmap](#-roadmap)
-- [ Contribution](#-contribution)
-- [ Licence](#-licence)
+- [Vue d'ensemble](#vue-densemble)
+- [Points forts du projet](#points-forts-du-projet)
+- [Architecture](#architecture)
+- [Fonctionnalités](#fonctionnalités)
+- [Technologies & NLP](#technologies--nlp)
+- [Installation Docker](#installation-docker)
+- [Installation Locale](#installation-locale)
+- [Sources de données](#sources-de-données)
+- [Modélisation des données](#modélisation-des-données)
+- [Intelligence Artificielle](#intelligence-artificielle)
+- [Captures d'écran](#captures-décran)
+- [Configuration](#configuration)
+- [Roadmap](#roadmap)
+- [Contribution](#contribution)
+- [Licence](#licence)
 
 ---
 
 ##  Vue d'ensemble
 
-**Job Radar** est une plateforme d'analyse avancée des offres d'emploi en France, spécialisée dans les **métiers de la Data, IA et Analytics**. 
+**RADAR** (Recherche Analytique Des Annonces Régionales) est une plateforme d'analyse avancée des offres d'emploi en France, spécialisée dans les **métiers de la Data, IA et Analytics**. 
 
 Combinant **NLP**, **Text Mining** et **visualisation interactive**, ce projet offre une vision territoriale unique du marché de l'emploi français.
 
 ### 🎓 Contexte académique
 
 Projet réalisé dans le cadre du **Master SISE** – *NLP & Text Mining*  
-Université Lumière Lyon 2 | 2024-2025
+Université Lumière Lyon 2 | 2025-2026
 
 ###  Objectifs
 
--  **Analyser** plus de 2 500 offres d'emploi en temps réel
--  **Cartographier** la répartition géographique des compétences
--  **Identifier** les compétences les plus demandées par région
-- **Visualiser** les tendances du marché de l'emploi
--  **Assister** les utilisateurs via IA générative (Mistral)
+- **Analyser** plus de 2 500 offres d'emploi en temps réel
+- **Cartographier** la répartition géographique des compétences
+- **Identifier** les compétences les plus demandées par région
+- **Visualiser** les tendances du marché de l'emploi data
+- **Assister** les utilisateurs via IA générative (Mistral)
 
 ---
 
@@ -66,7 +66,7 @@ Université Lumière Lyon 2 | 2024-2025
 <tr>
 <td width="50%">
 
-###  Interface Moderne
+###  Interface moderne
 - Design NASA-FBI professionnel
 - Navigation fluide et intuitive
 - Animations et effets visuels
@@ -75,7 +75,7 @@ Université Lumière Lyon 2 | 2024-2025
 </td>
 <td width="50%">
 
-###  Pipeline ETL Robuste
+###  Pipeline ETL robuste
 - Collecte automatisée (API + Scraping)
 - Enrichissement géographique
 - Gestion des doublons
@@ -86,16 +86,16 @@ Université Lumière Lyon 2 | 2024-2025
 <tr>
 <td width="50%">
 
-###  NLP Avancé
+###  NLP avancé
 - Extraction de compétences
-- TF-IDF & Vectorisation
+- TF-IDF et vectorisation
 - Analyse de similarité
 - Clustering intelligent
 
 </td>
 <td width="50%">
 
-###  Déploiement Simplifié
+###  Déploiement simplifié
 - Dockerisé (1 commande)
 - Prêt pour la production
 - Persistance des données
@@ -148,13 +148,13 @@ Université Lumière Lyon 2 | 2024-2025
 │
 ├──  data/                         # Données
 │   ├── processed/                   # Données traitées
-├──  skills_extraction/                         # Données
-│   ├── skills_extractor.py          # extraires les competences 
-│   ├── apply_skills_extraction      # Données avec competence et savoir faire                      
+├──  skills_extraction/              # Données
+│   ├── skills_extractor.py          # extraires les compétences 
+│   ├── apply_skills_extraction      # Données avec compétences et savoir-faire                      
 │
 ├──  Dockerfile                    # Image Docker
 ├──  requirements.txt              # Dépendances Python
-├── config.py                     # Configuration
+├── config.py                      # Configuration
 ├──  .env.example                  # Variables d'environnement
 └──  README.md                     # Ce fichier
 ```
@@ -184,7 +184,7 @@ Université Lumière Lyon 2 | 2024-2025
 <td width="40%">
 
 ```
- 2,520 offres analysées
+ 2,500+ offres analysées
  890+ entreprises
  53 régions françaises
  500+ compétences uniques
@@ -458,23 +458,23 @@ python geographic_enrichment/enrich_geo.py
 ### Architecture en étoile (Star Schema)
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    fact_offers                          │
+┌────────────────────────────────────────────────────────┐
+│                    fact_offers                         │
 │  ┌──────────────────────────────────────────────────┐  │
 │  │ • offer_key (PK)                                 │  │
 │  │ • uid (UNIQUE)                                   │  │
 │  │ • title, description, salary                     │  │
-│  │ • source_url ← URL de l'offre                   │  │
+│  │ • source_url ← URL de l'offre                    │  │
 │  │ • source_key (FK) → dim_source                   │  │
 │  │ • region_key (FK) → dim_region                   │  │
 │  │ • company_key (FK) → dim_company                 │  │
 │  │ • contract_key (FK) → dim_contract               │  │
 │  └──────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────┘
+└────────────────────────────────────────────────────────┘
            ↓                ↓                ↓
-    ┌──────────┐    ┌──────────┐    ┌──────────┐
-    │dim_region│    │dim_company│   │dim_contract│
-    └──────────┘    └──────────┘    └──────────┘
+    ┌──────────┐    ┌────────────┐    ┌────────────┐
+    │dim_region│    │dim_company │    │dim_contract│
+    └──────────┘    └────────────┘    └────────────┘
            ↓
     ┌──────────────────┐
     │ fact_offer_skill │  ← Table associative
@@ -482,11 +482,11 @@ python geographic_enrichment/enrich_geo.py
     │  • skill_key     │
     └──────────────────┘
            ↓
-    ┌──────────┐
-    │dim_skill │
+    ┌────────────┐
+    │dim_skill   │
     │• skill_name│
     │• skill_type│
-    └──────────┘
+    └────────────┘
 ```
 
 ### Vues matérialisées
@@ -587,20 +587,20 @@ assistant : "D'après l'analyse du marché, je vous recommande..."
 
 ### Version 1.1  (En cours)
 
-- [ ] Amélioration du scraping (plus de sources)
-- [ ] Analyse prédictive des tendances
-- [ ] Système de notifications
-- [ ] API REST pour les développeurs
-- [ ] Export PDF des analyses
+- [] Amélioration du scraping (plus de sources)
+- [] Analyse prédictive des tendances
+- [] Système de notifications
+- [] API REST pour les développeurs
+- [] Export PDF des analyses
 
 ### Version 2.0  (Futur)
 
-- [ ] Machine Learning (prédiction de salaires)
-- [ ] Recommandation personnalisée avancée
-- [ ] Authentification utilisateur
-- [ ] Dashboard personnalisé
-- [ ] Version mobile (React Native)
-- [ ] Intégration LinkedIn API
+- [] Machine Learning (prédiction de salaires)
+- [] Recommandation personnalisée avancée
+- [] Authentification utilisateur
+- [] Dashboard personnalisé
+- [] Version mobile (React Native)
+- [] Intégration LinkedIn API
 
 ---
 
@@ -638,10 +638,10 @@ Ouvrir une **issue** sur GitHub avec :
 
 **Développé par :**
 
-[Bah Mohamed Habib]()  
-[Thibaud Lecomte]()
-[Aya Mecheri]()
-[Rina Razafimahefa]()
+[Bah Mohamed Habib](https://github.com/Bahmohamedhabib)  
+[Thibaud Lecomte](https://github.com/Dyoxxx)
+[Aya Mecheri](https://github.com/AyaAya-ui)
+[Rina Razafimahefa](https://github.com/rsquaredata/)
 
 </div>
 
@@ -702,6 +702,6 @@ Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 **Made with ❤️ for the Data & AI community**
 
-*[Retour en haut ⬆️](#-job-radar)*
+*[Retour en haut ⬆️](#radar)*
 
 </div>
