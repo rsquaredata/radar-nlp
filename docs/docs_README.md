@@ -1,4 +1,4 @@
-#  Documentation Job Radar
+#  Documentation RADAR
 
 <div align="center">
 
@@ -265,7 +265,7 @@
 -  Utilisez la recherche GitHub (Ctrl+K)
 
 **Questions :**
--  [Discord Job Radar](https://discord.com/channels/@me/1443265825959317670)
+-  [Discord RADAR](https://discord.com/channels/@me/1443265825959317670)
 
 
 **Feedback :**
@@ -305,6 +305,6 @@
 
 *Dernière mise à jour : Janvier 2025*
 
-[⬆️ Retour en haut](#-documentation-job-radar)
+[⬆️ Retour en haut](#-documentation-radar)
 
 </div>
