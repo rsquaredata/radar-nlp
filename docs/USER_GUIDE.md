@@ -12,28 +12,28 @@
 
 </div>
 
-##  Table des matières
+## Table des matières
 
-1. [Introduction](#-introduction)
-2. [Démarrage rapide](#-démarrage-rapide)
-3. [Navigation](#-navigation)
-4. [Page Explorer](#-page-explorer)
-5. [Page Géographie](#-page-géographie)
-6. [Page Analytics](#-page-analytics)
-7. [Page Intelligence](#-page-intelligence)
-8. [Assistant IA](#-assistant-ia)
-9. [Contribuer](#-contribuer)
-10. [Astuces & Conseils](#-astuces--conseils)
-11. [FAQ](#-faq)
-12. [Résolution de problèmes](#-résolution-de-problèmes)
+1. [Introduction](#introduction)
+2. [Démarrage rapide](#démarrage-rapide)
+3. [Navigation](#navigation)
+4. [Page Explorer](#page-explorer)
+5. [Page Géographie](#page-géographie)
+6. [Page Analytics](#page-analytics)
+7. [Page Intelligence](#page-intelligence)
+8. [Assistant IA](#assistant-ia)
+9. [Contribuer](#contribuer)
+10. [Astuces & Conseils](#astuces--conseils)
+11. [FAQ](#faq)
+12. [Résolution de problèmes](#résolution-de-problèmes)
 
 ---
 
-##  Introduction
+## Introduction
 
-### Qu'est-ce que Job Radar ?
+### Qu'est-ce que RADAR ?
 
-**Job Radar** est votre assistant intelligent pour explorer le marché de l'emploi dans la Data, l'IA et l'Analytics en France. Il vous permet de :
+**RADAR** est votre assistant intelligent pour explorer le marché de l'emploi dans la Data, l'IA et l'Analytics en France. Il vous permet de :
 
 -  **Découvrir** plus de 2 500 offres d'emploi ciblées
 -  **Visualiser** la répartition géographique des opportunités
@@ -51,7 +51,7 @@
 
 ---
 
-##  Démarrage rapide
+## Démarrage rapide
 
 ### Accéder à Job Radar
 
@@ -82,18 +82,18 @@ docker run -p 8501:8501 job-radar
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│   Job Radar                              ☰ Menu       │
+│   Job Radar                              ☰ Menu         │
 ├─────────────────────────────────────────────────────────┤
-│                                                          │
-│   Statistiques Globales                               │
-│  ┌────────┬────────┬────────┬────────┐                │
-│  │ 2,520  │  890   │   53   │  500   │                │
-│  │ Offres │Entrep. │Régions │Compét. │                │
-│  └────────┴────────┴────────┴────────┘                │
-│                                                          │
-│   Actions Rapides                                     │
-│  [Explorer] [Carte] [Stats] [IA]                       │
-│                                                          │
+│                                                         │
+│   Statistiques Globales                                 │
+│  ┌────────┬────────┬────────┬────────┐                  │
+│  │ 2,520  │  890   │   53   │  500   │                  │
+│  │ Offres │Entrep. │Régions │Compét. │                  │
+│  └────────┴────────┴────────┴────────┘                  │
+│                                                         │
+│   Actions Rapides                                       │
+│  [Explorer] [Carte] [Stats] [IA]                        │
+│                                                         │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -101,7 +101,7 @@ docker run -p 8501:8501 job-radar
 
 ---
 
-##  Navigation
+## Navigation
 
 ### Menu principal
 
@@ -126,7 +126,7 @@ Le menu latéral (icône ☰) donne accès à 6 pages :
 
 ---
 
-##  Page Explorer
+## Page Explorer
 
 ### Vue d'ensemble
 
@@ -136,18 +136,18 @@ La page **Explorer** est votre point d'entrée pour naviguer parmi les 2 520 off
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│   Trouvez Votre Job Idéal                             │
-│  Plus de 2 500 opportunités Data • IA • Cloud          │
+│   Trouvez Votre Job Idéal                               │
+│  Plus de 2 500 opportunités Data • IA • Cloud           │
 ├─────────────────────────────────────────────────────────┤
-│   Rechercher des Offres                               │
-│  ┌────────────────────────────────────────────────┐    │
-│  │  Data Scientist, Python, Machine Learning   │    │
-│  └────────────────────────────────────────────────┘    │
-│                                                          │
-│   Région              Type de contrat             │
-│  [Île-de-France    ▼]   [CDI              ▼]          │
-│                                                          │
-│  [ Rechercher]                                        │
+│   Rechercher des Offres                                 │
+│  ┌────────────────────────────────────────────────┐     │
+│  │  Data Scientist, Python, Machine Learning      │     │
+│  └────────────────────────────────────────────────┘     │
+│                                                         │
+│   Région              Type de contrat                   │
+│  [Île-de-France    ▼]   [CDI              ▼]            │
+│                                                         │
+│  [ Rechercher]                                          │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -289,7 +289,7 @@ Cliquez pour afficher :
 
 ---
 
-##  Page Géographie
+## Page Géographie
 
 ### Vue d'ensemble
 
@@ -356,7 +356,7 @@ Visualisation en chaleur :
 
 ---
 
-##  Page Analytics
+## Page Analytics
 
 ### Vue d'ensemble
 
@@ -451,7 +451,7 @@ Compétence : [Toutes ▼]
 
 ---
 
-##  Page Intelligence
+## Page Intelligence
 
 ### Vue d'ensemble
 
@@ -532,7 +532,7 @@ Méthode TF-IDF : [Scikit-learn ▼]
 
 ---
 
-##  Assistant IA
+## Assistant IA
 
 ### Vue d'ensemble
 
@@ -647,7 +647,7 @@ Le système propose des questions :
 
 ---
 
-## ➕ Contribuer
+## Contribuer
 
 ### Vue d'ensemble
 
@@ -715,7 +715,7 @@ a été ajoutée à la base de données.
 
 ---
 
-## 💡 Astuces & Conseils
+## Astuces & Conseils
 
 ### Recherche efficace
 
@@ -766,7 +766,7 @@ Intégration dans vos propres outils
 
 ---
 
-## ❓ FAQ
+## FAQ
 
 ### Questions fréquentes
 
@@ -796,7 +796,7 @@ Intégration dans vos propres outils
 
 ---
 
-## 🔧 Résolution de problèmes
+## Résolution de problèmes
 
 ### Problèmes courants
 
@@ -853,7 +853,7 @@ Intégration dans vos propres outils
 
 ---
 
-## 📞 Support
+## Support
 
 ### Besoin d'aide ?
 
@@ -871,6 +871,6 @@ Intégration dans vos propres outils
 
 *N'hésitez pas à partager ce guide avec vos collègues*
 
-[⬆️ Retour en haut](#-guide-utilisateur---job-radar)
+[⬆️ Retour en haut](#guide-utilisateur---job-radar)
 
 </div>
