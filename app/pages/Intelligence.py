@@ -1816,7 +1816,6 @@ with w2v_tabs[2]:
                             showscale=True,
                             colorbar=dict(
                                 title="Fréquence",
-                                titlefont=dict(color="#00ff41", family="Orbitron"),
                                 tickfont=dict(color="#00ff41", family="Orbitron"),
                             ),
                         ),

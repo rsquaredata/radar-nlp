@@ -12,6 +12,10 @@ import os
 import re
 from typing import List, Dict, Any, Optional
 from bs4 import BeautifulSoup
+import asyncio
+
+# Charger les variables d'environnement EN PREMIER
+from dotenv import load_dotenv
 
 # Import
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -21,6 +25,14 @@ from utils.db import load_offers_with_skills
 # Import des fonctions d'insertion
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "app" / "utils"))
+
+ENV_FILE = PROJECT_ROOT / ".env"
+
+if ENV_FILE.exists():
+    load_dotenv(ENV_FILE)
+    print(f"✅ Fichier .env chargé depuis: {ENV_FILE}")
+else:
+    print(f"⚠️ Fichier .env non trouvé: {ENV_FILE}")
 
 try:
     from db_insert import insert_offers, generate_uid, check_duplicate_by_uid
@@ -64,6 +76,16 @@ except ImportError as e:
 
 ENRICHERS_AVAILABLE = ENRICHERS_GEO_AVAILABLE and ENRICHERS_SKILLS_AVAILABLE
 
+# Import de l'enrichisseur LLM
+try:
+    from llm_enricher import LLMEnricher
+
+    LLM_ENRICHER_AVAILABLE = True
+    print("✅ LLMEnricher importé avec succès")
+except ImportError as e:
+    print(f"⚠️ Erreur import LLMEnricher : {e}")
+    LLM_ENRICHER_AVAILABLE = False
+    LLMEnricher = None
 
 st.set_page_config(
     page_title="Contribuer | DataJobs",
@@ -89,24 +111,44 @@ if "xp" not in st.session_state:
 @st.cache_resource
 def get_enrichers():
     """Charge les enrichisseurs (cache pour performance)"""
-    if not ENRICHERS_AVAILABLE:
-        st.warning(
-            "⚠️ Enrichisseurs non disponibles - Les offres seront ajoutées sans enrichissement"
-        )
-        return None, None
+    geo_enricher = None
+    skills_enricher = None
+    llm_enricher = None
 
-    try:
-        geo_enricher = GeographicEnricher()
-        skills_enricher = SkillsExtractor()
-        st.success("✅ Enrichisseurs chargés avec succès !")
-        return geo_enricher, skills_enricher
-    except Exception as e:
-        st.error(f"❌ Erreur chargement enrichisseurs : {e}")
-        return None, None
+    # Enrichisseur géographique
+    if ENRICHERS_GEO_AVAILABLE:
+        try:
+            geo_enricher = GeographicEnricher()
+        except Exception as e:
+            st.warning(f"⚠️ GeographicEnricher non disponible : {e}")
+
+    # Enrichisseur de compétences
+    if ENRICHERS_SKILLS_AVAILABLE:
+        try:
+            skills_enricher = SkillsExtractor()
+        except Exception as e:
+            st.warning(f"⚠️ SkillsExtractor non disponible : {e}")
+
+    # Enrichisseur LLM
+    if LLM_ENRICHER_AVAILABLE:
+        try:
+            llm_enricher = LLMEnricher()
+        except Exception as e:
+            st.warning(f"⚠️ LLMEnricher non disponible : {e}")
+
+    # Afficher le statut
+    if geo_enricher and skills_enricher and llm_enricher:
+        st.success("✅ Tous les enrichisseurs chargés !")
+    elif llm_enricher:
+        st.info("🤖 Enrichisseur LLM actif")
+    else:
+        st.warning("⚠️ Enrichisseurs limités")
+
+    return geo_enricher, skills_enricher, llm_enricher
 
 
 # Charger les enrichisseurs
-geo_enricher, skills_enricher = get_enrichers()
+geo_enricher, skills_enricher, llm_enricher = get_enrichers()
 
 # Afficher le statut dans la sidebar (optionnel)
 if "show_enricher_status" not in st.session_state:
@@ -115,11 +157,29 @@ if "show_enricher_status" not in st.session_state:
 if st.session_state.show_enricher_status:
     with st.sidebar:
         st.markdown("---")
+        st.markdown("### ⚙️ Configuration")
+
+        use_llm = st.checkbox(
+            "🤖 Utiliser l'enrichissement LLM",
+            value=True,
+            help="Utilise Mistral pour extraire les informations (requiert API key)",
+            disabled=not llm_enricher,
+        )
+        st.markdown("---")
         st.markdown("### 🔧 Statut Enrichisseurs")
-        if geo_enricher and skills_enricher:
-            st.success("✅ Actifs")
-        else:
-            st.error("❌ Inactifs")
+
+        col1, col2 = st.columns(2)
+        with col1:
+            if geo_enricher and skills_enricher:
+                st.success("✅ Règles")
+            else:
+                st.error("❌ Règles")
+
+        with col2:
+            if llm_enricher:
+                st.success("✅ LLM")
+            else:
+                st.error("❌ LLM")
 
 
 def enrich_offer_automatically(offer: dict) -> dict:
@@ -227,6 +287,60 @@ def enrich_offers_batch(offers: list) -> list:
             print(f"   Enrichissement : {idx + 1}/{total}")
 
     return enriched_offers
+
+
+async def enrich_offers_with_llm_async(offers: list) -> list:
+    """
+    Enrichit les offres avec le LLM Mistral
+    Spécialement conçu pour Emploi Territorial
+    """
+    if not llm_enricher:
+        st.warning("⚠️ Enrichisseur LLM non disponible")
+        return offers
+
+    try:
+        enriched_offers = await llm_enricher.enrich_offers_batch(
+            offers, show_progress=False
+        )
+        return enriched_offers
+    except Exception as e:
+        st.error(f"❌ Erreur enrichissement LLM: {e}")
+        return offers
+
+
+def enrich_offers_with_llm_sync(offers: list) -> list:
+    """
+    Enrichit les offres avec le LLM Mistral (version synchrone pour Streamlit)
+    Spécialement conçu pour Emploi Territorial
+    """
+    if not llm_enricher:
+        st.warning("⚠️ Enrichisseur LLM non disponible")
+        return offers
+
+    try:
+        # Créer une nouvelle event loop si nécessaire
+        try:
+            loop = asyncio.get_event_loop()
+            if loop.is_closed():
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+
+        # Exécuter l'enrichissement de manière synchrone
+        enriched_offers = loop.run_until_complete(
+            llm_enricher.enrich_offers_batch(offers, show_progress=False)
+        )
+
+        return enriched_offers
+
+    except Exception as e:
+        st.error(f"❌ Erreur enrichissement LLM: {e}")
+        import traceback
+
+        st.error(traceback.format_exc())
+        return offers
 
 
 st.markdown(
@@ -1477,7 +1591,9 @@ with tab5:
     )
 
     st.markdown("**Scraping des offres Emploi Territorial** (+2 XP par offre)")
-
+    st.warning(
+        "⚠️ **Important:** Le scraping peut prendre quelques minutes, chaque offres est nettoyé par Mistral ~ 3 à 5 secondes de traitement en plus par offres"
+    )
     keywords_et = st.text_input(
         "🔍 Mots-clés (optionnel)", placeholder="Ex: data, SIG, urbanisme"
     )
@@ -1519,14 +1635,66 @@ with tab5:
                 unique_offers, duplicates = check_duplicate(offers, existing_data)
                 st.session_state.last_scraped_offers = unique_offers
                 if unique_offers:
-                    if geo_enricher and skills_enricher:
-                        with st.spinner("✨ Enrichissement automatique..."):
-                            unique_offers = enrich_offers_batch(unique_offers)
+                    # 🤖 ENRICHISSEMENT LLM (PRIORITAIRE pour Emploi Territorial)
+                    if llm_enricher:
+                        with st.spinner("🤖 Enrichissement LLM en cours (Mistral)..."):
+                            progress_text = st.empty()
+                            progress_text.text(
+                                f"Traitement de {len(unique_offers)} offres avec Mistral..."
+                            )
 
+                            unique_offers = enrich_offers_with_llm_sync(unique_offers)
+
+                            # Stats LLM
+                            llm_enriched = sum(
+                                1
+                                for o in unique_offers
+                                if o.get("competences") or o.get("savoir_etre")
+                            )
+                            competences_total = sum(
+                                o.get("competences_count", 0) for o in unique_offers
+                            )
+                            savoir_etre_total = sum(
+                                o.get("savoir_etre_count", 0) for o in unique_offers
+                            )
+
+                            progress_text.empty()
+                            st.success(
+                                f"✅ LLM Mistral : {llm_enriched}/{len(unique_offers)} offres enrichies • "
+                                f"{competences_total} compétences techniques • {savoir_etre_total} savoir-être"
+                            )
+
+                    # 🌍 ENRICHISSEMENT GÉOGRAPHIQUE (complément)
+                    if geo_enricher:
+                        with st.spinner("🌍 Enrichissement géographique..."):
+                            for offer in unique_offers:
+                                if not offer.get("region"):
+                                    location = offer.get("location", "")
+                                    if location:
+                                        try:
+                                            region_name, lat, lon = (
+                                                geo_enricher.extract_region(location)
+                                            )
+                                            offer["region"] = region_name
+                                            offer["region_lat"] = lat
+                                            offer["region_lon"] = lon
+                                        except:
+                                            pass
+
+                            geo_enriched = sum(
+                                1 for o in unique_offers if o.get("region")
+                            )
+                            st.success(
+                                f"✅ Géographie : {geo_enriched}/{len(unique_offers)} régions identifiées"
+                            )
+
+                    # INSERTION DANS LA BASE DE DONNÉES
                     inserted, dup_db, msg = insert_offers(unique_offers)
 
                     if inserted > 0:
-                        st.success(f"✅ {inserted} offres ajoutées")
+                        st.success(
+                            f"✅ {inserted} offres ajoutées à la base de données"
+                        )
                         add_contribution_xp(inserted * 2)
                         st.balloons()
 
@@ -1535,11 +1703,35 @@ with tab5:
                                 "timestamp": datetime.now().strftime(
                                     "%Y-%m-%d %H:%M:%S"
                                 ),
-                                "method": "Emploi Territorial",
+                                "method": "Emploi Territorial (LLM)",
                                 "count": inserted,
                                 "xp": inserted * 2,
                             }
                         )
+
+                        # Afficher preview enrichie
+                        with st.expander("👁️ Voir les offres enrichies"):
+                            preview_data = []
+                            for offer in unique_offers[:5]:
+                                preview_data.append(
+                                    {
+                                        "Titre": offer.get("title", "N/A"),
+                                        "Entreprise": offer.get("company_name", "N/A"),
+                                        "Lieu": offer.get("location", "N/A"),
+                                        "Région": offer.get("region", "N/A"),
+                                        "Compétences": len(
+                                            offer.get("competences", [])
+                                        ),
+                                        "Savoir-être": len(
+                                            offer.get("savoir_etre", [])
+                                        ),
+                                        "Contrat": offer.get("contract_type", "N/A"),
+                                        "Remote": offer.get("remote", "N/A"),
+                                    }
+                                )
+                            st.dataframe(
+                                pd.DataFrame(preview_data), use_container_width=True
+                            )
 
                         st.cache_data.clear()
                     else:
