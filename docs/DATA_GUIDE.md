@@ -25,7 +25,7 @@
 
 ---
 
-##  Vue d'ensemble
+## Vue d'ensemble
 
 ### Chiffres clés
 
@@ -60,7 +60,7 @@
 
 ---
 
-## 🔌 Sources de données
+## Sources de données
 
 ### 1. France Travail API
 
@@ -377,7 +377,7 @@ CREATE INDEX idx_offers_remote ON fact_offers(remote);
 
 ---
 
-##  Pipeline ETL
+## Pipeline ETL
 
 ### Processus complet
 
@@ -501,7 +501,7 @@ class ETLPipeline:
 
 ---
 
-##  Qualité des données
+## Qualité des données
 
 ### Métriques de qualité
 
@@ -555,7 +555,7 @@ FROM fact_offers;
 
 ---
 
-## 🔍 Requêtes SQL
+## Requêtes SQL
 
 ### Requêtes utiles
 
@@ -616,7 +616,7 @@ ORDER BY remote_pct DESC;
 
 ---
 
-## 📤 Export & APIs
+## Export & APIs
 
 ### Export CSV
 
@@ -668,7 +668,7 @@ def get_stats():
 
 ---
 
-## 🔧 Maintenance
+## Maintenance
 
 ### Backup régulier
 
