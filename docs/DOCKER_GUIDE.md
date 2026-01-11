@@ -22,7 +22,7 @@
 6. [Volumes & Persistance](#volumes--persistance)
 7. [Environnement Production](#environnement-production)
 8. [Optimisations](#optimisations)
-9. [Troubleshooting](#troubleshooting)
+9. [Ressources](#ressources)
 
 ---
 
