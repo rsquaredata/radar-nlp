@@ -1659,7 +1659,7 @@ def extract_skills(description, min_confidence=0.7):
 
 <div align="center">
 
-** RADAR - Analyse du Marché de l'Emploi**
+**RADAR - Analyse du Marché de l'Emploi**
 
 
 
