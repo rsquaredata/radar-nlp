@@ -1,0 +1,192 @@
+{
+  "hard_skills": {
+    "languages": {
+      "description": "Langages de programmation",
+      "skills": [
+        "Python", "R", "SQL", "Scala", "Java", "JavaScript", "TypeScript",
+        "Julia", "Go", "C++", "C#", "Ruby", "PHP", "Shell", "Bash",
+        "PowerShell", "Rust", "SAS", "MATLAB", "VBA"
+      ]
+    },
+    "big_data": {
+      "description": "Technologies Big Data",
+      "skills": [
+        "Spark", "PySpark", "Hadoop", "MapReduce", "HDFS", "Hive", "Pig",
+        "Kafka", "Flink", "Storm", "Beam", "Cassandra", "HBase",
+        "Presto", "Impala", "Drill", "NiFi", "Sqoop", "Flume",
+        "Databricks", "Cloudera", "Hortonworks", "EMR"
+      ]
+    },
+    "cloud": {
+      "description": "Plateformes Cloud",
+      "skills": [
+        "AWS", "Azure", "GCP", "Google Cloud Platform",
+        "S3", "EC2", "Lambda", "EMR", "Redshift", "Glue", "Athena", "SageMaker",
+        "BigQuery", "Cloud Storage", "Dataflow", "Dataproc", "Cloud Functions", "Cloud Run",
+        "Azure Data Lake", "Azure Synapse", "Azure Databricks", "Azure ML",
+        "Snowflake", "Databricks Cloud", "IBM Cloud", "Oracle Cloud",
+        "CloudFormation", "Terraform", "Pulumi"
+      ]
+    },
+    "ml_frameworks": {
+      "description": "Frameworks Machine Learning / Deep Learning",
+      "skills": [
+        "TensorFlow", "PyTorch", "Keras", "Scikit-learn", "XGBoost", "LightGBM", "CatBoost",
+        "FastAI", "JAX", "MXNet", "Caffe", "Theano", "ONNX",
+        "Hugging Face", "Transformers", "spaCy", "NLTK", "Gensim",
+        "OpenCV", "YOLO", "Detectron", "Stable Diffusion",
+        "LangChain", "LlamaIndex", "AutoML", "H2O.ai", "MLflow"
+      ]
+    },
+    "databases": {
+      "description": "Bases de données",
+      "skills": [
+        "PostgreSQL", "MySQL", "SQL Server", "Oracle", "MongoDB", "Cassandra",
+        "Redis", "Elasticsearch", "Neo4j", "DynamoDB", "Couchbase",
+        "MariaDB", "SQLite", "InfluxDB", "TimescaleDB", "ClickHouse",
+        "Snowflake", "Redshift", "BigQuery", "Teradata", "Vertica",
+        "Cosmos DB", "Aurora", "RDS", "Cloud SQL", "Firestore"
+      ]
+    },
+    "data_engineering": {
+      "description": "Outils Data Engineering",
+      "skills": [
+        "Airflow", "Luigi", "Prefect", "Dagster", "Argo",
+        "dbt", "Great Expectations", "Databricks", "Fivetran", "Stitch",
+        "Talend", "Informatica", "Pentaho", "SSIS", "ODI",
+        "ETL", "ELT", "CDC", "Data Pipeline", "Data Lake", "Data Warehouse",
+        "Delta Lake", "Iceberg", "Hudi", "Lakehouse"
+      ]
+    },
+    "bi_tools": {
+      "description": "Outils Business Intelligence",
+      "skills": [
+        "Tableau", "Power BI", "Looker", "Qlik", "QlikView", "Qlik Sense",
+        "Metabase", "Superset", "Redash", "Mode", "Sisense", "Domo",
+        "SAP BusinessObjects", "IBM Cognos", "MicroStrategy", "Pentaho",
+        "Google Data Studio", "Grafana", "Kibana", "D3.js", "Plotly"
+      ]
+    },
+    "devops_mlops": {
+      "description": "DevOps / MLOps",
+      "skills": [
+        "Docker", "Kubernetes", "Git", "GitHub", "GitLab", "Bitbucket",
+        "Jenkins", "CircleCI", "Travis CI", "GitHub Actions", "GitLab CI",
+        "Terraform", "Ansible", "Chef", "Puppet", "CloudFormation",
+        "MLflow", "Kubeflow", "Seldon", "BentoML", "TFX", "Metaflow",
+        "CI/CD", "IaC", "Infrastructure as Code", "Container", "Orchestration"
+      ]
+    },
+    "web_frameworks": {
+      "description": "Frameworks Web / API",
+      "skills": [
+        "Django", "Flask", "FastAPI", "Streamlit", "Gradio", "Dash",
+        "React", "Vue.js", "Angular", "Next.js", "Node.js", "Express",
+        "Spring Boot", "REST API", "GraphQL", "gRPC", "WebSocket"
+      ]
+    },
+    "data_formats": {
+      "description": "Formats de données",
+      "skills": [
+        "JSON", "XML", "CSV", "Parquet", "Avro", "ORC", "Arrow",
+        "Protobuf", "YAML", "HDF5", "NetCDF", "JSONL"
+      ]
+    },
+    "statistics_math": {
+      "description": "Statistiques & Mathématiques",
+      "skills": [
+        "Statistiques", "Probabilités", "Algèbre linéaire", "Calcul",
+        "Optimisation", "Régression", "Classification", "Clustering",
+        "Time Series", "Séries temporelles", "A/B Testing", "Tests statistiques",
+        "ANOVA", "Chi-2", "T-test", "Bayes", "Monte Carlo"
+      ]
+    },
+    "methodologies": {
+      "description": "Méthodologies",
+      "skills": [
+        "Agile", "Scrum", "Kanban", "SAFe", "DevOps", "MLOps", "DataOps",
+        "CRISP-DM", "SEMMA", "KDD", "Lean", "Six Sigma",
+        "Design Thinking", "Product Management", "Project Management"
+      ]
+    },
+    "data_governance": {
+      "description": "Gouvernance des données",
+      "skills": [
+        "RGPD", "GDPR", "Data Quality", "Data Catalog", "Metadata Management",
+        "Data Lineage", "Master Data Management", "MDM", "Data Privacy",
+        "CNIL", "ISO 27001", "SOC 2", "Compliance"
+      ]
+    },
+    "specialized_domains": {
+      "description": "Domaines spécialisés",
+      "skills": [
+        "NLP", "Natural Language Processing", "Computer Vision", "OCR",
+        "Speech Recognition", "Recommender Systems", "Fraud Detection",
+        "Time Series Forecasting", "Anomaly Detection", "Reinforcement Learning",
+        "Graph Analytics", "Network Analysis", "GenAI", "Generative AI",
+        "LLM", "Large Language Model", "RAG", "Retrieval Augmented Generation",
+        "Prompt Engineering", "Fine-tuning", "Transfer Learning",
+        "Edge Computing", "IoT", "Blockchain", "Quantum Computing"
+      ]
+    }
+  },
+  "soft_skills": {
+    "communication": {
+      "description": "Communication",
+      "skills": [
+        "Communication", "Présentation", "Storytelling", "Data Storytelling",
+        "Vulgarisation", "Pédagogie", "Rédaction", "Documentation",
+        "Anglais", "English", "Bilingue", "Trilingue"
+      ]
+    },
+    "teamwork": {
+      "description": "Travail d'équipe",
+      "skills": [
+        "Esprit d'équipe", "Collaboration", "Travail en équipe",
+        "Coopération", "Intelligence collective", "Pair programming"
+      ]
+    },
+    "leadership": {
+      "description": "Leadership",
+      "skills": [
+        "Leadership", "Management", "Encadrement", "Mentoring",
+        "Coaching", "Animation d'équipe", "Gestion d'équipe"
+      ]
+    },
+    "personal": {
+      "description": "Qualités personnelles",
+      "skills": [
+        "Autonomie", "Rigueur", "Curiosité", "Créativité", "Innovation",
+        "Proactivité", "Initiative", "Adaptabilité", "Flexibilité",
+        "Résilience", "Persévérance", "Organisation", "Gestion du temps",
+        "Esprit critique", "Esprit analytique", "Problem solving",
+        "Résolution de problèmes", "Sens du détail", "Pragmatisme"
+      ]
+    },
+    "business": {
+      "description": "Compétences business",
+      "skills": [
+        "Sens du business", "Orientation client", "Orientation résultats",
+        "Vision stratégique", "Compréhension métier", "Analyse fonctionnelle",
+        "Gestion de projet", "Product Management", "Stakeholder management"
+      ]
+    }
+  },
+  "certifications": {
+    "description": "Certifications professionnelles",
+    "skills": [
+      "AWS Certified", "Azure Certified", "GCP Certified", "Google Cloud Certified",
+      "Databricks Certified", "Snowflake Certified", "Tableau Certified",
+      "PMP", "Prince2", "Scrum Master", "Product Owner", "SAFe",
+      "TOGAF", "ITIL", "CISSP", "CEH", "CompTIA"
+    ]
+  },
+  "education": {
+    "description": "Formations académiques",
+    "skills": [
+      "Bac+5", "Master", "Ingénieur", "Doctorat", "PhD",
+      "Grande École", "École d'ingénieur", "Université",
+      "MBA", "Executive MBA", "Formation continue", "Bootcamp"
+    ]
+  }
+}
