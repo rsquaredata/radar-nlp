@@ -12,7 +12,7 @@
 
 </div>
 
-##  Table des matières
+## Table des matières
 
 1. [Architecture](#architecture)
 2. [Installation Dev](#installation-développeur)
@@ -79,7 +79,7 @@
 
 ---
 
-##  Installation Développeur
+## Installation Développeur
 
 ### Prérequis
 
