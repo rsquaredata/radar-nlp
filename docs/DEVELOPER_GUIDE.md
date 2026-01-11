@@ -29,7 +29,7 @@
 
 ---
 
-## 🏛️ Architecture
+## Architecture
 
 ### Vue d'ensemble
 
@@ -137,7 +137,7 @@ jupyter>=1.0.0
 
 ---
 
-## 📁 Structure du Code
+## Structure du Code
 
 ### Arborescence Détaillée
 
@@ -223,7 +223,7 @@ MAX_RESULTS = 1000
 
 ---
 
-## 🗄️ Base de Données
+## Base de Données
 
 ### Schéma Relationnel
 
@@ -439,7 +439,7 @@ class DatabaseManager:
 
 ---
 
-## 🔄 Pipeline ETL
+## Pipeline ETL
 
 ### Architecture ETL
 
@@ -555,7 +555,7 @@ def insert_offer(self, row: dict):
 
 ---
 
-## 🔌 APIs & Intégrations
+## APIs & Intégrations
 
 ### France Travail API
 
