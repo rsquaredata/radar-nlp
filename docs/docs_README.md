@@ -305,6 +305,6 @@
 
 *Dernière mise à jour : Janvier 2025*
 
-[⬆️ Retour en haut](#-documentation-radar)
+[⬆️ Retour en haut](#documentation-radar)
 
 </div>
