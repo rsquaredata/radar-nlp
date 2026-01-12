@@ -656,8 +656,8 @@ Ouvrir une **issue** sur GitHub avec :
 **Développé par :**
 
 [Bah Mohamed Habib](https://github.com/Bahmohamedhabib)  
-[Thibaud Lecomte](https://github.com/Dyoxxx)
-[Aya Mecheri](https://github.com/AyaAya-ui)
+[Thibaud Lecomte](https://github.com/Dyoxxx)  
+[Aya Mecheri](https://github.com/AyaAya-ui)  
 [Rina Razafimahefa](https://github.com/rsquaredata/)
 
 </div>
