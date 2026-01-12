@@ -2,7 +2,7 @@
 
 #  RADAR
 
-### *Analyse Territoriale des Offres d'emploi par NLP & IA*
+### *Analyse territoriale des offres d'emploi par NLP & IA*
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-red.svg)](https://streamlit.io/)
@@ -41,7 +41,7 @@
 
 ## Vue d'ensemble
 
-**RADAR** (Recherche Analytique Des Annonces Régionales) est une plateforme d'analyse avancée des offres d'emploi en France, spécialisée dans les **métiers de la Data, IA et Analytics**. 
+**RADAR** (*Recherche Analytique Des Annonces Régionales*) est une plateforme d'analyse avancée des offres d'emploi en France, spécialisée dans les **métiers de la Data, IA et Analytics**. 
 
 Combinant **NLP**, **Text Mining** et **visualisation interactive**, ce projet offre une vision territoriale unique du marché de l'emploi français.
 
