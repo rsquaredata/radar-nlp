@@ -621,7 +621,7 @@ assistant : "D'après l'analyse du marché, je vous recommande..."
 
 ---
 
-## 🤝 Contribution
+## Contribution
 
 Les contributions sont les bienvenues ! 
 
@@ -682,7 +682,7 @@ Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
-## 🙏 Remerciements
+## Remerciements
 
 -  **Université Lumière Lyon 2** - Master SISE
 -  **France Travail** - API officielle
