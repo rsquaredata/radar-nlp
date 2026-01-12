@@ -19,7 +19,7 @@
 
 </div>
 
-##  Table des matières
+## Table des matières
 
 - [Vue d'ensemble](#vue-densemble)
 - [Points forts du projet](#points-forts-du-projet)
@@ -39,7 +39,7 @@
 
 ---
 
-##  Vue d'ensemble
+## Vue d'ensemble
 
 **RADAR** (Recherche Analytique Des Annonces Régionales) est une plateforme d'analyse avancée des offres d'emploi en France, spécialisée dans les **métiers de la Data, IA et Analytics**. 
 
@@ -50,7 +50,7 @@ Combinant **NLP**, **Text Mining** et **visualisation interactive**, ce projet o
 Projet réalisé dans le cadre du **Master SISE** – *NLP & Text Mining*  
 Université Lumière Lyon 2 | 2025-2026
 
-###  Objectifs
+### Objectifs
 
 - **Analyser** plus de 2 500 offres d'emploi en temps réel
 - **Cartographier** la répartition géographique des compétences
@@ -60,13 +60,13 @@ Université Lumière Lyon 2 | 2025-2026
 
 ---
 
-##  Points forts du projet
+## Points forts du projet
 
 <table>
 <tr>
 <td width="50%">
 
-###  Interface moderne
+### Interface moderne
 - Design NASA-FBI professionnel
 - Navigation fluide et intuitive
 - Animations et effets visuels
@@ -75,7 +75,7 @@ Université Lumière Lyon 2 | 2025-2026
 </td>
 <td width="50%">
 
-###  Pipeline ETL robuste
+### Pipeline ETL robuste
 - Collecte automatisée (API + Scraping)
 - Enrichissement géographique
 - Gestion des doublons
@@ -86,7 +86,7 @@ Université Lumière Lyon 2 | 2025-2026
 <tr>
 <td width="50%">
 
-###  NLP avancé
+### NLP avancé
 - Extraction de compétences
 - TF-IDF et vectorisation
 - Analyse de similarité
@@ -95,7 +95,7 @@ Université Lumière Lyon 2 | 2025-2026
 </td>
 <td width="50%">
 
-###  Déploiement simplifié
+### Déploiement simplifié
 - Dockerisé (1 commande)
 - Prêt pour la production
 - Persistance des données
@@ -163,9 +163,9 @@ Université Lumière Lyon 2 | 2025-2026
 
 ---
 
-##  Fonctionnalités
+## Fonctionnalités
 
-###  Explorer – Navigation des offres
+### Explorer – Navigation des offres
 
 <table>
 <tr>
@@ -197,7 +197,7 @@ Université Lumière Lyon 2 | 2025-2026
 </tr>
 </table>
 
-###  Géographie – Cartographie interactive
+### Géographie – Cartographie interactive
 
 -  Carte de France interactive (Folium)
 -  Heatmap des offres par région
@@ -205,7 +205,7 @@ Université Lumière Lyon 2 | 2025-2026
 -  Zones de concentration des emplois
 -  Analyse comparative inter-régions
 
-###  Analytics – Statistiques avancées
+### Analytics – Statistiques avancées
 
 -  Évolution temporelle des offres
 -  Top compétences par région
@@ -214,7 +214,7 @@ Université Lumière Lyon 2 | 2025-2026
 -  Graphiques interactifs (Plotly)
 -  Export des données (CSV, JSON)
 
-###  Intelligence – NLP & Text Mining
+### Intelligence – NLP & Text Mining
 
 <table>
 <tr>
@@ -242,7 +242,7 @@ Université Lumière Lyon 2 | 2025-2026
 </tr>
 </table>
 
-###  Assistant – IA conversationnelle
+### Assistant – IA conversationnelle
 
 -  Assistant intelligent (Mistral AI)
 -  Recommandations personnalisées
@@ -250,7 +250,7 @@ Université Lumière Lyon 2 | 2025-2026
 -  Suggestions de compétences à acquérir
 -  Interface conversationnelle naturelle
 
-###  Contribuer – Enrichissement dynamique
+### Contribuer – Enrichissement dynamique
 
 -  Ajout manuel d'offres
 -  Enrichissement automatique
@@ -259,7 +259,7 @@ Université Lumière Lyon 2 | 2025-2026
 
 ---
 
-##  Technologies & NLP
+## Technologies & NLP
 
 ### Stack Technique
 
@@ -304,7 +304,7 @@ Université Lumière Lyon 2 | 2025-2026
 
 ---
 
-##  Installation Docker
+## Installation Docker
 
 ### Prérequis
 
@@ -353,13 +353,13 @@ docker build -t job-radar .
 docker run -p 8501:8501 --env-file .env job-radar
 ```
 
-####  Accéder à l'application
+#### Accéder à l'application
 
 ```
  http://localhost:8501
 ```
 
-###  Persistance des données (Recommandé)
+### Persistance des données (Recommandé)
 
 Pour conserver les données entre les redémarrages :
 
@@ -381,7 +381,7 @@ docker run -p 8501:8501 \
 
 ---
 
-##  Installation Locale
+## Installation Locale
 
 ### Prérequis
 
@@ -413,7 +413,7 @@ nano .env
 streamlit run app/home.py
 ```
 
-###  Configuration avancée
+### Configuration avancée
 
 **Créer la base de données :**
 
@@ -427,16 +427,16 @@ python geographic_enrichment/enrich_geo.py
 
 ---
 
-##  Sources de données
+## Sources de données
 
-###  France Travail API
+### France Travail API
 
 - **Type** : API officielle
 - **Volume** : ~1 500 offres
 - **Mise à jour** : Quotidienne
 - **Couverture** : France entière
 
-###  HelloWork (Scraping)
+### HelloWork (Scraping)
 
 - **Type** : Web scraping
 - **Volume** : ~1 000 offres
@@ -450,7 +450,7 @@ python geographic_enrichment/enrich_geo.py
 - **Mise à jour** : Hebdomadaire
 - **Focus** : Métiers Data/IA du secteur public
 
-###  Statistiques de collecte
+### Statistiques de collecte
 
 ```
  Total : 2,520 offres
@@ -462,7 +462,7 @@ python geographic_enrichment/enrich_geo.py
 
 ---
 
-##  Modélisation des données
+## Modélisation des données
 
 ### Architecture en étoile (Star Schema)
 
@@ -507,7 +507,7 @@ python geographic_enrichment/enrich_geo.py
 
 ---
 
-##  Intelligence Artificielle
+## Intelligence Artificielle
 
 ### Mistral AI Integration
 
@@ -533,31 +533,39 @@ assistant : "D'après l'analyse du marché, je vous recommande..."
 
 ---
 
-##  Captures d'écran
+## Captures d'écran
 
 <div align="center">
 
 ### Page Explorer
-![Explorer](docs/screenshots/explorer.png)
-*Navigation et filtrage des 2500+ offres*
+![Explorer](docs/screenshots/Explorer_1.png)
+*Navigation et filtrage de 2500+ offres*
 
 ### Cartographie
-![Geo](docs/screenshots/geo.png)
+![Geo](docs/screenshots/Geo_1.png)
 *Visualisation géographique interactive*
 
 ### Analytics
-![Analytics](docs/screenshots/analytics.png)
+![Analytics](docs/screenshots/Analytics_1.png)
 *Statistiques et graphiques avancés*
 
 ### Intelligence NLP
-![Intelligence](docs/screenshots/intelligence.png)
+![Intelligence](docs/screenshots/Intelligence_1.png)
 *Clustering et analyses NLP*
+
+### Contribuer
+![Contribuer](docs/screenshots/Contribution_1.png)
+*Gagner de l'XP en contribuant à la base RADAR*
+
+### Assistant IA
+![Assistant IA](docs/screenshots/Assistant_IA_1.png)
+*Utiliser l'IA pour booster sa carrière*
 
 </div>
 
 ---
 
-##  Configuration
+## Configuration
 
 ### Variables d'environnement requises
 
@@ -583,7 +591,7 @@ assistant : "D'après l'analyse du marché, je vous recommande..."
 
 ---
 
-##  Roadmap
+## Roadmap
 
 ### Version 1.0  (Actuelle)
 
@@ -641,7 +649,7 @@ Ouvrir une **issue** sur GitHub avec :
 
 ---
 
-##  Équipe
+## Équipe
 
 <div align="center">
 
@@ -656,7 +664,7 @@ Ouvrir une **issue** sur GitHub avec :
 
 ---
 
-##  Licence
+## Licence
 
 Ce projet est sous licence **MIT**.
 
@@ -685,7 +693,7 @@ Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
-##  Ressources
+## Ressources
 
 ### Documentation
 
